@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 
@@ -93,11 +94,6 @@ const Contact = () => {
                         {info.title}
                       </h4>
                       <p className="text-gray-600">{info.details}</p>
-                      {info.extra && (
-                        <p className="text-sm text-gray-500 mt-1">
-                          {info.extra}
-                        </p>
-                      )}
                     </div>
                   </div>
                 ))}
