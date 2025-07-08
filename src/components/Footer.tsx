@@ -118,8 +118,7 @@ const Footer = () => {
                 </div>
                 <div className="text-white/80">
                   <p className="font-medium text-white mb-1">Call Us Today</p>
-                  <p className="text-sm">024 7699 2020</p>
-                  <p className="text-xs text-white/60">Emergency: 024 7699 2021</p>
+                  <p className="text-sm">024 76 31 2256</p>
                 </div>
               </div>
               
@@ -129,7 +128,7 @@ const Footer = () => {
                 </div>
                 <div className="text-white/80">
                   <p className="font-medium text-white mb-1">Email Us</p>
-                  <p className="text-sm">info@coventryroaddentalcare.com</p>
+                  <p className="text-sm">reception@deoldental.com</p>
                 </div>
               </div>
             </div>

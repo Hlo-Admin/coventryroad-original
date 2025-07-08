@@ -6,18 +6,17 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Our Clinic",
-      details: "123 Coventry Road\nBirmingham B26 3EA\nUnited Kingdom",
+      details: "94 Coventry Rd\nBedworth, Coventry\nCV12 8NW\nUnited Kingdom",
     },
     {
       icon: Phone,
-      title: "Call Us Today",
-      details: "024 7699 2020",
-      extra: "Emergency: 024 7699 2021",
+      title: "Call Us Today", 
+      details: "024 76 31 2256",
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: "info@coventryroaddentalcare.com",
+      details: "reception@deoldental.com",
     },
   ];
 
@@ -113,7 +112,7 @@ const Contact = () => {
               <div className="w-full h-72 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
                 <iframe
                   title="Coventry Road Dental Care Location"
-                  src="https://www.google.com/maps?q=123+Coventry+Road,+Birmingham+B26+3EA,+United+Kingdom&output=embed"
+                  src="https://www.google.com/maps?q=94+Coventry+Rd,+Bedworth,+Coventry+CV12+8NW,+United+Kingdom&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -123,20 +122,6 @@ const Contact = () => {
                 ></iframe>
               </div>
             </div>
-
-            {/* {/* Emergency Contact */}
-            {/* <div className="bg-[#63316b] rounded-3xl p-8 text-white">
-              <h4 className="text-xl font-bold mb-4">Dental Emergency?</h4>
-              <p className="mb-6 opacity-90">
-                We provide emergency dental care for urgent situations. Don't
-                hesitate to call us if you're experiencing severe pain or dental
-                trauma.
-              </p>
-              <button className="bg-white text-[#63316b] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-flex items-center space-x-2">
-                <Phone className="w-5 h-5" />
-                <span>Emergency Line: 024 7699 2021</span>
-              </button>
-            </div> */}
           </div> 
 
           {/* Contact Form */}

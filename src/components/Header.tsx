@@ -77,7 +77,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium">
                 <Phone className="w-4 h-4" />
-                <span>024 7699 2020</span>
+                <span>024 76 31 2256</span>
               </div>
               <button className="bg-[#63316b] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl">
                 Book Appointment
@@ -118,7 +118,7 @@ const Header = () => {
                 <div className="pt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium mb-4">
                     <Phone className="w-4 h-4" />
-                    <span>024 7699 2020</span>
+                    <span>024 76 31 2256</span>
                   </div>
                   <button className="w-full bg-[#63316b] text-white px-6 py-3 rounded-full font-semibold shadow-lg">
                     Book Appointment

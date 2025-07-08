@@ -60,9 +60,9 @@ const PrivacyPolicy = () => {
               <p className="text-gray-700">
                 If you have any questions about this Privacy Policy, please contact us at:
                 <br />
-                Email: info@coventryroaddentalcare.com
+                Email: reception@deoldental.com
                 <br />
-                Phone: 024 7699 2020
+                Phone: 024 76 31 2256
               </p>
             </section>
           </div>
