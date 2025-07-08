@@ -1,29 +1,16 @@
+
 import { useState, useRef } from "react";
 import {
   Phone,
   Mail,
   Calendar,
   Play,
-  ChevronDown,
-  ChevronUp,
+  ChevronLeft,
+  ChevronRight,
   MessageCircle,
-  Smile,
-  Apple,
-  MessageSquare,
-  Gem,
-  Bone,
-  Stethoscope,
-  PoundSterling,
-  CalendarDays,
-  CreditCard,
-  Percent,
-  FileText,
-  Building2,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ServiceTiles from "@/components/ServiceTiles";
 import {
   Accordion,
   AccordionContent,
@@ -32,55 +19,32 @@ import {
 } from "@/components/ui/accordion";
 
 const FullArchImplants = () => {
-  const [activeTab, setActiveTab] = useState("all-on-6");
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
-  const implantTypes = [
-    {
-      id: "full-arch",
-      title: "Full Arch Implants",
-      description:
-        "Full arch implants are a revolutionary solution for patients with extensive tooth loss. They involve placing multiple titanium implants in the jawbone to support a full arch of replacement teeth, providing a permanent and natural-looking solution.",
-    },
-    {
-      id: "all-on-6",
-      title: "All-On-6 Dental Implants",
-      description:
-        "All-On-6 dental implants are when 6 titanium dental implants are placed in the upper or lower arch of the jaw and a premium zirconia bridge with 12 teeth is then screwed onto those 6 Implants. This procedure is called All-On-6.",
-    },
-    {
-      id: "all-on-4",
-      title: "All-On-4 Dental Implants",
-      description:
-        "All-On-4 dental implants are when 4 titanium dental implants are placed in the upper or lower arch of the jaw and a premium zirconia bridge with 10 teeth is then screwed onto those 4 Implants. This procedure is called All-On-4.",
-    },
-  ];
 
   const faqs = [
     {
       question: "What is all-on-6 dental implants?",
       answer:
-        "All-on-6 dental implants are when 6 titanium dental implants are placed on the upper or lower arch of the jaw and a premium zirconia bridge with 12 teeth is then screwed onto those 6 implants. This is often done when you have all missing teeth, struggling with a poor fitting denture, loose teeth or when you have failing teeth.\n\nHere at Coventry Road Dental Care, with our expertise, we have the ability to offer this procedure to our patients, which only a few clinics can offer in the UK. We undertake a fully digital workflow for our patients, which achieves an amazing looking set of fixed teeth.",
+        "All-on-6 dental implants are when 6 titanium dental implants are placed on the upper or lower arch of the jaw and a premium zirconia bridge with 12 teeth then screwed onto those 6 implants. This is often done when you have all missing teeth, struggling with a poor fitting denture, loose teeth or when you have failing teeth.\n\nHere at Coventry Road Dental Care with our expertise we have the ability to offer this procedure to our patients which only a few clinics can offer in the UK. We undertake a fully digital workflow for our patients, which achieves an amazing looking set of fixed teeth.",
     },
     {
       question: "What is all-on-4 dental implants?",
       answer:
-        "All-on-4 dental implants are when 4 titanium dental implants are placed on the upper or lower arch of the jaw and a premium zirconia bridge with 10 teeth is then screwed onto those 4 implants. This is often done when you have all missing teeth, struggling with a poor fitting denture, loose teeth or when you have failing teeth.\n\nHere at Coventry Road Dental Care, with our expertise, we have the ability to offer this procedure to our patients, which only a few clinics can offer in the UK. We undertake a fully digital workflow for our patients, which achieves an amazing looking set of fixed teeth.",
+        "All-on-4 dental implants are when 4 titanium dental implants are placed on the upper or lower arch of the jaw and a premium zirconia bridge with 10 teeth is then screwed onto those 4 implants. This is often done when you have all missing teeth, struggling with a poor fitting denture, loose teeth or when you have failing teeth.\n\nHere at Coventry Road Dental Care with our expertise we have the ability to offer this procedure to our patients which only a few clinics can offer in the UK. We undertake a fully digital workflow for our patients, which achieves an amazing looking set of fixed teeth.",
     },
     {
       question: "What are the benefits to having dental implants?",
       answer:
-        "There are many benefits to having dental implants.\n\nRegaining your confidence is a huge one and we often see this with our patients, it gives you a reason to smile again without feeling self-conscious.\n\nHaving the ability to eat and chew without any problems, whilst also being able to enjoy your favourite foods without any struggle. Dental implants function like your natural teeth.\n\nGives back shape and structure to your face.\n\nNot having to worry about poorly fitted or loose dentures falling out and finally being able to get rid of using denture-adhesive.\n\nGiving you a fresh start to a healthy, clean smile.",
+        "There are many benefits to having dental implants.\n\nRegaining your confidence is a huge one and we often see this with our patients, it gives you a reason to smile again without feeling self-conscious.\n\nHaving the ability to eat and chew without any problems, whilst also being able to enjoy your favourite foods without any struggle. Dental implants function like your natural teeth.\n\nGives back shape and structure to your face\n\nNot having to worry about poorly fitted or loose dentures falling out and finally being able to get rid of using denture-adhesive.\n\nGiving you a fresh start to a healthy, clean smile.",
     },
     {
       question: "Am I suitable for Dental Implants?",
       answer:
-        "Most people in good general health will be suitable for dental implants, so why not come in for your FREE implant consultation to discuss your treatment plan.\n\nHere at Coventry Road Dental Care, we provide the best care and quality for all of our patients.",
+        "Most people in good general health will be suitable for dental implants so why not come in for your FREE implant consultation to discuss your treatment plan.\n\nHere at Coventry Road Dental Care, we provide the best care and quality for all of our patients.",
     },
     {
-      question:
-        "What if I'm nervous about going to the dentist to have my dental implant treatment?",
+      question: "What if I'm nervous about going to the dentist to have my dental implant treatment?",
       answer:
         "Here at Coventry Road Dental Care we have all the answers to your worries. We offer sedation here which can either be done via IV sedation in the arm or hand or oral sedation use, which can be discussed on your consultation. We have an amazing team which discusses your treatment plan and co-ordinate it together, so the procedure runs smoothly. The whole outcome can be achieved with a minimal number of visits, to reassure those that suffer anxiety.",
     },
@@ -92,12 +56,12 @@ const FullArchImplants = () => {
     {
       question: "How much does dental implants cost?",
       answer:
-        "A single dental implant starts from £2,650.00.\n\nA Full arch starts from £12,500.00 per arch – this is for a full arch of premium zirconia teeth.\n\nFor all other enquiries regarding multiple implants, bridges and dentures, this will be discussed on your consultation.",
+        "A single dental implant starts from £2,650.00\n\nA Full arch starts from £12,500.00 per arch – this is for a full arch of premium zirconia teeth\n\nFor all other enquires regarding multiple implants bridges and dentures, this will be discussed on your consultation.",
     },
     {
-      question: "What if I can't afford dental implants?",
+      question: "What if I cant afford dental implants?",
       answer:
-        "Here at Coventry Road Dental Care, we have all the answers to your dental problems. We offer a finance option should you require it. The finance company we work alongside with is called Chrysalis Finance which offers 0.0% APR for 12 months or under. After 12 months APR may vary*",
+        "Here at Coventry Road Dental Care, we have all the answers to your dental problems. We offer a finance option should you require it. The finance company we work alongside with is called chrysalis finance which offer 0.0% APR for 12 months or under. After 12 months APR may vary*",
     },
   ];
 
@@ -107,13 +71,19 @@ const FullArchImplants = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-16">
-        {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#63316b]/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#63316b]/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 flex flex-col items-center justify-center min-h-[70vh] text-center">
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-[#63316b] mb-4">
+              Coventry Road Dental
+            </h3>
+            <h4 className="text-lg text-gray-600 mb-2">Full Arch Implants</h4>
+          </div>
+          
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
             Restore Your Smile with{" "}
             <span className="text-[#63316b]">Full Arch Implants</span> in
@@ -139,17 +109,10 @@ const FullArchImplants = () => {
         </div>
       </section>
 
-      {/* Before & After Gallery - Updated with swapped images */}
+      {/* Before & After Gallery */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-centre mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Real Patient Smiles Transformed
-            </h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-centre">
-            {/* Before Image - now showing the after image */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative group">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100">
                 <img
@@ -158,12 +121,11 @@ const FullArchImplants = () => {
                   className="w-full h-64 md:h-80 object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                  Before Treatment
+                  Before
                 </div>
               </div>
             </div>
 
-            {/* After Image - now showing the before image */}
             <div className="relative group">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-100">
                 <img
@@ -172,30 +134,43 @@ const FullArchImplants = () => {
                   className="w-full h-64 md:h-80 object-cover"
                 />
                 <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                  After Treatment
+                  After
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="text-centre mt-12">
-            <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl">
-              See Your Transformation
-            </button>
-          </div>
         </div>
       </section>
 
-     
-
-      {/* Compare Implant Types */}
-      <section className="py-20 bg-white">
+      {/* Implant Types */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-center mb-16">
+            <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg w-full md:w-1/3 p-8 border border-gray-100 relative">
+              <div className="absolute top-0 left-0 w-full h-2 rounded-t-2xl bg-[#63316b]"></div>
+              <h3 className="text-xl font-bold text-gray-900 mt-6 mb-2 text-center">
+                Full Arch Implants
+              </h3>
+            </div>
+            <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg w-full md:w-1/3 p-8 border border-gray-100 relative">
+              <div className="absolute top-0 left-0 w-full h-2 rounded-t-2xl bg-[#63316b]"></div>
+              <h3 className="text-xl font-bold text-gray-900 mt-6 mb-2 text-center">
+                All-On-6 Dental Implants
+              </h3>
+            </div>
+            <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg w-full md:w-1/3 p-8 border border-gray-100 relative">
+              <div className="absolute top-0 left-0 w-full h-2 rounded-t-2xl bg-[#63316b]"></div>
+              <h3 className="text-xl font-bold text-gray-900 mt-6 mb-2 text-center">
+                All-On-4 Dental Implants
+              </h3>
+            </div>
+          </div>
+
+          <div className="text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Faster And More Secure Than Ever Previously Experienced.
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
               If you are searching for a fast yet long-lasting remedy for
               failing bridges, missing teeth or uncomfortable dentures, full
               arch implants offer a comprehensive solution. It will completely
@@ -203,24 +178,21 @@ const FullArchImplants = () => {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-            {implantTypes.map((type) => (
-              <div
-                key={type.id}
-                className="flex flex-col items-center bg-white rounded-2xl shadow-lg w-full md:w-1/3 p-8 border border-gray-100 relative"
-              >
-                <div className="absolute top-0 left-0 w-full h-2 rounded-t-2xl bg-[#63316b]"></div>
-                <h3 className="text-xl font-bold text-gray-900 mt-6 mb-2 text-center">
-                  {type.title}
-                </h3>
-              </div>
-            ))}
+          <div className="flex justify-center mt-8 space-x-4">
+            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
+              <ChevronLeft className="w-5 h-5" />
+              <span>Previous slide</span>
+            </button>
+            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
+              <span>Next slide</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </section>
 
-       {/* What are Full Arch Implants */}
-       <section className="py-20 bg-gray-50">
+      {/* What is a Dental Implant */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -233,7 +205,6 @@ const FullArchImplants = () => {
                 muted
                 style={{ objectFit: "cover", maxHeight: 400 }}
               />
-              {/* Play Button Overlay */}
               {!isPlaying && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <button
@@ -254,7 +225,7 @@ const FullArchImplants = () => {
 
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                What is a Dental Implant?
+                What Is A Dental Implant?
               </h2>
 
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -262,24 +233,23 @@ const FullArchImplants = () => {
                 replaces the root of a missing tooth. It can be placed in either
                 the upper or lower jaw and, in time will bond with your jawbone
                 to create a firm foundation to which a replacement false tooth
-                is fixed.
+                is fixed. Implants can also be used to provide a secure
+                foundation for replacing multiple teeth, failing bridges and
+                poor fitting dentures.
               </p>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Implants can also be used to provide a secure foundation for
-                replacing multiple teeth, failing bridges and poor fitting
-                dentures.
-              </p>
+              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300">
+                Request a callback
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Q&A Section: Implant Info */}
+      {/* Q&A Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: Accordion Q&A */}
             <div>
               <Accordion type="single" collapsible className="space-y-4">
                 <AccordionItem value="all-on-6">
@@ -355,7 +325,6 @@ const FullArchImplants = () => {
                 </AccordionItem>
               </Accordion>
             </div>
-            {/* Right: Image */}
             <div className="flex justify-center">
               <img
                 src="/services/Full%20Arch%20Implants/hero.jpg"
@@ -368,41 +337,12 @@ const FullArchImplants = () => {
         </div>
       </section>
 
-      {/* Service Tiles */}
-      <ServiceTiles />
-
-          {/* Final CTA */}
-          <section className="py-20 bg-[#63316b] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Straight Teeth May Be a{" "}
-            <span className="text-white underline">Phone Call Away</span>
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            We're here to help you smile again — book your free consultation
-            today.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
-              <Phone className="w-5 h-5" />
-              <span>Call Now</span>
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2">
-              <Calendar className="w-5 h-5" />
-              <span>Book Free Consultation</span>
-            </button>
-          </div>
-        </div>
-      </section>
-   
-
       {/* FAQs */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Dental Implants: What You Need to Know
+              FAQs
             </h2>
           </div>
 
@@ -416,7 +356,7 @@ const FullArchImplants = () => {
                 <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-[#63316b] transition-colors">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed">
+                <AccordionContent className="text-gray-600 leading-relaxed whitespace-pre-line">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -430,14 +370,6 @@ const FullArchImplants = () => {
         <button className="bg-[#63316b] text-white p-4 rounded-full shadow-lg hover:bg-[#63316b]/90 transition-all duration-300 group">
           <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
         </button>
-        <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-lg p-4 w-64 opacity-0 group-hover:opacity-100 transition-opacity">
-          <p className="text-sm font-medium text-gray-900 mb-2">
-            Got questions about Full Arch Implants?
-          </p>
-          <p className="text-xs text-gray-600">
-            Tap to Chat or Call. Our team is ready to help.
-          </p>
-        </div>
       </div>
 
       <Footer />
