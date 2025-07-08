@@ -1,3 +1,4 @@
+
 import {
   Phone,
   Calendar,
@@ -10,14 +11,29 @@ import {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/hero-background.mp4" type="video/mp4" />
+        </video>
+        {/* Video Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-purple-50/60 to-pink-50/60"></div>
+      </div>
+
       {/* Subtle Background Elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-10">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-100/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-pink-100/20 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-left">
@@ -51,7 +67,7 @@ const Hero = () => {
               </button>
               <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
                 <Phone className="w-5 h-5" />
-                <span>024 7699 2020</span>
+                <span>024 76 31 2256</span>
               </button>
             </div>
 
@@ -81,7 +97,7 @@ const Hero = () => {
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4 text-[#63316b]" />
                   <span className="text-gray-700">
-                    94 Coventry Rd, Bedworth
+                    94 Coventry Rd Bedworth, Coventry CV12 8NW United Kingdom
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
