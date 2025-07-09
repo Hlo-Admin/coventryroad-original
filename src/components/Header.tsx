@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -65,16 +66,24 @@ const Header = () => {
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  <div className="max-h-80 overflow-y-auto py-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
-                    {services.map((service, index) => (
-                      <Link
-                        key={index}
-                        to={service.path}
-                        className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
+                  <div className="py-2">
+                    <Link
+                      to="/treatments"
+                      className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium border-b border-gray-200 mb-2"
+                    >
+                      All Treatments
+                    </Link>
+                    <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                      {services.map((service, index) => (
+                        <Link
+                          key={index}
+                          to={service.path}
+                          className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -112,6 +121,9 @@ const Header = () => {
                 {/* Mobile Services */}
                 <div className="space-y-2">
                   <div className="text-gray-900 font-bold py-2 border-b border-gray-200">Treatments</div>
+                  <Link to="/treatments" className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4 border-b border-gray-100">
+                    All Treatments
+                  </Link>
                   <div className="max-h-60 overflow-y-auto space-y-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
                     {services.map((service, index) => (
                       <Link
