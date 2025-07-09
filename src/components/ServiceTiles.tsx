@@ -47,6 +47,11 @@ const ServiceTiles = () => {
       image: "/home/services/White Fillings.jpg",
       path: "/white-fillings",
     },
+    {
+      title: "Night Guard",
+      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
+      path: "/night-guard",
+    },
   ];
 
   useEffect(() => {

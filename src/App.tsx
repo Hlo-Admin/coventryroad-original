@@ -13,6 +13,7 @@ import Veneers from "./pages/Veneers";
 import DentalImplants from "./pages/DentalImplants";
 import Dentures from "./pages/Dentures";
 import WhiteFillings from "./pages/WhiteFillings";
+import NightGuard from "./pages/NightGuard";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/dental-implants" element={<DentalImplants />} />
           <Route path="/dentures" element={<Dentures />} />
           <Route path="/white-fillings" element={<WhiteFillings />} />
+          <Route path="/night-guard" element={<NightGuard />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
