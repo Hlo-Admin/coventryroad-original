@@ -17,19 +17,24 @@ const NightGuard = () => {
       <Header />
       <div className="min-h-screen pt-24">
         {/* Hero Section */}
-        <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+        <section className="relative bg-gradient-to-br from-gray-50 to-white overflow-hidden py-12 lg:py-16">
           <div className="absolute inset-0">
             <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#63316b]/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#63316b]/5 rounded-full blur-3xl"></div>
           </div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-            <div className="text-center space-y-8">
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center space-y-6 max-w-4xl mx-auto">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
                 Regain Comfort by Investing in a{" "}
                 <span className="text-[#63316b]">Night Guard</span>
               </h1>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Protect your teeth from bruxism and get relief from headaches, jaw pain, and poor sleep quality with our custom-made night guards.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
@@ -44,7 +49,7 @@ const NightGuard = () => {
         </section>
 
         {/* About Night Guard Section */}
-        <section className="py-16 lg:py-24">
+        <section className="py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 text-center">
@@ -63,7 +68,7 @@ const NightGuard = () => {
         </section>
 
         {/* Treatment Options Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
+        <section className="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 text-center">
