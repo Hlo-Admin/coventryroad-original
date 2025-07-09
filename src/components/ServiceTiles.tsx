@@ -1,3 +1,4 @@
+
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
@@ -46,6 +47,11 @@ const ServiceTiles = () => {
       title: "White Fillings",
       image: "/home/services/White Fillings.jpg",
       path: "/white-fillings",
+    },
+    {
+      title: "Fillings",
+      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
+      path: "/fillings",
     },
     {
       title: "Night Guard",
