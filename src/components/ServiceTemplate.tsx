@@ -39,10 +39,15 @@ const ServiceTemplate = ({
             {subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+            <a
+              href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2"
+            >
               <Calendar className="w-5 h-5" />
               <span>Book Consultation</span>
-            </button>
+            </a>
             <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
               <Phone className="w-5 h-5" />
               <span>Call Now</span>
@@ -60,7 +65,6 @@ const ServiceTemplate = ({
         </div>
       </section>
 
-      {/* Benefits */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Benefits</h2>
@@ -75,7 +79,6 @@ const ServiceTemplate = ({
         </div>
       </section>
 
-      {/* Process */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Our Process</h2>
@@ -92,7 +95,6 @@ const ServiceTemplate = ({
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Frequently Asked Questions</h2>
@@ -115,10 +117,15 @@ const ServiceTemplate = ({
             Book your consultation today and take the first step towards your perfect smile.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
+            <a
+              href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2"
+            >
               <Calendar className="w-5 h-5" />
               <span>Book Appointment</span>
-            </button>
+            </a>
             <Link to="/" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2">
               <ArrowRight className="w-5 h-5" />
               <span>Back to Home</span>

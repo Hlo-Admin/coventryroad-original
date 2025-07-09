@@ -98,9 +98,14 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 <span>024 76 31 2256</span>
               </div>
-              <button className="bg-[#63316b] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <a
+                href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#63316b] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
                 Book Appointment
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -144,9 +149,14 @@ const Header = () => {
                     <Phone className="w-4 h-4" />
                     <span>024 76 31 2256</span>
                   </div>
-                  <button className="w-full bg-[#63316b] text-white px-6 py-3 rounded-full font-semibold shadow-lg">
+                  <a
+                    href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-[#63316b] text-white px-6 py-3 rounded-full font-semibold shadow-lg text-center"
+                  >
                     Book Appointment
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

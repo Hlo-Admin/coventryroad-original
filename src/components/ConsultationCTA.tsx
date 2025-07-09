@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const ConsultationCTA = () => (
@@ -16,7 +17,12 @@ const ConsultationCTA = () => (
             help you achieve the perfect smile you've always wanted.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center space-x-3 bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+            <a
+              href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-3 bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+            >
               <span>Schedule Consultation</span>
               <svg
                 className="w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -31,7 +37,7 @@ const ConsultationCTA = () => (
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </button>
+            </a>
             <button className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300">
               <span>Call (024) 7699 2020</span>
             </button>

@@ -1,4 +1,3 @@
-
 import { Phone, Calendar, CheckCircle } from 'lucide-react';
 import { useEffect } from 'react';
 import Header from '../components/Header';
@@ -39,10 +38,15 @@ const NightGuard = () => {
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
                 </button>
-                <button className="glass bg-white/80 backdrop-blur-sm border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                <a
+                  href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass bg-white/80 backdrop-blur-sm border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+                >
                   <Calendar className="w-5 h-5" />
                   <span>Book a Free Consultation</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -100,10 +104,15 @@ const NightGuard = () => {
             <p className="text-lg mb-8 opacity-90">
               Protect your teeth and improve your sleep quality with our precision-made night guards.
             </p>
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
+            <a
+              href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl"
+            >
               <Phone className="w-5 h-5" />
               <span>Request a Callback</span>
-            </button>
+            </a>
           </div>
         </section>
 
