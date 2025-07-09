@@ -25,6 +25,7 @@ import ChildrensDentistry from "./pages/ChildrensDentistry";
 import NervousPatients from "./pages/NervousPatients";
 import RestorativeTreatment from "./pages/RestorativeTreatment";
 import EndodonticTreatment from "./pages/EndodonticTreatment";
+import CrownsBridges from "./pages/CrownsBridges";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/nervous-patients" element={<NervousPatients />} />
           <Route path="/restorative-treatment" element={<RestorativeTreatment />} />
           <Route path="/endodontic-treatment" element={<EndodonticTreatment />} />
+          <Route path="/crowns-bridges" element={<CrownsBridges />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

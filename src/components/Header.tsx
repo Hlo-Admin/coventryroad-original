@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -22,7 +21,8 @@ const Header = () => {
     { name: "Children's Dentistry", path: '/childrens-dentistry' },
     { name: 'Nervous Patients', path: '/nervous-patients' },
     { name: 'Restorative Treatment', path: '/restorative-treatment' },
-    { name: 'Endodontic Treatment', path: '/endodontic-treatment' }
+    { name: 'Endodontic Treatment', path: '/endodontic-treatment' },
+    { name: 'Crowns & Bridges', path: '/crowns-bridges' }
   ];
 
   return (
