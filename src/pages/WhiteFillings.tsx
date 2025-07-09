@@ -100,7 +100,7 @@ const WhiteFillings = () => {
               </div>
               <div>
                 <img
-                  src="/services/white filling/filling.jpg"
+                 src="/common.jpeg"
                   alt="White filling procedure"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />

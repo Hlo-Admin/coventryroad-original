@@ -114,7 +114,7 @@ const DentalImplants = () => {
               </div>
               <div>
                 <img
-                  src="services/dental implant/dental-implant.jpg"
+             src="/common.jpeg"
                   alt="Professional dental implants treatment"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />

@@ -167,7 +167,7 @@ const Veneers = () => {
               </div>
               <div>
                 <img
-                  src="services/Veneers/veneers.jpg"
+                  src="/common.jpeg"
                   alt="Before and after veneer treatment"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />

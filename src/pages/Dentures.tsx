@@ -92,9 +92,8 @@ const Dentures = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
             <div className="text-center space-y-8 animate-fadeInUp">
               <div className="space-y-6">
-                <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 leading-tight">
-                  Restore Your Smile with{" "}
-                  <span className="gradient-text">Dentures</span>
+                <h1 className="text-4xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                  Restore Your Smile with{" "} <br />                  <span className="gradient-text">Dentures</span>
                 </h1>
                 <h2 className="text-3xl lg:text-4xl text-[#63316b] font-semibold">
                   in Coventry
@@ -146,7 +145,7 @@ const Dentures = () => {
               <div className="flex justify-center items-center animate-fadeInUp">
                 <div className="relative">
                   <img
-                    src="/services/dentures/hero.jpg"
+                    src="/common.jpeg"
                     alt="Professional dentures treatment"
                     className="w-full max-w-lg h-96 object-cover rounded-3xl shadow-2xl border border-white/20"
                   />
