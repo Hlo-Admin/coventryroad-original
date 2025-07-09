@@ -67,6 +67,11 @@ const ServiceTiles = () => {
       image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
       path: "/childrens-dentistry",
     },
+    {
+      title: "Nervous Patients",
+      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
+      path: "/nervous-patients",
+    },
   ];
 
   useEffect(() => {

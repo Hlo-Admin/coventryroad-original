@@ -18,7 +18,8 @@ const Header = () => {
     { name: 'Fillings', path: '/fillings' },
     { name: 'Night Guard', path: '/night-guard' },
     { name: 'Dental Hygiene', path: '/dental-hygiene' },
-    { name: "Children's Dentistry", path: '/childrens-dentistry' }
+    { name: "Children's Dentistry", path: '/childrens-dentistry' },
+    { name: 'Nervous Patients', path: '/nervous-patients' }
   ];
 
   return (
