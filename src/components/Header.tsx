@@ -22,7 +22,8 @@ const Header = () => {
     { name: 'Nervous Patients', path: '/nervous-patients' },
     { name: 'Restorative Treatment', path: '/restorative-treatment' },
     { name: 'Endodontic Treatment', path: '/endodontic-treatment' },
-    { name: 'Crowns & Bridges', path: '/crowns-bridges' }
+    { name: 'Crowns & Bridges', path: '/crowns-bridges' },
+    { name: 'Sedation', path: '/sedation' }
   ];
 
   return (

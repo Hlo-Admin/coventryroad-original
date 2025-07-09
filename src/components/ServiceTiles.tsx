@@ -87,6 +87,11 @@ const ServiceTiles = () => {
       image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
       path: "/crowns-bridges",
     },
+    {
+      title: "Sedation",
+      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
+      path: "/sedation",
+    },
   ];
 
   useEffect(() => {
