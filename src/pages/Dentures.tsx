@@ -82,86 +82,134 @@ const Dentures = () => {
     <>
       <Header />
       <div className="min-h-screen pt-16">
-        {/* Hero Section with 3D Model - Visible on all devices */}
-        <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+        {/* Hero Section */}
+        <section className="relative min-h-[80vh] bg-gradient-to-br from-gray-50 via-white to-purple-50/30 overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-100/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-pink-100/20 rounded-full blur-3xl"></div>
+          </div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-20">
               {/* Left Content */}
-              <div className="space-y-8 order-2 lg:order-1">
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Restore Your Smile with{" "}
-                  <span className="text-[#63316b]">Dentures</span> in Coventry
-                </h1>
-                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed">
-                  There is no substitute for your own teeth for both appearance and function and making dentures that perform as well as natural teeth is one of the most difficult challenges of modern dentistry. Ill-fitting dentures that are loose or painful can be most debilitating and a cause of lost confidence in social situations. We provide full and partial dentures in metal, acrylic, and soft flexible dentures, which can be very comfortable. Advances in denture teeth and bases mean we can now offer more natural-looking teeth, to include tooth shades that look realistic. If you would prefer not to wear dentures because they undermine your confidence, are uncomfortable, or restrictive in what you can eat and taste, or if you would prefer a more permanent solution, implant-supported dentures might be the solution you are looking for.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-[#63316b] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2">
-                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="space-y-8 animate-fadeInUp">
+                <div className="space-y-6">
+                  <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                    Restore Your Smile with{" "}
+                    <span className="gradient-text">Dentures</span>
+                  </h1>
+                  <h2 className="text-2xl lg:text-3xl text-[#63316b] font-semibold">
+                    in Coventry
+                  </h2>
+                </div>
+                
+                <div className="prose prose-lg text-gray-600 max-w-none">
+                  <p className="text-lg leading-relaxed">
+                    There is no substitute for your own teeth for both appearance and function and making dentures that perform as well as natural teeth is one of the most difficult challenges of modern dentistry. Ill-fitting dentures that are loose or painful can be most debilitating and a cause of lost confidence in social situations.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    We provide full and partial dentures in metal, acrylic, and soft flexible dentures, which can be very comfortable. Advances in denture teeth and bases mean we can now offer more natural-looking teeth, to include tooth shades that look realistic.
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <button className="bg-[#63316b] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center space-x-2 group">
+                    <Phone className="w-5 h-5" />
                     <span>Request a Callback</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>Book Consultation</span>
                   </button>
                 </div>
               </div>
 
-              {/* Right 3D Object - Visible on all devices */}
-              <div className="flex justify-center items-center order-1 lg:order-2">
-                <img
-                  src="/services/dentures/hero.jpg"
-                  alt="Dentures hero"
-                  className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border border-white/20 bg-gradient-to-br from-[#63316b]/10 to-purple-100"
-                />
+              {/* Right Image */}
+              <div className="flex justify-center items-center animate-fadeInUp">
+                <div className="relative">
+                  <img
+                    src="/services/dentures/hero.jpg"
+                    alt="Professional dentures treatment"
+                    className="w-full max-w-lg h-96 object-cover rounded-3xl shadow-2xl border border-white/20"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#63316b]/10 to-transparent rounded-3xl"></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Have This Treatment With Us Section */}
-        <section className="py-16 lg:py-24 bg-gray-50">
+        {/* Navigation Placeholder */}
+        <section className="py-8 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <div className="flex justify-center space-x-6 text-sm text-gray-500">
+              <span className="hover:text-[#63316b] cursor-pointer transition-colors">Previous slide</span>
+              <span className="hover:text-[#63316b] cursor-pointer transition-colors">Next slide</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Why Have This Treatment With Us?
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Our range of NHS and private denture treatment ensures you can achieve the solution that suits your budget and your lifestyle.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                  className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
                 >
-                  <div className="mb-4">{benefit.icon}</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <div className="mb-6 p-3 bg-[#63316b]/10 rounded-xl w-fit group-hover:bg-[#63316b]/20 transition-colors">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{benefit.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="text-center mt-16">
+              <h3 className="text-3xl font-bold text-[#63316b] mb-6">
+                Restore Your Smile with Dentures in Coventry
+              </h3>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 lg:py-24">
+        <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                FAQs
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Frequently Asked <span className="text-[#63316b]">Questions</span>
               </h2>
+              <p className="text-xl text-gray-600">
+                Get answers to common questions about dentures
+              </p>
             </div>
-            <Accordion type="single" collapsible className="space-y-4">
+            
+            <Accordion type="single" collapsible className="space-y-6">
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-white rounded-lg shadow-sm border"
+                  className="bg-gray-50 rounded-2xl shadow-sm border-0 overflow-hidden"
                 >
-                  <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
+                  <AccordionTrigger className="px-8 py-6 text-left font-bold text-lg text-gray-900 hover:no-underline hover:bg-gray-100 transition-colors">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-gray-700">
+                  <AccordionContent className="px-8 pb-6 text-gray-700 text-base leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -174,23 +222,23 @@ const Dentures = () => {
         <ServiceTiles />
 
         {/* Final CTA Section */}
-        <section className="py-16 bg-white">
+        <section className="py-20 bg-gradient-to-br from-[#63316b] to-purple-800">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
-              <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
-                Restore Your Smile with Dentures in Coventry
+            <div className="space-y-8">
+              <h3 className="text-4xl font-bold text-white mb-6">
+                Ready to Restore Your Smile?
               </h3>
-              <p className="text-lg mb-6 text-gray-700 opacity-90">
+              <p className="text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
                 Book your consultation today and discover how dentures can restore your confidence and smile.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+                <button className="bg-white text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Consultation</span>
                 </button>
                 <Link
                   to="/"
-                  className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2"
                 >
                   <ArrowRight className="w-5 h-5" />
                   <span>Back to Home</span>
