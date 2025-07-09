@@ -15,7 +15,8 @@ const Header = () => {
     { name: 'Dental Implants', path: '/dental-implants' },
     { name: 'Dentures', path: '/dentures' },
     { name: 'White Fillings', path: '/white-fillings' },
-    { name: 'Night Guard', path: '/night-guard' }
+    { name: 'Night Guard', path: '/night-guard' },
+    { name: 'Dental Hygiene', path: '/dental-hygiene' }
   ];
 
   return (

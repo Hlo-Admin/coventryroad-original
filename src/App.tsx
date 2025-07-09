@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -19,6 +18,7 @@ import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
 import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
+import DentalHygiene from "./pages/DentalHygiene";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +39,7 @@ const App = () => (
           <Route path="/dentures" element={<Dentures />} />
           <Route path="/white-fillings" element={<WhiteFillings />} />
           <Route path="/night-guard" element={<NightGuard />} />
+          <Route path="/dental-hygiene" element={<DentalHygiene />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

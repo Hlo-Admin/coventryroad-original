@@ -52,6 +52,11 @@ const ServiceTiles = () => {
       image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
       path: "/night-guard",
     },
+    {
+      title: "Dental Hygiene",
+      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
+      path: "/dental-hygiene",
+    },
   ];
 
   useEffect(() => {
