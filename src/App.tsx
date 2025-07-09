@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -23,6 +24,7 @@ import Fillings from "./pages/Fillings";
 import ChildrensDentistry from "./pages/ChildrensDentistry";
 import NervousPatients from "./pages/NervousPatients";
 import RestorativeTreatment from "./pages/RestorativeTreatment";
+import EndodonticTreatment from "./pages/EndodonticTreatment";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +50,7 @@ const App = () => (
           <Route path="/childrens-dentistry" element={<ChildrensDentistry />} />
           <Route path="/nervous-patients" element={<NervousPatients />} />
           <Route path="/restorative-treatment" element={<RestorativeTreatment />} />
+          <Route path="/endodontic-treatment" element={<EndodonticTreatment />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
