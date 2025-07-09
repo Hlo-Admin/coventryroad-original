@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
 import FullArchImplants from "./pages/FullArchImplants";
-import CompositeBonding from "./pages/CompositeBonding";
+import CompositeBonding from "./pages/CompositeBonding"; 
 import InvisalignBraces from "./pages/InvisalignBraces";
 import TeethWhitening from "./pages/TeethWhitening";
 import Veneers from "./pages/Veneers";
