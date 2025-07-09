@@ -72,6 +72,11 @@ const ServiceTiles = () => {
       image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
       path: "/nervous-patients",
     },
+    {
+      title: "Restorative Treatment",
+      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
+      path: "/restorative-treatment",
+    },
   ];
 
   useEffect(() => {

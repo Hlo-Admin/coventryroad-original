@@ -19,7 +19,8 @@ const Header = () => {
     { name: 'Night Guard', path: '/night-guard' },
     { name: 'Dental Hygiene', path: '/dental-hygiene' },
     { name: "Children's Dentistry", path: '/childrens-dentistry' },
-    { name: 'Nervous Patients', path: '/nervous-patients' }
+    { name: 'Nervous Patients', path: '/nervous-patients' },
+    { name: 'Restorative Treatment', path: '/restorative-treatment' }
   ];
 
   return (
