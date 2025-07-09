@@ -1,4 +1,3 @@
-
 import {
   Phone,
   Calendar,
@@ -21,10 +20,10 @@ const Hero = () => {
           muted
           playsInline
         >
-          <source src="/hero-background.mp4" type="video/mp4" />
+          <source src="/home/hero.mp4" type="video/mp4" />
         </video>
         {/* Video Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-purple-50/60 to-pink-50/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-50/60 to-pink-50/60"></div>
       </div>
 
       {/* Subtle Background Elements */}
@@ -50,12 +49,11 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-              Dentists in{" "}
-              <span className="gradient-text">Coventry</span>
+              Dentists in <span className="gradient-text">Coventry</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-             Dentists in Coventry that deliver happier, healthier smiles
+              Dentists in Coventry that deliver happier, healthier smiles
             </p>
 
             {/* Primary CTA */}
@@ -114,7 +112,7 @@ const Hero = () => {
           </div>
 
           {/* Right Space for 3D Element */}
-          <div className="hidden lg:flex items-center justify-center">
+          {/* <div className="hidden lg:flex items-center justify-center">
             <div className="w-full h-[36rem] rounded-2xl border border-gray-200/50 flex items-center justify-center">
               <iframe
                 src="https://my.spline.design/untitled-g41916vVo1fiGca33wbZbm3e/"
@@ -126,7 +124,7 @@ const Hero = () => {
                 allowFullScreen
               ></iframe>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
