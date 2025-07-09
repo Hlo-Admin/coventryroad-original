@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -56,21 +57,23 @@ const Header = () => {
                 
                 {/* Dropdown Menu */}
                 <div 
-                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl py-2 transition-all duration-200 z-50 ${
+                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl transition-all duration-200 z-50 ${
                     isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                   }`}
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  {services.map((service, index) => (
-                    <Link
-                      key={index}
-                      to={service.path}
-                      className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
+                  <div className="max-h-80 overflow-y-auto py-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                    {services.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={service.path}
+                        className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
               
@@ -107,15 +110,17 @@ const Header = () => {
                 {/* Mobile Services */}
                 <div className="space-y-2">
                   <div className="text-gray-900 font-bold py-2 border-b border-gray-200">Treatments</div>
-                  {services.map((service, index) => (
-                    <Link
-                      key={index}
-                      to={service.path}
-                      className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
+                  <div className="max-h-60 overflow-y-auto space-y-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                    {services.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={service.path}
+                        className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
                 
                 <Link to="/about" className="block text-gray-800 hover:text-[#63316b] font-semibold py-2">About</Link>
