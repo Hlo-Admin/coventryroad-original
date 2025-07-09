@@ -21,6 +21,7 @@ import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 import DentalHygiene from "./pages/DentalHygiene";
 import Fillings from "./pages/Fillings";
+import ChildrensDentistry from "./pages/ChildrensDentistry";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/fillings" element={<Fillings />} />
           <Route path="/night-guard" element={<NightGuard />} />
           <Route path="/dental-hygiene" element={<DentalHygiene />} />
+          <Route path="/childrens-dentistry" element={<ChildrensDentistry />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

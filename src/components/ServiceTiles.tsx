@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
@@ -62,6 +61,11 @@ const ServiceTiles = () => {
       title: "Dental Hygiene",
       image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
       path: "/dental-hygiene",
+    },
+    {
+      title: "Children's Dentistry",
+      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
+      path: "/childrens-dentistry",
     },
   ];
 
