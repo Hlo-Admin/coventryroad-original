@@ -82,33 +82,50 @@ const Dentures = () => {
     <>
       <Header />
       <div className="min-h-screen pt-16">
-        {/* Hero Section */}
-        <section className="relative min-h-[80vh] bg-gradient-to-br from-gray-50 via-white to-purple-50/30 overflow-hidden">
+        {/* Hero Section - Title Only */}
+        <section className="relative min-h-[60vh] bg-gradient-to-br from-gray-50 via-white to-purple-50/30 overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-100/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-pink-100/20 rounded-full blur-3xl"></div>
           </div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-            <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-20">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
+            <div className="text-center space-y-8 animate-fadeInUp">
+              <div className="space-y-6">
+                <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 leading-tight">
+                  Restore Your Smile with{" "}
+                  <span className="gradient-text">Dentures</span>
+                </h1>
+                <h2 className="text-3xl lg:text-4xl text-[#63316b] font-semibold">
+                  in Coventry
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Dentures Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left Content */}
               <div className="space-y-8 animate-fadeInUp">
                 <div className="space-y-6">
-                  <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                    Restore Your Smile with{" "}
-                    <span className="gradient-text">Dentures</span>
-                  </h1>
-                  <h2 className="text-2xl lg:text-3xl text-[#63316b] font-semibold">
-                    in Coventry
+                  <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    Professional <span className="text-[#63316b]">Denture Solutions</span>
                   </h2>
+                  <div className="w-20 h-1 bg-[#63316b] rounded"></div>
                 </div>
                 
-                <div className="prose prose-lg text-gray-600 max-w-none">
+                <div className="prose prose-lg text-gray-600 max-w-none space-y-6">
                   <p className="text-lg leading-relaxed">
                     There is no substitute for your own teeth for both appearance and function and making dentures that perform as well as natural teeth is one of the most difficult challenges of modern dentistry. Ill-fitting dentures that are loose or painful can be most debilitating and a cause of lost confidence in social situations.
                   </p>
                   <p className="text-lg leading-relaxed">
                     We provide full and partial dentures in metal, acrylic, and soft flexible dentures, which can be very comfortable. Advances in denture teeth and bases mean we can now offer more natural-looking teeth, to include tooth shades that look realistic.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    If you would prefer not to wear dentures because they undermine your confidence, are uncomfortable, or restrictive in what you can eat and taste, or if you would prefer a more permanent solution, implant-supported dentures might be the solution you are looking for.
                   </p>
                 </div>
 
@@ -118,7 +135,7 @@ const Dentures = () => {
                     <span>Request a Callback</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
-                  <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
+                  <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
                     <Calendar className="w-5 h-5" />
                     <span>Book Consultation</span>
                   </button>
@@ -134,18 +151,19 @@ const Dentures = () => {
                     className="w-full max-w-lg h-96 object-cover rounded-3xl shadow-2xl border border-white/20"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#63316b]/10 to-transparent rounded-3xl"></div>
+                  <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+                    <div className="flex items-center space-x-4">
+                      <div className="p-3 bg-[#63316b]/10 rounded-xl">
+                        <Star className="w-6 h-6 text-[#63316b]" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Natural Looking</p>
+                        <p className="text-sm text-gray-600">Realistic Results</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Navigation Placeholder */}
-        <section className="py-8 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-center space-x-6 text-sm text-gray-500">
-              <span className="hover:text-[#63316b] cursor-pointer transition-colors">Previous slide</span>
-              <span className="hover:text-[#63316b] cursor-pointer transition-colors">Next slide</span>
             </div>
           </div>
         </section>
