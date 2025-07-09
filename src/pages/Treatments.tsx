@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -10,49 +9,49 @@ const Treatments = () => {
   }, []);
 
   const cosmeticServices = [
-    {
+     {
       title: "Full Arch Implants",
-      image: "/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png",
-      path: "/full-arch-implants"
+      image: "/home/services/Full Arch Implants.jpg",
+      path: "/full-arch-implants",
     },
     {
-      title: "Composite Bonding", 
-      image: "/lovable-uploads/9ca20df0-a984-4c24-bec5-dfa24a26b9ff.png",
-      path: "/composite-bonding"
+      title: "Composite Bonding",
+      image: "/home/services/Composite Bonding.jpg",
+      path: "/composite-bonding",
     },
     {
       title: "Invisalign Braces",
-      image: "/lovable-uploads/299453f5-63b1-4193-8164-955b3504b4b8.png", 
-      path: "/invisalign-braces"
+      image: "/home/services/Invisalign Braces.webp",
+      path: "/invisalign-braces",
     },
     {
       title: "Teeth Whitening",
-      image: "/lovable-uploads/6835c5cd-d5a1-4f43-bdd2-b4f8e4281f53.png",
-      path: "/teeth-whitening"
+      image: "/home/services/Teeth Whitening.jpg",
+      path: "/teeth-whitening",
     },
     {
       title: "Veneers",
-      image: "/lovable-uploads/b36a9abe-94d8-4d84-bfc4-8cfa96f50a54.png",
-      path: "/veneers"
+      image: "/home/services/Veneers.jpg",
+      path: "/veneers",
     },
     {
-      title: "Dental Implants", 
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
-      path: "/dental-implants"
+      title: "Dental Implants",
+      image: "/home/services/Dental Implants.jpg",
+      path: "/dental-implants",
     },
     {
       title: "Dentures",
-      image: "/lovable-uploads/f5f56c66-3af5-4799-8c25-992c6ef7417c.png",
-      path: "/dentures"
+      image: "/home/services/Dentures.jpg",
+      path: "/dentures",
     },
     {
       title: "White Fillings",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
-      path: "/white-fillings"
+      image: "/home/services/White Fillings.jpg",
+      path: "/white-fillings",
     },
     {
       title: "Night Guard",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/night-guard.png",
       path: "/night-guard"
     }
   ];
@@ -60,42 +59,42 @@ const Treatments = () => {
   const generalServices = [
     {
       title: "Dental Hygiene",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/dental-hygiene.jpg",
       path: "/dental-hygiene"
     },
     {
       title: "Fillings",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/fillings.jpg",
       path: "/fillings"
     },
     {
       title: "Children's Dentistry",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/children-dentistry.jpg",
       path: "/childrens-dentistry"
     },
     {
       title: "Nervous Patients",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/nervous-paitents.jpeg",
       path: "/nervous-patients"
     },
     {
       title: "Restorative Treatment",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/restorative-treatment.jpg",
       path: "/restorative-treatment"
     },
     {
       title: "Endodontic Treatment",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/endodontic-treatment.jpeg",
       path: "/endodontic-treatment"
     },
     {
       title: "Crowns & Bridges",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/crowns-bridges.jpg",
       path: "/crowns-bridges"
     },
     {
       title: "Sedation",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
+      image: "/home/services/sedation.jpg",
       path: "/sedation"
     }
   ];
@@ -134,11 +133,11 @@ const Treatments = () => {
                   to={service.path}
                   className="group block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="aspect-video overflow-hidden">
+                  <div className="h-48 w-full overflow-hidden bg-gray-100">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="p-6">
@@ -175,11 +174,11 @@ const Treatments = () => {
                   to={service.path}
                   className="group block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="aspect-video overflow-hidden">
+                  <div className="h-48 w-full overflow-hidden bg-gray-100">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="p-6">

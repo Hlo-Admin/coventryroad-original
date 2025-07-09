@@ -1,8 +1,11 @@
 import {
   Shield,
+  Phone,
   Sparkles,
   Heart,
   Zap,
+  Wrench,
+  MoveRight,
   Clock,
   Award,
   ArrowRight,
@@ -230,6 +233,17 @@ const Services = () => {
           </Carousel>
         </div>
       </div>
+      
+<div className="text-center">
+<Link
+      to="/treatments"
+      className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center text-center gap-2"
+    >
+      <MoveRight className="w-5 h-5" />
+      <span>View All Services</span>
+    </Link>
+</div>
+
     </section>
 
     

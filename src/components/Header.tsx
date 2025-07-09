@@ -1,11 +1,19 @@
 
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const location = useLocation();
+  
+useEffect(() => {
+  window.scrollTo(0, 0);
+  // Close mobile menu when navigating
+  setIsMenuOpen(false);
+}, [location.pathname]);
+
 
   const services = [
     { name: 'Full Arch Implants', path: '/full-arch-implants' },

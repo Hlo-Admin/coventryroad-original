@@ -48,50 +48,50 @@ const ServiceTiles = () => {
       path: "/white-fillings",
     },
     {
-      title: "Fillings",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
-      path: "/fillings",
-    },
-    {
       title: "Night Guard",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
+      image: "/home/services/night-guard.png",
       path: "/night-guard",
     },
-    {
+   {
       title: "Dental Hygiene",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
-      path: "/dental-hygiene",
+      image: "/home/services/dental-hygiene.jpg",
+      path: "/dental-hygiene"
+    },
+    {
+      title: "Fillings",
+      image: "/home/services/fillings.jpg",
+      path: "/fillings"
     },
     {
       title: "Children's Dentistry",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
-      path: "/childrens-dentistry",
+      image: "/home/services/children-dentistry.jpg",
+      path: "/childrens-dentistry"
     },
     {
       title: "Nervous Patients",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
-      path: "/nervous-patients",
+      image: "/home/services/nervous-paitents.jpeg",
+      path: "/nervous-patients"
     },
     {
       title: "Restorative Treatment",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
-      path: "/restorative-treatment",
+      image: "/home/services/restorative-treatment.jpg",
+      path: "/restorative-treatment"
     },
     {
       title: "Endodontic Treatment",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
-      path: "/endodontic-treatment",
+      image: "/home/services/endodontic-treatment.jpeg",
+      path: "/endodontic-treatment"
     },
     {
       title: "Crowns & Bridges",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
-      path: "/crowns-bridges",
+      image: "/home/services/crowns-bridges.jpg",
+      path: "/crowns-bridges"
     },
     {
       title: "Sedation",
-      image: "/home/services/White Fillings.jpg", // Using existing image as placeholder
-      path: "/sedation",
-    },
+      image: "/home/services/sedation.jpg",
+      path: "/sedation"
+    }
   ];
 
   useEffect(() => {
