@@ -83,7 +83,7 @@ const Dentures = () => {
       <Header />
       <div className="min-h-screen pt-16">
         {/* Hero Section - Title Only */}
-        <section className="relative min-h-[60vh] bg-gradient-to-br from-gray-50 via-white to-purple-50/30 overflow-hidden">
+        <section className="relative min-h-[60vh] bg-gradient-to-br from-gray-50 via-white to-purple-50/30 overflow-hidden pt-20">
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-100/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-pink-100/20 rounded-full blur-3xl"></div>
