@@ -67,12 +67,6 @@ const Treatments = () => {
       description: "Protect your teeth from grinding and clenching",
       image: "/home/services/night-guard.png",
       path: "/night-guard"
-    },
-    {
-      title: "Sleepwell MAS",
-      description: "Protect your teeth from grinding and clenching",
-      image: "/services/sleepwellmas.jpg",
-      path: "#"
     }
   ];
 
@@ -146,10 +140,10 @@ const Treatments = () => {
                   Our Services
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Experience exceptional dental care with our comprehensive range of premium treatments, 
                 delivered by expert professionals in a state-of-the-art facility.
-              </p>
+              </p> */}
             </div>
           </div>
         </section>
@@ -161,9 +155,9 @@ const Treatments = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Cosmetic Excellence
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Transform your smile with our advanced cosmetic treatments
-              </p>
+              </p> */}
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -216,11 +210,11 @@ const Treatments = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Essential Care
+                General Services
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Comprehensive dental treatments for optimal oral health
-              </p>
+              </p> */}
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
