@@ -1,3 +1,4 @@
+
 import { useState, useRef } from "react";
 import {
   Phone,
@@ -176,6 +177,17 @@ const FullArchImplants = () => {
               transform your smile, leaving you feeling confident and satisfied.
             </p>
           </div>
+
+          {/* <div className="flex justify-center mt-8 space-x-4">
+            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
+              <ChevronLeft className="w-5 h-5" />
+              <span>Previous slide</span>
+            </button>
+            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
+              <span>Next slide</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div> */}
         </div>
       </section>
 
@@ -186,15 +198,17 @@ const FullArchImplants = () => {
             <div className="relative">
               <video
                 ref={videoRef}
-                src="/services/fullarch (1) (1).mp4"
-                className="w-full aspect-[9/16] rounded-2xl shadow-lg object-cover"
+                src="/services/Full%20Arch%20Implants/implants.mp4"
+                poster="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop"
+                className="w-full rounded-2xl shadow-lg"
                 controls={isPlaying}
                 muted
+                style={{ objectFit: "cover", maxHeight: 400 }}
               />
               {!isPlaying && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <button
-                    className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group"
+                    className="w-10 h-10 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group"
                     onClick={() => {
                       setIsPlaying(true);
                       videoRef.current?.play();
@@ -313,8 +327,8 @@ const FullArchImplants = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="/services/CompositeBonding/composite-bonding.jpeg"
-                alt="Full Arch Implants"
+                src="/services/Full%20Arch%20Implants/hero.jpg"
+                alt="Full Arch Implants Hero"
                 className="rounded-2xl shadow-lg max-w-full h-auto object-cover"
                 style={{ maxHeight: 400 }}
               />
