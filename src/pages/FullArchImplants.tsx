@@ -178,7 +178,7 @@ const FullArchImplants = () => {
             </p>
           </div>
 
-          <div className="flex justify-center mt-8 space-x-4">
+          {/* <div className="flex justify-center mt-8 space-x-4">
             <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
               <ChevronLeft className="w-5 h-5" />
               <span>Previous slide</span>
@@ -187,7 +187,7 @@ const FullArchImplants = () => {
               <span>Next slide</span>
               <ChevronRight className="w-5 h-5" />
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 
