@@ -52,18 +52,18 @@ const WhiteFillings = () => {
                   Restore Your Smile with{" "}
                   <span className="text-[#63316b]">White Fillings</span> <br /> in Coventry
                 </h1>
-                <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
-                  A mercury-free solution that blends beautifully with your natural teeth.
-                </p>
+               
                 <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/contact">
                   <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
                     <Phone className="w-5 h-5" />
                     <span>Request a Callback</span>
-                  </button>
+                  </button></Link>
+                  <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                   <button className="glass bg-white/80 backdrop-blur-sm border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
                     <Calendar className="w-5 h-5" />
                     <span>Book a Free Consultation</span>
-                  </button>
+                  </button></a>
                 </div>
               </div>
               
@@ -71,8 +71,8 @@ const WhiteFillings = () => {
               <div className="relative">
                 <div className="flex justify-center items-center order-1 lg:order-2">
                   <img
-                    src="/services/white filling/hero.jpg"
-                    alt="White Fillings hero"
+                    src="/home/services/White Fillings.jpg"
+                    alt="White Fillings"
                     className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border border-white/20 bg-gradient-to-br from-[#63316b]/10 to-purple-100"
                   />
                 </div>
@@ -136,13 +136,11 @@ const WhiteFillings = () => {
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
               Restore Your Smile with White Fillings in Coventry
             </h3>
-            <p className="text-lg mb-8 opacity-90">
-              Get natural-looking, mercury-free fillings that blend perfectly with your teeth.
-            </p>
+           <Link to="/contact">
             <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
               <Phone className="w-5 h-5" />
               <span>Request a Callback</span>
-            </button>
+            </button></Link>
           </div>
         </section>
 
@@ -170,7 +168,7 @@ const WhiteFillings = () => {
         </section>
 
         {/* Service Tiles */}
-        <ServiceTiles />
+        {/* <ServiceTiles /> */}
       </div>
       <FloatingBubble />
       <Footer />
