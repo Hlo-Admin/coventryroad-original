@@ -123,7 +123,11 @@ const DentalHygiene = () => {
                 {faqs.map((faq, index) => (
                   <div key={index} className="glass bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed">
+                    {answerPoints.map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
                   </div>
                 ))}
               </div>
@@ -131,24 +135,7 @@ const DentalHygiene = () => {
           </div>
         </section>
 
-        {/* Call to Action Section */}
-        <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 glass bg-white/5"></div>
-          </div>
-          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              Ready to Improve Your Oral Health?
-            </h3>
-            <p className="text-lg mb-8 opacity-90">
-              Book your dental hygiene appointment today and take the first step towards healthier teeth and gums.
-            </p>
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
-              <Phone className="w-5 h-5" />
-              <span>Request a Callback</span>
-            </button>
-          </div>
-        </section>
+      
 
         {/* Service Tiles */}
         <ServiceTiles />
