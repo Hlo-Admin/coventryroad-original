@@ -187,7 +187,7 @@ const FullArchImplants = () => {
               <video
                 ref={videoRef}
                 src="/services/fullarch (1) (1).mp4"
-                className="w-full h-96 rounded-2xl shadow-lg object-cover"
+                className="w-full aspect-[9/16] rounded-2xl shadow-lg object-cover"
                 controls={isPlaying}
                 muted
               />
