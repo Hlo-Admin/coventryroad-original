@@ -32,13 +32,7 @@ const Veneers = () => {
   }, []);
 
   const benefits = [
-    {
-      icon: <CheckCircle className="w-6 h-6 text-[#63316b]" />,
-      title: "Replace a missing tooth or teeth.",
-      description:
-        "Restore your smile and confidence by filling gaps with natural-looking replacements.",
-    },
-    {
+        {
       icon: <Smile className="w-6 h-6 text-[#63316b]" />,
       title: "Enhance your natural smile line.",
       description:
