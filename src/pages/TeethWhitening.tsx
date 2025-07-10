@@ -33,30 +33,41 @@ const TeethWhitening = () => {
   }, []);
 
   const benefits = [
-    "Enhance your natural smile line.",
-    "Gives an instant boost to your smile.",
-    "Improves natural colour of teeth.",
-    "Blends in with your original teeth.",
-    "Pain-free treatment.",
-    "Long lasting cosmetic dental treatment."
+    "Initial appointments are carried out by trained professionals.",
+    "Treatment is safe, quick, and comfortable.",
+    "Treatment is pain free.",
+    "Whitening makes a real difference to your appearance/self-confidence.",
+    "Whitening kits are used in the comfort of your own home.",
+    "Boosts confidence and self-esteem.",
+    "Brightens stained and aging teeth.",
+    "Top ups can be carried out at home when needed."
   ];
 
   const faqs = [
     {
-      question: "Are veneers for me?",
+      question: "Is teeth whitening for me?",
       answer:
-        "If you would like to restore the appearance of your teeth, then look no further than veneers from Coventry Road Dental Care. Request a FREE consultation appointment with our treatment coordinator to discuss if veneers are the best solution for you.",
+        "We are passionate our patients have smiles they feel proud of – if you look good, you feel good. If you think your teeth have become dull over time and could benefit from being brighter, home whitening is an easy, great value and pain free way of brightening up your smile.",
     },
     {
-      question: "How do veneers work?",
+      question: "How long will treatment take?",
       answer:
-        "Veneers are thin shells of ceramic/porcelain for teeth. A veneer is bonded to the front of your existing tooth, with little to no further preparation or treatment needed on the tooth itself, making veneers kinder to teeth than some other cosmetic treatments.",
+        "For particularly stained teeth, we recommend a hygiene treatment to ensure the cleanest base for applying whitening. We then ask you to join us to have a scan taken of your teeth and return later to collect your specially made trays and gels. Your teeth will gradually whiten as you use the whitening gels provided but the degree is dependent on your starting position, diet, age, and lifestyle.",
     },
     {
-      question: "Am I suitable for veneers?",
+      question: "Does teeth whitening hurt?",
       answer:
-        "Everyone is different and if you are not suitable for veneers, we promise to do all we can to find an alternative treatment to restore your smile. We encourage you to come along and visit one of our talented dentists and discover how we can achieve the smile you desire.",
+        "Tooth whitening is a safe, painless procedure when carried out by a trained dental professional. The treatment can result in short term sensitivity for some people, but do not worry we have products that can help with this."
     },
+    {
+      question: "What if my teeth need whitening again?",
+      answer:
+        "Once you have your trays you can whiten your teeth for years to come by simply purchasing additional whitening gel from Coventry Road Dental Care."
+    },
+    {
+      question: "What can you do about stained veneers, crowns or dentures to make sure they match my natural teeth?",
+      answer:
+          "Depending on the degree of staining, you may need a thorough clean and polish before you have whitening treatment, to remove any discolouration caused by stains. The colour of crowns, veneers and dentures is not affected by tooth whitening. Old or dark crowns may need replacing to ensure they match your natural teeth. That is why an initial appointment with a dental professional is imperative before you begin using any tooth whitening products."    },
   ];
 
   return (
@@ -73,13 +84,13 @@ const TeethWhitening = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                Coventry Road Dental
+                Brighten Your Smile with
               </h1>
               <h2 className="text-3xl lg:text-5xl font-bold text-[#63316b] mb-6 animate-fadeInUp">
-                Veneers
+                Teeth Whitening
               </h2>
               <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
-                Restore Your Smile with Veneers in Coventry
+                in Coventry
               </p>
             </div>
           </div>
@@ -91,42 +102,26 @@ const TeethWhitening = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Veneers
+                  Teeth Whitening
                 </h3>
                 <div className="prose prose-lg text-gray-700 space-y-4">
                   <p>
-                    If you've a cracked, discoloured, or unsightly tooth or a niggling 
-                    gap in your smile line that bothers you, veneers might be the answer. 
-                    Veneers are sheets of porcelain that are carefully bonded to the 
-                    surface of a natural tooth to mask imperfections in the enamel or 
-                    improve the position and appearance. Veneers often require much less 
-                    preparation of the natural tooth tissue helping preserve much more 
-                    of what nature gave you.
+                    Teeth whitening is one the easiest, most cost effective and long-lasting ways of giving your smile – and your confidence – a real lift. Here at Coventry Road Dental Care, we offer two brands of whitening, complete with custom-made whitening trays and gels that can be used in the comfort of your own home. Following a consultation with one of our dentists, you will be advised which system is best for you based on the existing shade of your teeth, your desired level of whiteness and brightness, and your budget.
                   </p>
                 </div>
               </div>
               <div>
                 <img
-                  src="/services/Veneers/veneers.jpg"
-                  alt="Professional veneers treatment"
+                  src="/services/CompositeBonding/composite-bonding.jpeg"
+                  alt="Professional Teeth Whitening treatment"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />
               </div>
             </div>
 
-            {/* Previous/Next slide placeholders */}
-            <div className="flex justify-center space-x-4 mb-8">
-              <button className="text-sm text-gray-500">Previous slide</button>
-              <button className="text-sm text-gray-500">Next slide</button>
-            </div>
+            
 
-            {/* Request callback button */}
-            <div className="text-center mb-16">
-              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                <Phone className="w-5 h-5" />
-                <span>Request a callback</span>
-              </button>
-            </div>
+            
           </div>
         </section>
 
@@ -135,10 +130,11 @@ const TeethWhitening = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Why Have This Treatment With Us?
+                Tooth Whitening Can Give Your Smile And Confidence A Boost
               </h3>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Thin layers of white ceramic or porcelain offer an instant boost to your smile and can dramatically improve the appearance of misaligned or crooked teeth. As a long-lasting, cost-effective cosmetic treatment, veneers are one of the easiest ways to enhance your natural smile, tidy up imperfections and close gaps.
+                We want our patients to look and feel their absolute best and boast a smile they deserve.
+                It gives us real pleasure to offer two brands of whitening kit depending on your desires, both of which can be used in the comfort of your own home.
               </p>
             </div>
 
@@ -156,11 +152,7 @@ const TeethWhitening = () => {
               ))}
             </div>
 
-            <div className="text-center">
-              <h4 className="text-2xl font-bold text-[#63316b] mb-4">
-                Restore Your Smile with Veneers in Coventry
-              </h4>
-            </div>
+            
           </div>
         </section>
 
