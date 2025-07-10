@@ -1,3 +1,4 @@
+
 import { useState, useRef } from "react";
 import {
   Phone,
@@ -176,6 +177,17 @@ const FullArchImplants = () => {
               transform your smile, leaving you feeling confident and satisfied.
             </p>
           </div>
+
+          {/* <div className="flex justify-center mt-8 space-x-4">
+            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
+              <ChevronLeft className="w-5 h-5" />
+              <span>Previous slide</span>
+            </button>
+            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
+              <span>Next slide</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div> */}
         </div>
       </section>
 
@@ -191,7 +203,7 @@ const FullArchImplants = () => {
                 controls={isPlaying}
                 muted
                 autoPlay
-                style={{ objectFit: "cover", aspectRatio: "9/16", maxHeight: "400px" }}
+                style={{ objectFit: "cover", aspectRatio: "9/16" }}
               />
               {!isPlaying && (
                 <div className="absolute inset-0 flex items-center justify-center">
