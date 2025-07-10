@@ -79,21 +79,21 @@ const About = () => {
               <img 
                 src="/lovable-uploads/6ea5a8aa-7b9b-4b0a-a3ff-ba1823a3dfeb.png" 
                 alt="Dr. Anoop Deol" 
-                className="w-full h-48 md:h-64 object-cover"
+                className="w-full h-60 md:h-64 object-cover"
               />
             </div>
             <div className="glass rounded-2xl overflow-hidden">
               <img 
                 src="/lovable-uploads/69f725c9-fe56-4589-ba0f-98a1066a2646.png" 
                 alt="Dr. Kalveen Manak" 
-                className="w-full h-48 md:h-64 object-cover"
+                className="w-full h-60 md:h-64 object-cover"
               />
             </div>
             <div className="glass rounded-2xl overflow-hidden">
               <img 
                 src="/lovable-uploads/b025e17d-dffe-4d21-b83f-005975eaf587.png" 
                 alt="Dr. Satbir Birdi" 
-                className="w-full h-48 md:h-64 object-cover"
+                className="w-full h-60 md:h-64 object-cover"
               />
             </div>
           </div>
