@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -131,7 +132,7 @@ const Treatments = () => {
                 <Link
                   key={index}
                   to={service.path}
-                  className="group block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                  className="group block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 w-fit mx-auto"
                 >
                   <div className="h-48 w-full overflow-hidden bg-gray-100">
                     <img
@@ -172,7 +173,7 @@ const Treatments = () => {
                 <Link
                   key={index}
                   to={service.path}
-                  className="group block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                  className="group block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 w-fit mx-auto"
                 >
                   <div className="h-48 w-full overflow-hidden bg-gray-100">
                     <img
