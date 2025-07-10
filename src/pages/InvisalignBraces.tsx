@@ -118,7 +118,7 @@ const InvisalignBraces = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp pt-16"
             style={{ animationDelay: "0.4s" }}
           >
-            <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1">
+            <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
             <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
               <Calendar className="w-5 h-5" />
               <span>Book a Free Consultation</span>
@@ -269,7 +269,7 @@ const InvisalignBraces = () => {
 
 
       {/* Service Tiles */}
-      <ServiceTiles />
+      {/* <ServiceTiles /> */}
 
         {/* Final CTA Section */}
   <section className="py-16 bg-white">
@@ -283,10 +283,11 @@ const InvisalignBraces = () => {
                 bonding can enhance your smile.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Consultation</span>
-                </button>
+                </button></a>
                 <Link
                   to="/"
                   className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
@@ -300,14 +301,14 @@ const InvisalignBraces = () => {
         </section>
 
       {/* Floating Chat CTA */}
-      <div className="fixed bottom-6 right-6 z-50">
+      {/* <div className="fixed bottom-6 right-6 z-50">
         <button className="bg-[#63316b] text-white p-4 rounded-full shadow-lg hover:bg-[#63316b]/90 transition-all duration-300 group">
           <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
           <div className="absolute bottom-full right-0 mb-2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
             Questions about Invisalign?
           </div>
         </button>
-      </div>
+      </div> */}
 
       <Footer />
     </>
