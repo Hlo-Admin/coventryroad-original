@@ -327,8 +327,8 @@ const FullArchImplants = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="/services/Full%20Arch%20Implants/hero.jpg"
-                alt="Full Arch Implants Hero"
+                src="/services/CompositeBonding/composite-bonding.jpeg"
+                alt="Full Arch Implants"
                 className="rounded-2xl shadow-lg max-w-full h-auto object-cover"
                 style={{ maxHeight: 400 }}
               />
