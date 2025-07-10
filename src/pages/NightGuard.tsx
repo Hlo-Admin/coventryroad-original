@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ServiceTiles from '../components/ServiceTiles';
 import FloatingBubble from '../components/FloatingBubble';
+import { Link } from 'react-router-dom';
 
 const NightGuard = () => {
   useEffect(() => {
@@ -29,15 +30,13 @@ const NightGuard = () => {
                 <span className="text-[#63316b]">Night Guard</span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Protect your teeth from bruxism and get relief from headaches, jaw pain, and poor sleep quality with our custom-made night guards.
-              </p>
-              
+            
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Link to="/contact">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
-                </button>
+                </button></Link>
                 <a
                   href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
                   target="_blank"
@@ -93,7 +92,7 @@ const NightGuard = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white relative overflow-hidden">
+        {/* <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 glass bg-white/5"></div>
           </div>
@@ -114,7 +113,7 @@ const NightGuard = () => {
               <span>Request a Callback</span>
             </a>
           </div>
-        </section>
+        </section> */}
 
         {/* Service Tiles */}
         <ServiceTiles />
