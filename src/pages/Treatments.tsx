@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -13,109 +12,97 @@ const Treatments = () => {
   const cosmeticServices = [
     {
       title: "Full Arch Implants",
-      description: "Complete smile transformation with advanced implant technology",
       image: "/home/services/Full Arch Implants.jpg",
       path: "/full-arch-implants",
       featured: true
     },
     {
-      title: "Composite Bonding",
-      description: "Natural-looking dental restoration and enhancement",
+      title: "Composite Bonding", 
       image: "/home/services/Composite Bonding.jpg",
       path: "/composite-bonding",
     },
     {
       title: "Invisalign Braces",
-      description: "Discreet orthodontic treatment for perfect alignment",
       image: "/home/services/Invisalign Braces.webp",
       path: "/invisalign-braces",
       featured: true
     },
     {
       title: "Teeth Whitening",
-      description: "Professional whitening for a radiant smile",
       image: "/home/services/Teeth Whitening.jpg",
       path: "/teeth-whitening",
     },
     {
       title: "Veneers",
-      description: "Porcelain perfection for your dream smile",
-      image: "/home/services/Veneers.jpg",
+      image: "/home/services/Veneers.jpg", 
       path: "/veneers",
       featured: true
     },
     {
       title: "Dental Implants",
-      description: "Permanent solution for missing teeth",
       image: "/home/services/Dental Implants.jpg",
       path: "/dental-implants",
     },
     {
       title: "Dentures",
-      description: "Comfortable, natural-looking tooth replacement",
       image: "/home/services/Dentures.jpg",
       path: "/dentures",
     },
     {
       title: "White Fillings",
-      description: "Mercury-free restorations that blend seamlessly",
       image: "/home/services/White Fillings.jpg",
       path: "/white-fillings",
     },
     {
       title: "Night Guard",
-      description: "Protect your teeth from grinding and clenching",
       image: "/home/services/night-guard.png",
       path: "/night-guard"
+    },
+    {
+      title: "Sleepwell Mas",
+      image: "/home/services/sleepwell.jpg",
+      path: "/sleepwell-mas"
     }
   ];
 
   const generalServices = [
     {
       title: "Dental Hygiene",
-      description: "Professional cleaning and preventive care",
       image: "/home/services/dental-hygiene.jpg",
       path: "/dental-hygiene"
     },
     {
       title: "Fillings",
-      description: "Restorative treatment for damaged teeth",
       image: "/home/services/fillings.jpg",
       path: "/fillings"
     },
     {
       title: "Children's Dentistry",
-      description: "Gentle dental care designed for young smiles",
       image: "/home/services/children-dentistry.jpg",
       path: "/childrens-dentistry"
     },
     {
       title: "Nervous Patients",
-      description: "Compassionate care for anxious patients",
       image: "/home/services/nervous-paitents.jpeg",
       path: "/nervous-patients"
     },
     {
       title: "Restorative Treatment",
-      description: "Comprehensive solutions for damaged teeth",
       image: "/home/services/restorative-treatment.jpg",
       path: "/restorative-treatment"
     },
     {
       title: "Endodontic Treatment",
-      description: "Advanced root canal therapy and treatment",
       image: "/home/services/endodontic-treatment.jpeg",
       path: "/endodontic-treatment"
     },
     {
       title: "Crowns & Bridges",
-      description: "Durable solutions for missing or damaged teeth",
       image: "/home/services/crowns-bridges.jpg",
       path: "/crowns-bridges"
     },
     {
       title: "Sedation",
-      description: "Comfortable dentistry with sedation options",
       image: "/home/services/sedation.jpg",
       path: "/sedation"
     }
@@ -186,9 +173,6 @@ const Treatments = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#63316b] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
                     <div className="flex items-center text-[#63316b] font-semibold text-sm group-hover:gap-2 transition-all">
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -235,9 +219,6 @@ const Treatments = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#63316b] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-3 leading-relaxed">
-                      {service.description}
-                    </p>
                     <div className="flex items-center text-[#63316b] font-medium text-sm">
                       <span>View Details</span>
                       <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
