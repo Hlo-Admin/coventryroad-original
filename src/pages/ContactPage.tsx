@@ -1,10 +1,11 @@
 
 import { useState } from "react";
-import { Send, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Send, MapPin, Phone, Mail, Clock, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -50,9 +51,29 @@ const ContactPage = () => {
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
               Contact Us
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Ready to transform your smile? Get in touch with our expert team at Coventry Road Dental.
             </p>
+            
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <a
+                href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#63316b] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2"
+              >
+                <Calendar className="w-5 h-5" />
+                <span>Book a Free Consultation</span>
+              </a>
+              <Link
+                to="/contact"
+                className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center justify-center space-x-2"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Request a Callback</span>
+              </Link>
+            </div>
           </div>
 
           {/* Two Column Layout */}
