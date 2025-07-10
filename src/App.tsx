@@ -28,6 +28,7 @@ import RestorativeTreatment from "./pages/RestorativeTreatment";
 import EndodonticTreatment from "./pages/EndodonticTreatment";
 import CrownsBridges from "./pages/CrownsBridges";
 import Sedation from "./pages/Sedation";
+import ContactPage from "./pages/ContactPage";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Treatments />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/full-arch-implants" element={<FullArchImplants />} />
           <Route path="/composite-bonding" element={<CompositeBonding />} />
           <Route path="/invisalign-braces" element={<InvisalignBraces />} />
