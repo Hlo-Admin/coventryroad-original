@@ -195,32 +195,32 @@ const FullArchImplants = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <video
-                ref={videoRef}
-                src="/services/Full%20Arch%20Implants/implants.mp4"
-                poster="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop"
-                className="rounded-2xl shadow-lg"
-                controls={isPlaying}
-                muted
-                style={{ objectFit: "cover", maxHeight: 400 }}
-              />
-              {!isPlaying && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button
-                    className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group"
-                    onClick={() => {
-                      setIsPlaying(true);
-                      videoRef.current?.play();
-                    }}
-                  >
-                    <Play
-                      className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform"
-                      fill="currentColor"
-                    />
-                  </button>
-                </div>
-              )}
+            <div className="flex justify-center">
+              <div className="relative">
+                <video
+                  ref={videoRef}
+                  src="/services/Full%20Arch%20Implants/implants.mp4"
+                  className="w-full max-w-sm aspect-[9/16] object-cover rounded-2xl shadow-lg"
+                  controls={isPlaying}
+                  muted
+                />
+                {!isPlaying && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group"
+                      onClick={() => {
+                        setIsPlaying(true);
+                        videoRef.current?.play();
+                      }}
+                    >
+                      <Play
+                        className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform"
+                        fill="currentColor"
+                      />
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className="space-y-6">
