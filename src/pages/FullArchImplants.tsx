@@ -199,7 +199,7 @@ const FullArchImplants = () => {
               <video
                 ref={videoRef}
                 src="/services/Full%20Arch%20Implants/implants.mp4"
-                className="w-full h-160 max-w-md rounded-2xl shadow-lg"
+                className="w-full h-120 max-w-md rounded-2xl shadow-lg"
                 controls={isPlaying}
                 muted
                 autoPlay
