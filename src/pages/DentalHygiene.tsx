@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ServiceTiles from '../components/ServiceTiles';
 import FloatingBubble from '../components/FloatingBubble';
+import { Link } from 'react-router-dom';
 
 const DentalHygiene = () => {
   useEffect(() => {
@@ -31,7 +32,7 @@ const DentalHygiene = () => {
     },
     {
       question: "What can I do to look after my teeth at home?",
-      answer: "Brushing your teeth twice daily with fluoride toothpaste. Reducing the frequency of sugary drinks and snacks. Using a small to medium toothbrush with soft to medium multi-tufted, round-ended nylon bristles. Changing your toothbrush regularly, at least three-monthly. Cleaning daily between your teeth with dental floss or interdental brushes. Visiting your dentist and hygienist at least once a year."
+      answer: ["Brushing your teeth twice daily with fluoride toothpaste.", "Reducing the frequency of sugary drinks and snacks." ,"Using a small to medium toothbrush with soft to medium multi-tufted, round-ended nylon bristles. ","Changing your toothbrush regularly, at least three-monthly. ","Cleaning daily between your teeth with dental floss or interdental brushes." ,"Visiting your dentist and hygienist at least once a year."]
     },
     {
       question: "How often should I visit the dentist to prevent problems?",
@@ -57,19 +58,18 @@ const DentalHygiene = () => {
                 <span className="text-[#63316b]">Dental Hygiene</span> in Coventry
               </h1>
               
-              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Maintain optimal oral health with our comprehensive dental hygiene services for healthier teeth and gums.
-              </p>
-              
+             
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Link to="/contact">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
-                </button>
+                </button></Link>
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                 <button className="glass bg-white/80 backdrop-blur-sm border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book a Free Consultation</span>
-                </button>
+                </button></a>
               </div>
             </div>
           </div>
@@ -123,11 +123,7 @@ const DentalHygiene = () => {
                 {faqs.map((faq, index) => (
                   <div key={index} className="glass bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                   {faq.answer.split('. ').filter(Boolean).map((sentence, index) => (
-                      <li key={index} className="text-gray-700 leading-relaxed mb-2">
-                        {sentence.endsWith('.') ? sentence : sentence + '.'}
-                      </li>
-                    ))}
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                   </div>
                 ))}
               </div>
