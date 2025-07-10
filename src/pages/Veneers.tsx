@@ -27,7 +27,7 @@ import {
 const Veneers = () => {
   useEffect(() => {
     document.title =
-      "Porcelain Veneers - Transform Your Smile | Coventry Road Dental Care";
+      "Veneers - Transform Your Smile | Coventry Road Dental Care";
     window.scrollTo(0, 0);
   }, []);
 
@@ -40,37 +40,37 @@ const Veneers = () => {
     },
     {
       icon: <Smile className="w-6 h-6 text-[#63316b]" />,
-      title: "Restore the mouth's function.",
+      title: "Enhance your natural smile line.",
       description:
         "Eat, speak, and smile comfortably with a fully functional set of teeth.",
     },
     {
       icon: <Shield className="w-6 h-6 text-[#63316b]" />,
-      title: "Provide a secure anchor for dentures & bridges.",
+      title: "Gives an instant boost to your smile.",
       description:
         "Enjoy a stable, secure fit for dentures and bridges with dental implants.",
     },
     {
       icon: <Sparkles className="w-6 h-6 text-[#63316b]" />,
-      title: "Highly qualified implant dentist.",
+      title: "Improves natural colour of teeth.",
       description:
         "Benefit from the expertise of our experienced implant team for safe, predictable results.",
     },
     {
       icon: <Heart className="w-6 h-6 text-[#63316b]" />,
-      title: "Prevent that caved in look often seen with missing teeth.",
+      title: "Blends in with your original teeth.",
       description:
         "Maintain your natural facial structure and prevent premature aging.",
     },
     {
       icon: <DollarSign className="w-6 h-6 text-[#63316b]" />,
-      title: "The most cost-effective, long-lasting solution to missing teeth.",
+      title: "Pain-free treatment.",
       description:
         "Dental implants are a durable investment that can last a lifetime with proper care.",
     },
     {
       icon: <Wrench className="w-6 h-6 text-[#63316b]" />,
-      title: "Prevent bone loss.",
+      title: "Long lasting cosmetic dental treatment.",
       description:
         "Implants stimulate the jawbone, helping to prevent bone loss and preserve oral health.",
     },
@@ -121,19 +121,18 @@ const Veneers = () => {
                 Restore Your Smile with{" "}
                 <span className="text-[#63316b]">Veneers</span> in Coventry
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
-                A quick, pain-free and elegant way to correct chips, cracks,
-                discolouration, and gaps.
-              </p>
+             
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
+                <Link to="/contact">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
-                </button>
+                </button></Link>
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                 <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book My Free Consultation</span>
-                </button>
+                </button></a>
               </div>
             </div>
           </div>
@@ -184,9 +183,8 @@ const Veneers = () => {
                 Why Have This Treatment With Us?
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
-                Veneers are thin ceramic or porcelain layers that instantly
-                improve your smile by fixing misalignment, gaps, and
-                imperfections.
+                Thin layers of white ceramic or porcelain offer an instant boost to your smile and can dramatically improve the appearance of misaligned or crooked teeth. As a long-lasting, cost-effective cosmetic treatment, veneers are one of the easiest ways to enhance your natural smile, tidy up imperfections and close gaps.
+
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -201,7 +199,6 @@ const Veneers = () => {
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">
                         {benefit.title}
                       </h3>
-                      <p className="text-gray-600">{benefit.description}</p>
                     </div>
                   </div>
                 </div>
@@ -210,23 +207,7 @@ const Veneers = () => {
           </div>
         </section>
 
-        {/* Quote Section */}
-        <section className="py-16 bg-[#63316b] text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <blockquote className="text-2xl lg:text-3xl font-light italic mb-6">
-              "We believe in preserving the beauty nature gave you, not
-              replacing it — that's why our veneer approach is minimally
-              invasive and individually tailored."
-            </blockquote>
-            <cite className="text-lg opacity-90 mb-8 block">
-              — Coventry Road Dental Team
-            </cite>
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
-              <Heart className="w-5 h-5" />
-              <span>Speak to Our Smile Consultant</span>
-            </button>
-          </div>
-        </section>
+        
 
         {/* FAQ Section */}
         <section className="py-16 lg:py-24">
@@ -256,7 +237,7 @@ const Veneers = () => {
         </section>
 
         {/* Service Tiles */}
-        <ServiceTiles />
+        {/* <ServiceTiles /> */}
 
         {/* Final CTA Section */}
         <section className="py-16 bg-white">
@@ -266,14 +247,14 @@ const Veneers = () => {
                 Ready to Transform Your Smile?
               </h3>
               <p className="text-lg mb-6 text-gray-700 opacity-90">
-                Book your free consultation today and discover how composite
-                bonding can enhance your smile.
+                Book your free consultation today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Consultation</span>
-                </button>
+                </button></a>
                 <Link
                   to="/"
                   className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
