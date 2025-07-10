@@ -95,7 +95,7 @@ const Dentures = () => {
                 <h1 className="text-4xl lg:text-7xl font-bold text-gray-900 leading-tight">
                   Restore Your Smile with{" "} <br />                  <span className="gradient-text">Dentures</span>
                 </h1>
-                <h2 className="text-3xl lg:text-4xl text-[#63316b] font-semibold">
+                <h2 className="text-3xl lg:text-4xl font-semibold">
                   in Coventry
                 </h2>
               </div>
@@ -111,7 +111,7 @@ const Dentures = () => {
               <div className="space-y-8 animate-fadeInUp">
                 <div className="space-y-6">
                   <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                    Professional <span className="text-[#63316b]">Denture Solutions</span>
+                    <span className="text-[#63316b]">Denture</span>
                   </h2>
                   <div className="w-20 h-1 bg-[#63316b] rounded"></div>
                 </div>
@@ -129,15 +129,17 @@ const Dentures = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Link to="/contact">
                   <button className="bg-[#63316b] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center space-x-2 group">
                     <Phone className="w-5 h-5" />
                     <span>Request a Callback</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </button></Link>
+                  <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                   <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
                     <Calendar className="w-5 h-5" />
                     <span>Book Consultation</span>
-                  </button>
+                  </button></a>
                 </div>
               </div>
 
@@ -191,16 +193,11 @@ const Dentures = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                 </div>
               ))}
             </div>
 
-            <div className="text-center mt-16">
-              <h3 className="text-3xl font-bold text-[#63316b] mb-6">
-                Restore Your Smile with Dentures in Coventry
-              </h3>
-            </div>
+           
           </div>
         </section>
 
@@ -236,7 +233,7 @@ const Dentures = () => {
         </section>
 
         {/* Service Tiles */}
-        <ServiceTiles />
+        {/* <ServiceTiles /> */}
 
         {/* Final CTA Section */}
         <section className="py-20 bg-gradient-to-br from-[#63316b] to-purple-800">
@@ -249,10 +246,11 @@ const Dentures = () => {
                 Book your consultation today and discover how dentures can restore your confidence and smile.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                 <button className="bg-white text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Consultation</span>
-                </button>
+                </button></a>
                 <Link
                   to="/"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2"
