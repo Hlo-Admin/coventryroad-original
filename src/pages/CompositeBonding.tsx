@@ -50,7 +50,7 @@ const CompositeBonding = () => {
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
                 </button> */}
-                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1">
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                 <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Consultation</span>
@@ -76,10 +76,11 @@ const CompositeBonding = () => {
                     into the desired shape. The resin with then be set with a
                     curing light and finally the tooth polished.
                   </p>
+                  <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                   <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                     <Phone className="w-5 h-5" />
-                    <span>Request a Callback</span>
-                  </button>
+                    <span>Book Free Consultation</span>
+                  </button></a>
                 </div>
               </div>
               <div>
@@ -100,7 +101,7 @@ const CompositeBonding = () => {
               {/* Left: Image */}
               <div className="flex justify-center">
                 <img
-                  src="/services/Full%20Arch%20Implants/hero.jpg"
+                  src="/home/services/Composite Bonding.jpg"
                   alt="Full Arch Implants Hero"
                   className="rounded-2xl shadow-lg max-w-full h-auto object-cover"
                   style={{ maxHeight: 400 }}
@@ -207,7 +208,7 @@ const CompositeBonding = () => {
       
 
         {/* Service Tiles */}
-        <ServiceTiles />
+        {/* <ServiceTiles /> */}
 
         {/* Final CTA Section */}
         <section className="py-16 bg-white">
@@ -221,10 +222,11 @@ const CompositeBonding = () => {
                 bonding can enhance your smile.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Consultation</span>
-                </button>
+                </button></a>
                 <Link
                   to="/"
                   className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
