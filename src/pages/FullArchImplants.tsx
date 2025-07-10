@@ -200,7 +200,7 @@ const FullArchImplants = () => {
                 ref={videoRef}
                 src="/services/Full%20Arch%20Implants/implants.mp4"
                 poster="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop"
-                className="w-full rounded-2xl shadow-lg"
+                className="rounded-2xl shadow-lg"
                 controls={isPlaying}
                 muted
                 style={{ objectFit: "cover", maxHeight: 400 }}
@@ -208,7 +208,7 @@ const FullArchImplants = () => {
               {!isPlaying && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <button
-                    className="w-10 h-10 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group"
+                    className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group"
                     onClick={() => {
                       setIsPlaying(true);
                       videoRef.current?.play();
