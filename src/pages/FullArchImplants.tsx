@@ -199,11 +199,11 @@ const FullArchImplants = () => {
               <video
                 ref={videoRef}
                 src="/services/Full%20Arch%20Implants/implants.mp4"
-                className="w-full h-96 max-w-md rounded-2xl shadow-lg"
+                className="w-full rounded-2xl shadow-lg"
                 controls={isPlaying}
                 muted
                 autoPlay
-                style={{ objectFit: "cover", aspectRatio: "9/16" }}
+                style={{ objectFit: "cover", maxHeight: 500 }}
               />
               {!isPlaying && (
                 <div className="absolute inset-0 flex items-center justify-center">
