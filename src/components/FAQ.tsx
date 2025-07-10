@@ -12,7 +12,7 @@ const FAQ: React.FC = () => {
   {
     question: "I’m a nervous patient, how can you help?",
     answer:
-      "Here at Coventry Dental Care, we welcome nervous patients all the time. We want you to be at ease at each appointment. We can help you with relaxation techniques. We offer sedation if needed — your comfort is our priority.",
+      "Here at Coventry Dental Care, we welcome nervous patients all the time. We want you to be at ease at each appointment. We can help you with relaxation techniques. We offer sedation if needed, your comfort is our priority.",
   },
   {
     question: "Do you offer emergency appointments?",
@@ -32,7 +32,7 @@ const FAQ: React.FC = () => {
   {
     question: "What treatments do you offer?",
     answer:
-      "We offer a broad range of treatments from standard preventative dentistry such as check-ups, X-rays, fillings and extractions, to advanced dentistry such as root canal treatments, crowns, bridges, dentures, and veneers. Private treatments include whitening, composite bonding and Invisalign.",
+      "We offer a broad range of treatments from standard preventative dentistry such as check ups, X-rays, fillings and extractions. To advanced dentistry such as root canal treatments, crowns, bridges, dentures, veneers. Private treatments such as whitening, composite bonding and Invisalign. You can opt for NHS or Private dental work. You can even wish to be sedated for your treatment with our sedation trained dentist.",
   },
 ];
 

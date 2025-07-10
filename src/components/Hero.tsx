@@ -37,7 +37,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="text-left">
             {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-3 mb-6">
+            {/* <div className="flex flex-wrap gap-3 mb-6">
               <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 border border-gray-200 shadow-sm">
                 <Award className="w-3 h-3 inline mr-1.5" />
                 BDA Certified
@@ -46,13 +46,13 @@ const Hero = () => {
                 <Users className="w-3 h-3 inline mr-1.5" />
                 25+ Years Experience
               </div>
-            </div>
+            </div> */}
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
               Dentists in <span className="gradient-text">Coventry</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-xl">
               Dentists in Coventry that deliver happier, healthier smiles
             </p>
 

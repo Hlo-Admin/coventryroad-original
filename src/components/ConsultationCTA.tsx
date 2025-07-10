@@ -39,7 +39,7 @@ const ConsultationCTA = () => (
               </svg>
             </a>
             <button className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300">
-              <span>Call (024) 7699 2020</span>
+              <span>Call  024 76 31 2256 </span>
             </button>
           </div>
         </div>
