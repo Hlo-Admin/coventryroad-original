@@ -151,18 +151,8 @@ const Dentures = () => {
                     alt="Professional dentures treatment"
                     className="w-full max-w-lg h-96 object-cover rounded-3xl shadow-2xl border border-white/20"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#63316b]/10 to-transparent rounded-3xl"></div>
-                  <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 bg-[#63316b]/10 rounded-xl">
-                        <Star className="w-6 h-6 text-[#63316b]" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-gray-900">Natural Looking</p>
-                        <p className="text-sm text-gray-600">Realistic Results</p>
-                      </div>
-                    </div>
-                  </div>
+                  
+    
                 </div>
               </div>
             </div>
