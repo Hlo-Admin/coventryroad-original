@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import {
   Phone,
@@ -177,17 +176,6 @@ const FullArchImplants = () => {
               transform your smile, leaving you feeling confident and satisfied.
             </p>
           </div>
-
-          {/* <div className="flex justify-center mt-8 space-x-4">
-            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
-              <ChevronLeft className="w-5 h-5" />
-              <span>Previous slide</span>
-            </button>
-            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
-              <span>Next slide</span>
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div> */}
         </div>
       </section>
 
@@ -199,11 +187,9 @@ const FullArchImplants = () => {
               <video
                 ref={videoRef}
                 src="/services/fullarch (1) (1).mp4"
-                
-                className="w-full rounded-2xl shadow-lg"
+                className="w-full h-96 rounded-2xl shadow-lg object-cover"
                 controls={isPlaying}
                 muted
-                style={{ objectFit: "cover", maxHeight: 400 }}
               />
               {!isPlaying && (
                 <div className="absolute inset-0 flex items-center justify-center">
