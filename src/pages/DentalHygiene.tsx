@@ -123,19 +123,23 @@ const DentalHygiene = () => {
                 {faqs.map((faq, index) => (
                   <div key={index} className="glass bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                    <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed">
-                    {answerPoints.map((point, index) => (
-                      <li key={index}>{point}</li>
-                    ))}
-                  </ul>
+                    <div className="text-gray-700 leading-relaxed">
+                      {Array.isArray(faq.answer) ? (
+                        <ul className="list-disc list-inside space-y-2">
+                          {faq.answer.map((point, pointIndex) => (
+                            <li key={pointIndex}>{point}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p>{faq.answer}</p>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
         </section>
-
-      
 
         {/* Service Tiles */}
         <ServiceTiles />
