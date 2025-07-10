@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -18,7 +19,7 @@ const Treatments = () => {
       featured: true
     },
     {
-      title: "Composite Bonding", 
+      title: "Composite Bonding",
       description: "Natural-looking dental restoration and enhancement",
       image: "/home/services/Composite Bonding.jpg",
       path: "/composite-bonding",
@@ -139,6 +140,10 @@ const Treatments = () => {
                   Our Services
                 </span>
               </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Experience exceptional dental care with our comprehensive range of premium treatments, 
+                delivered by expert professionals in a state-of-the-art facility.
+              </p>
             </div>
           </div>
         </section>
@@ -150,6 +155,9 @@ const Treatments = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Cosmetic Excellence
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Transform your smile with our advanced cosmetic treatments
+              </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -157,7 +165,7 @@ const Treatments = () => {
                 <Link
                   key={index}
                   to={service.path}
-                  className={`group relative w-fit mx-auto bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/50 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ${
+                  className={`group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/50 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ${
                     service.featured ? 'lg:col-span-1 ring-2 ring-[#63316b]/20' : ''
                   }`}
                 >
@@ -166,7 +174,7 @@ const Treatments = () => {
                       Popular
                     </div>
                   )}
-                  <div className="relative h-72 overflow-hidden">
+                  <div className="relative h-56 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
                     <img
                       src={service.image}
@@ -178,6 +186,9 @@ const Treatments = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#63316b] transition-colors">
                       {service.title}
                     </h3>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
                     <div className="flex items-center text-[#63316b] font-semibold text-sm group-hover:gap-2 transition-all">
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -199,18 +210,21 @@ const Treatments = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                General Services
+                Essential Care
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Comprehensive dental treatments for optimal oral health
+              </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {generalServices.map((service, index) => (
                 <Link
                   key={index}
                   to={service.path}
                   className="group bg-white/60 backdrop-blur-sm rounded-2xl shadow-md border border-white/40 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="h-56 overflow-hidden">
+                  <div className="h-40 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
