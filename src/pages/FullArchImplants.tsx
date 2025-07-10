@@ -198,8 +198,8 @@ const FullArchImplants = () => {
             <div className="relative">
               <video
                 ref={videoRef}
-                src="/services/Full%20Arch%20Implants/implants.mp4"
-                poster="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop"
+                src="/services/fullarch (1) (1).mp4"
+                
                 className="w-full rounded-2xl shadow-lg"
                 controls={isPlaying}
                 muted
@@ -327,8 +327,8 @@ const FullArchImplants = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="/services/Full%20Arch%20Implants/hero.jpg"
-                alt="Full Arch Implants Hero"
+                src="/services/CompositeBonding/composite-bonding.jpeg"
+                alt="Full Arch Implants"
                 className="rounded-2xl shadow-lg max-w-full h-auto object-cover"
                 style={{ maxHeight: 400 }}
               />

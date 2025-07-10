@@ -67,6 +67,12 @@ const Treatments = () => {
       description: "Protect your teeth from grinding and clenching",
       image: "/home/services/night-guard.png",
       path: "/night-guard"
+    },
+    {
+      title: "Sleepwell MAS",
+      description: "Protect your teeth from grinding and clenching",
+      image: "/services/sleepwellmas.jpg",
+      path: "#"
     }
   ];
 
@@ -186,9 +192,9 @@ const Treatments = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#63316b] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                    {/* <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                       {service.description}
-                    </p>
+                    </p> */}
                     <div className="flex items-center text-[#63316b] font-semibold text-sm group-hover:gap-2 transition-all">
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
