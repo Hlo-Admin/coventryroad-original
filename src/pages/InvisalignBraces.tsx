@@ -118,14 +118,16 @@ const InvisalignBraces = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp pt-16"
             style={{ animationDelay: "0.4s" }}
           >
+            <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1">
             <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
               <Calendar className="w-5 h-5" />
               <span>Book a Free Consultation</span>
-            </button>
+            </button></a>
+            <Link to="/contact">
             <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
               <Mail className="w-5 h-5" />
               <span>Request a Callback</span>
-            </button>
+            </button></Link>
           </div>
         </div>
       </section>

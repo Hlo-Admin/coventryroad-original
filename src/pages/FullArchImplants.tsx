@@ -237,10 +237,10 @@ const FullArchImplants = () => {
                 foundation for replacing multiple teeth, failing bridges and
                 poor fitting dentures.
               </p>
-
+              <Link to="/contact">
               <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300">
                 Request a callback
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>

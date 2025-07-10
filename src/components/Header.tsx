@@ -151,7 +151,7 @@ useEffect(() => {
                 </div>
                 
                 <Link to="/about" className="block text-gray-800 hover:text-[#63316b] font-semibold py-2">About</Link>
-                <Link to="/#contact" className="block text-gray-800 hover:text-[#63316b] font-semibold py-2">Contact</Link>
+                <Link to="/contact" className="block text-gray-800 hover:text-[#63316b] font-semibold py-2">Contact</Link>
                 <div className="pt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium mb-4">
                     <Phone className="w-4 h-4" />
