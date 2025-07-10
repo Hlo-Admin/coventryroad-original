@@ -18,7 +18,7 @@ import {
 const DentalImplants = () => {
   useEffect(() => {
     document.title =
-      "Dental Implants - Permanent Tooth Replacement | Coventry Road Dental Care";
+      "Dental Implants - Coventry Road Dental Care";
     window.scrollTo(0, 0);
   }, []);
 
@@ -74,13 +74,13 @@ const DentalImplants = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                Coventry Road Dental
+                Restore Your Smile with
               </h1>
               <h2 className="text-3xl lg:text-5xl font-bold text-[#63316b] mb-6 animate-fadeInUp">
                 Dental Implants
               </h2>
               <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
-                Restore Your Smile with Dental Implants in Coventry
+                in Coventry
               </p>
             </div>
           </div>
@@ -121,19 +121,7 @@ const DentalImplants = () => {
               </div>
             </div>
 
-            {/* Previous/Next slide placeholders */}
-            <div className="flex justify-center space-x-4 mb-8">
-              <button className="text-sm text-gray-500">Previous slide</button>
-              <button className="text-sm text-gray-500">Next slide</button>
-            </div>
-
-            {/* Request callback button */}
-            <div className="text-center mb-16">
-              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                <Phone className="w-5 h-5" />
-                <span>Request a callback</span>
-              </button>
-            </div>
+            
           </div>
         </section>
 
