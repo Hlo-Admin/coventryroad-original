@@ -27,108 +27,84 @@ const handler = async (req: Request): Promise<Response> => {
     console.log('Subject:', subject);
     
     const gmailUser = "karthikkishore2603@gmail.com";
-    const gmailPassword = Deno.env.get("GMAIL_APP_PASSWORD");
+    const gmailAppPassword = Deno.env.get("GMAIL_APP_PASSWORD");
+    const gmailRefreshToken = Deno.env.get("GMAIL_REFRESH_TOKEN");
+    const gmailClientId = Deno.env.get("GMAIL_CLIENT_ID");
+    const gmailClientSecret = Deno.env.get("GMAIL_CLIENT_SECRET");
     
-    if (!gmailPassword) {
-      console.error("Gmail app password not configured");
-      throw new Error("Gmail app password not configured");
+    if (!gmailRefreshToken || !gmailClientId || !gmailClientSecret) {
+      console.error("Gmail OAuth credentials not configured");
+      throw new Error("Gmail OAuth credentials not configured. Please set GMAIL_REFRESH_TOKEN, GMAIL_CLIENT_ID, and GMAIL_CLIENT_SECRET");
     }
 
-    // Use Gmail's SMTP via Web API approach
-    const emailData = {
-      to: to,
-      subject: subject,
-      html: html || text || '',
-      from: from || gmailUser,
-      auth: {
-        user: gmailUser,
-        pass: gmailPassword
-      }
-    };
+    // Get OAuth2 access token
+    const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        client_id: gmailClientId,
+        client_secret: gmailClientSecret,
+        refresh_token: gmailRefreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+
+    if (!tokenResponse.ok) {
+      const errorText = await tokenResponse.text();
+      console.error('Failed to get OAuth token:', errorText);
+      throw new Error('Failed to authenticate with Gmail API');
+    }
+
+    const tokenData = await tokenResponse.json();
+    const accessToken = tokenData.access_token;
 
     // Create email content in RFC2822 format
-    const emailContent = `From: ${emailData.from}
-To: ${emailData.to}
-Subject: ${emailData.subject}
-MIME-Version: 1.0
-Content-Type: text/html; charset=UTF-8
+    const emailContent = [
+      `From: ${from || gmailUser}`,
+      `To: ${to}`,
+      `Subject: ${subject}`,
+      'MIME-Version: 1.0',
+      'Content-Type: text/html; charset=UTF-8',
+      '',
+      html || text || ''
+    ].join('\r\n');
 
-${emailData.html}`;
+    // Encode email content in base64url format
+    const encodedEmail = btoa(emailContent)
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=+$/, '');
 
-    // Encode email content in base64
-    const encodedEmail = btoa(emailContent).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    // Send email using Gmail API
+    const gmailResponse = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        raw: encodedEmail
+      }),
+    });
 
-    // Use Gmail API to send email
-    const gmailApiUrl = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send';
-    
-    // For now, we'll use a direct SMTP approach via a third-party service
-    // Since direct SMTP from Edge Functions has limitations, we'll use an HTTP-based approach
-    
-    try {
-      // Alternative: Use a webhook service to send emails
-      const webhookResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${gmailPassword}`
-        },
-        body: JSON.stringify({
-          service_id: 'default_service',
-          template_id: 'template_email',
-          user_id: gmailUser,
-          template_params: {
-            to_email: to,
-            subject: subject,
-            message: html || text || '',
-            from_name: from || gmailUser
-          }
-        })
-      });
-
-      if (!webhookResponse.ok) {
-        throw new Error(`Email service error: ${webhookResponse.status}`);
-      }
-
-      console.log('Email sent successfully via webhook to:', to);
-    } catch (webhookError) {
-      console.log('Webhook failed, using direct SMTP simulation:', webhookError);
-      
-      // Fallback: Use nodemailer-like approach for Deno
-      const smtpCommand = `
-        EHLO localhost
-        AUTH LOGIN
-        ${btoa(gmailUser)}
-        ${btoa(gmailPassword)}
-        MAIL FROM:<${gmailUser}>
-        RCPT TO:<${to}>
-        DATA
-        ${emailContent}
-        .
-        QUIT
-      `;
-
-      // Since we can't use direct SMTP in Edge Functions, we'll simulate but add proper validation
-      if (!to.includes('@') || !subject.trim()) {
-        throw new Error('Invalid email parameters');
-      }
-
-      console.log('Email validated and processed:', {
-        to: to,
-        subject: subject,
-        from: emailData.from,
-        contentLength: emailData.html.length
-      });
-
-      // Add a small delay to simulate real email sending
-      await new Promise(resolve => setTimeout(resolve, 2000));
+    if (!gmailResponse.ok) {
+      const errorText = await gmailResponse.text();
+      console.error('Gmail API error:', errorText);
+      throw new Error(`Gmail API error: ${gmailResponse.status} - ${errorText}`);
     }
+
+    const gmailResult = await gmailResponse.json();
+    console.log('Email sent successfully via Gmail API:', gmailResult);
 
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: 'Email sent successfully',
+        message: 'Email sent successfully via Gmail API',
         recipient: to,
-        subject: subject
+        subject: subject,
+        messageId: gmailResult.id
       }),
       {
         status: 200,
