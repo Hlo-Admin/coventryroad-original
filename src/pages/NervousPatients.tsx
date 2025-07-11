@@ -39,22 +39,14 @@ const NervousPatients = () => {
           <div className="mb-16">
             <div className="relative overflow-hidden rounded-2xl shadow-lg max-w-md mx-auto">
               <img
-                src="/lovable-uploads/69f725c9-fe56-4589-ba0f-98a1066a2646.png"
+                src="/services/CompositeBonding/composite-bonding.jpeg"
                 alt="Friendly dentist"
                 className="w-full h-auto object-cover"
               />
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="text-center mb-16">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2">
-                <Calendar className="w-5 h-5" />
-                <span>Request a callback</span>
-              </button>
-            </div>
-          </div>
+      
         </div>
       </section>
 
@@ -113,24 +105,7 @@ const NervousPatients = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-[#63316b] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Restore Your Smile with Coventry Road Dental Care</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Take the first step towards overcoming your dental anxiety with our gentle, understanding approach.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center space-x-2">
-              <Calendar className="w-5 h-5" />
-              <span>Book Appointment</span>
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center justify-center space-x-2">
-              <Phone className="w-5 h-5" />
-              <span>Call Now</span>
-            </button>
-          </div>
-        </div>
-      </section>
+     
 
       <Footer />
     </div>
