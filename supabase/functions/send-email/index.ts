@@ -32,7 +32,19 @@ const handler = async (req: Request): Promise<Response> => {
     
     if (!gmailAppPassword) {
       console.error("Gmail app password not configured");
-      throw new Error("Gmail app password not configured. Please set GMAIL_APP_PASSWORD in Supabase secrets");
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          error: "Gmail app password not configured. Please set GMAIL_APP_PASSWORD in Supabase secrets"
+        }),
+        {
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          },
+        }
+      );
     }
 
     // Create email content
@@ -40,6 +52,7 @@ const handler = async (req: Request): Promise<Response> => {
     const fromEmail = from || gmailUser;
     
     console.log('Attempting to send email via SMTP...');
+    console.log('Using Gmail user:', gmailUser);
 
     try {
       // Create SMTP client
@@ -52,6 +65,8 @@ const handler = async (req: Request): Promise<Response> => {
         username: gmailUser,
         password: gmailAppPassword,
       });
+
+      console.log('SMTP connection established');
 
       // Send email
       await client.send({
@@ -100,6 +115,8 @@ const handler = async (req: Request): Promise<Response> => {
           password: gmailAppPassword,
         });
 
+        console.log('Alternative SMTP connection established');
+
         await altClient.send({
           from: gmailUser,
           to: to,
@@ -131,15 +148,6 @@ const handler = async (req: Request): Promise<Response> => {
       } catch (altError) {
         console.error('Alternative SMTP also failed:', altError);
         
-        // Log the email details for debugging
-        console.log('Email would have been sent:', {
-          from: gmailUser,
-          to: to,
-          subject: subject,
-          content: emailContent.substring(0, 100) + '...'
-        });
-        
-        // Return error for frontend to handle
         return new Response(
           JSON.stringify({ 
             success: false, 
