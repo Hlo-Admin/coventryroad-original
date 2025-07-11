@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import {
   Carousel,
@@ -61,41 +62,82 @@ const Testimonials = () => {
           What Our Customers Say
         </h2>
         <div className="relative">
-          <Carousel
-            className="w-full"
-            opts={{ align: "start", loop: true }}
-            plugins={autoplayPlugin ? [autoplayPlugin] : []}
-          >
-            <CarouselPrevious />
-            <CarouselContent>
-              {testimonials.map((t, i) => (
-                <CarouselItem
-                  key={i}
-                  className="flex justify-center basis-1/3 max-w-[33.333%]"
-                >
-                  <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg p-10 flex flex-col justify-between min-h-[220px] max-w-2xl w-full transition-transform hover:scale-[1.025] hover:shadow-xl duration-300">
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 rounded-full bg-[#63316b]/10 flex items-center justify-center mr-3">
-                        <span className="text-xl font-semibold text-[#63316b]">
-                          {t.name.charAt(0)}
+          {/* Desktop View - 3 columns */}
+          <div className="hidden lg:block">
+            <Carousel
+              className="w-full"
+              opts={{ align: "start", loop: true }}
+              plugins={autoplayPlugin ? [autoplayPlugin] : []}
+            >
+              <CarouselPrevious />
+              <CarouselContent>
+                {testimonials.map((t, i) => (
+                  <CarouselItem
+                    key={i}
+                    className="flex justify-center basis-1/3 max-w-[33.333%]"
+                  >
+                    <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg p-10 flex flex-col justify-between min-h-[220px] max-w-2xl w-full transition-transform hover:scale-[1.025] hover:shadow-xl duration-300">
+                      <div className="flex items-center mb-4">
+                        <div className="w-10 h-10 rounded-full bg-[#63316b]/10 flex items-center justify-center mr-3">
+                          <span className="text-xl font-semibold text-[#63316b]">
+                            {t.name.charAt(0)}
+                          </span>
+                        </div>
+                        <span className="font-semibold text-gray-900 text-lg">
+                          {t.name}
+                        </span>
+                        <span className="ml-2 text-[#63316b] text-xs font-bold tracking-widest">
+                          ★★★★★
                         </span>
                       </div>
-                      <span className="font-semibold text-gray-900 text-lg">
-                        {t.name}
-                      </span>
-                      <span className="ml-2 text-[#63316b] text-xs font-bold tracking-widest">
-                        ★★★★★
-                      </span>
+                      <blockquote className="text-gray-700 text-base md:text-lg italic mb-2 flex-1">
+                        "{t.text}"
+                      </blockquote>
                     </div>
-                    <blockquote className="text-gray-700 text-base md:text-lg italic mb-2 flex-1">
-                      “{t.text}”
-                    </blockquote>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselNext />
-          </Carousel>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselNext />
+            </Carousel>
+          </div>
+
+          {/* Mobile/Tablet View - Single column */}
+          <div className="lg:hidden">
+            <Carousel
+              className="w-full"
+              opts={{ align: "start", loop: true }}
+              plugins={autoplayPlugin ? [autoplayPlugin] : []}
+            >
+              <CarouselContent>
+                {testimonials.map((t, i) => (
+                  <CarouselItem key={i} className="basis-full">
+                    <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg p-6 sm:p-8 flex flex-col justify-between min-h-[200px] w-full transition-transform hover:scale-[1.025] hover:shadow-xl duration-300 mx-2">
+                      <div className="flex items-center mb-4">
+                        <div className="w-10 h-10 rounded-full bg-[#63316b]/10 flex items-center justify-center mr-3">
+                          <span className="text-xl font-semibold text-[#63316b]">
+                            {t.name.charAt(0)}
+                          </span>
+                        </div>
+                        <div className="flex flex-col sm:flex-row sm:items-center">
+                          <span className="font-semibold text-gray-900 text-base sm:text-lg">
+                            {t.name}
+                          </span>
+                          <span className="sm:ml-2 text-[#63316b] text-xs font-bold tracking-widest">
+                            ★★★★★
+                          </span>
+                        </div>
+                      </div>
+                      <blockquote className="text-gray-700 text-sm sm:text-base italic mb-2 flex-1">
+                        "{t.text}"
+                      </blockquote>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          </div>
         </div>
         <div className="flex justify-center mt-12">
           <span className="text-gray-400 text-sm">
