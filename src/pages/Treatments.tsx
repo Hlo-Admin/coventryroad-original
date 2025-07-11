@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -19,7 +18,7 @@ const Treatments = () => {
       
     },
     {
-      title: "Composite Bonding",
+      title: "Composite Bonding", 
       description: "Natural-looking dental restoration and enhancement",
       image: "/home/services/Composite Bonding.jpg",
       path: "/composite-bonding",
@@ -165,15 +164,8 @@ const Treatments = () => {
                 <Link
                   key={index}
                   to={service.path}
-                  className={`group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/50 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ${
-                    service.featured ? 'lg:col-span-1 ring-2 ring-[#63316b]/20' : ''
-                  }`}
+                  className="group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/50 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
                 >
-                  {service.featured && (
-                    <div className="absolute top-4 right-4 z-10 bg-gradient-to-r from-[#63316b] to-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                      Popular
-                    </div>
-                  )}
                   <div className="relative h-72 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
                     <img
