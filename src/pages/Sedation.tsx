@@ -2,6 +2,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Calendar } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const Sedation = () => {
   return (
@@ -35,7 +36,7 @@ const Sedation = () => {
           <div className="mb-16">
             <div className="relative overflow-hidden rounded-2xl shadow-lg max-w-md mx-auto">
               <img
-                src="/lovable-uploads/69f725c9-fe56-4589-ba0f-98a1066a2646.png"
+                src="/services/CompositeBonding/composite-bonding.jpeg"
                 alt="Sedation treatment"
                 className="w-full h-auto object-cover"
               />
@@ -45,10 +46,11 @@ const Sedation = () => {
           {/* CTA Button */}
           <div className="text-center mb-16">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
               <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2">
                 <Calendar className="w-5 h-5" />
                 <span>Request a callback</span>
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>
@@ -101,10 +103,11 @@ const Sedation = () => {
             Don't let anxiety prevent you from getting the dental care you need.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
             <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center space-x-2">
               <Calendar className="w-5 h-5" />
               <span>Book Appointment</span>
-            </button>
+            </button></a>
           </div>
         </div>
       </section>
