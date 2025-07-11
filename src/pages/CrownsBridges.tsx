@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Phone, CheckCircle } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const CrownsBridges = () => {
   const benefits = [
@@ -53,14 +54,12 @@ const CrownsBridges = () => {
             Restore Your Smile with Crowns & Bridges in Coventry
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
             <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
               <Calendar className="w-5 h-5" />
               <span>Book Consultation</span>
-            </button>
-            <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-              <Phone className="w-5 h-5" />
-              <span>Call Now</span>
-            </button>
+            </button></a>
+            
           </div>
         </div>
       </section>
@@ -86,18 +85,12 @@ const CrownsBridges = () => {
       {/* Image Section */}
       <section className="py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative">
-            <img
-              src="/lovable-uploads/69f725c9-fe56-4589-ba0f-98a1066a2646.png"
-              alt="Dental professional"
-              className="w-full h-80 object-cover rounded-2xl shadow-lg"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-          </div>
+          
           <div className="text-center mt-8">
+            <Link to="/contact">
             <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
               <span>Request a callback</span>
-            </button>
+            </button></Link>
           </div>
         </div>
       </section>
@@ -122,15 +115,7 @@ const CrownsBridges = () => {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            Restore Your Smile with Crowns & Bridges in Coventry
-          </h3>
-        </div>
-      </section>
-
+     
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,10 +139,11 @@ const CrownsBridges = () => {
             Book your consultation today and take the first step towards your perfect smile.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
             <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
               <Calendar className="w-5 h-5" />
               <span>Book Appointment</span>
-            </button>
+            </button></a>
           </div>
         </div>
       </section>
