@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -18,6 +17,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const FullArchImplants = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -112,34 +118,50 @@ const FullArchImplants = () => {
 
       {/* Before & After Gallery */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative group">
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100">
-                <img
-                  src="/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png"
-                  alt="Before dental implant treatment"
-                  className="w-full h-64 md:h-80 object-cover"
-                />
-                <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                  Before
-                </div>
-              </div>
-            </div>
-
-            <div className="relative group">
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-100">
-                <img
-                  src="/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png"
-                  alt="After dental implant treatment"
-                  className="w-full h-64 md:h-80 object-cover"
-                />
-                <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                  After
-                </div>
-              </div>
-            </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Before & After Results
+            </h2>
+            <p className="text-lg text-gray-600">
+              See the amazing transformations we've achieved with full arch implants
+            </p>
           </div>
+          
+          <Carousel className="w-full max-w-2xl mx-auto">
+            <CarouselContent>
+              <CarouselItem>
+                <div className="relative group">
+                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100">
+                    <img
+                      src="/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png"
+                      alt="Before dental implant treatment"
+                      className="w-full h-64 md:h-80 object-cover"
+                    />
+                    <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      Before
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="relative group">
+                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-100">
+                    <img
+                      src="/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png"
+                      alt="After dental implant treatment"
+                      className="w-full h-64 md:h-80 object-cover"
+                    />
+                    <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      After
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </div>
       </section>
 
@@ -178,17 +200,6 @@ const FullArchImplants = () => {
               transform your smile, leaving you feeling confident and satisfied.
             </p>
           </div>
-
-          {/* <div className="flex justify-center mt-8 space-x-4">
-            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
-              <ChevronLeft className="w-5 h-5" />
-              <span>Previous slide</span>
-            </button>
-            <button className="flex items-center space-x-2 text-[#63316b] hover:text-[#63316b]/80">
-              <span>Next slide</span>
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div> */}
         </div>
       </section>
 
