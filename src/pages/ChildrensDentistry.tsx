@@ -1,4 +1,3 @@
-
 import { Phone, Calendar } from 'lucide-react';
 import { useEffect } from 'react';
 import Header from '../components/Header';
@@ -16,25 +15,33 @@ const ChildrensDentistry = () => {
   const faqs = [
     {
       question: "How should I look after my child's teeth?",
-      answer: ["Good dental health begins with you. By following a simple routine, you can keep your child's mouth clean and healthy by:", "Brushing your child's teeth twice daily with fluoride toothpaste.", "Having sugary drinks and snacks less often. Using a small to medium toothbrush.", "Using a pea-sized amount of toothpaste."," Using small circular movements to clean your child's teeth.", "Changing your child's toothbrush regularly.", "Visiting your dentist for child check up every 3-6 months."
+      answer: [
+        "Good dental health begins with you. By following a simple routine, you can keep your child's mouth clean and healthy by:",
+        "Brushing your child's teeth twice daily with fluoride toothpaste.",
+        "Having sugary drinks and snacks less often. Using a small to medium toothbrush.",
+        "Using a pea-sized amount of toothpaste.",
+        "Using small circular movements to clean your child's teeth.",
+        "Changing your child's toothbrush regularly.",
+        "Visiting your dentist for child check up every 3-6 months."
+      ]
     },
     {
       question: "How often should my child visit the dentist?",
-      answer: "We recommend children visit the dentist at least twice a year, but your dentist will advise following your child's examination."
+      answer: ["We recommend children visit the dentist at least twice a year, but your dentist will advise following your child's examination."]
     },
     {
       question: "At what age should I bring my child to the dentist for the first time?",
-      answer: "We recommend you bring children to your appointment from birth, so they grow up happy in the dental practice environment and comfortable with dental visits."
+      answer: ["We recommend you bring children to your appointment from birth, so they grow up happy in the dental practice environment and comfortable with dental visits."]
     },
     {
       question: "How often should I change my child's toothbrush?",
-      answer: "For optimum dental hygiene and brushing effectiveness, we recommend you change your child's toothbrush every three months."
+      answer: ["For optimum dental hygiene and brushing effectiveness, we recommend you change your child's toothbrush every three months."]
     }
   ];
 
   const benefits = [
     "After school appointment times reserved for children between 3pm-5pm",
-    "Care tailored to children's needs",
+    "Care tailored to children's needs", 
     "Aim to educate children from an early age",
     "Tips on maintaining good dental health",
     "Visit the kids zone for fun and educational activities"
@@ -125,7 +132,7 @@ const ChildrensDentistry = () => {
                 {faqs.map((faq, index) => (
                   <div key={index} className="glass bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                     <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed">
+                    <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed">
                       {faq.answer.map((point, index) => (
                         <li key={index}>{point}</li>
                       ))}
@@ -136,25 +143,6 @@ const ChildrensDentistry = () => {
             </div>
           </div>
         </section>
-
-        {/* Call to Action Section */}
-        {/* <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 glass bg-white/5"></div>
-          </div>
-          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              Ready to Give Your Child the Best Dental Care?
-            </h3>
-            <p className="text-lg mb-8 opacity-90">
-              Book your child's appointment today and help them develop healthy dental habits for life.
-            </p>
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
-              <Phone className="w-5 h-5" />
-              <span>Request a Callback</span>
-            </button>
-          </div>
-        </section> */}
 
         {/* Service Tiles */}
         <ServiceTiles />
