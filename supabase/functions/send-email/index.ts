@@ -1,5 +1,6 @@
 
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -38,78 +39,40 @@ const handler = async (req: Request): Promise<Response> => {
     const emailContent = html || text || '';
     const fromEmail = from || gmailUser;
     
-    // Construct the email message
-    const message = [
-      `From: ${fromEmail}`,
-      `To: ${to}`,
-      `Subject: ${subject}`,
-      'MIME-Version: 1.0',
-      'Content-Type: text/html; charset=UTF-8',
-      '',
-      emailContent
-    ].join('\r\n');
+    console.log('Attempting to send email via SMTP...');
 
-    // Send email using Gmail SMTP
     try {
-      // For Deno, we'll use a simple HTTP approach to Gmail's API
-      // First, we need to create a base64 encoded version of the email
-      const encodedMessage = btoa(message).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-      
-      // Use Gmail API with basic auth (app password)
-      const auth = btoa(`${gmailUser}:${gmailAppPassword}`);
-      
-      // Since direct SMTP is complex in Deno, we'll use Gmail API with the app password
-      // This requires the Gmail API to be enabled and configured
-      const response = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Basic ${auth}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          raw: encodedMessage
-        }),
+      // Create SMTP client
+      const client = new SmtpClient();
+
+      // Connect to Gmail SMTP server
+      await client.connectTLS({
+        hostname: "smtp.gmail.com",
+        port: 587,
+        username: gmailUser,
+        password: gmailAppPassword,
       });
 
-      if (!response.ok) {
-        // If Gmail API fails, we'll simulate sending for now
-        console.log('Gmail API not accessible, simulating email send');
-        console.log('Email details:', {
-          from: fromEmail,
-          to: to,
-          subject: subject,
-          content: emailContent.substring(0, 100) + '...'
-        });
-        
-        // Return success response
-        return new Response(
-          JSON.stringify({ 
-            success: true, 
-            message: 'Email processed successfully',
-            recipient: to,
-            subject: subject,
-            note: 'Email simulated - configure Gmail API for actual sending'
-          }),
-          {
-            status: 200,
-            headers: {
-              'Content-Type': 'application/json',
-              ...corsHeaders,
-            },
-          }
-        );
-      }
+      // Send email
+      await client.send({
+        from: fromEmail,
+        to: to,
+        subject: subject,
+        content: emailContent,
+        html: emailContent,
+      });
 
-      const result = await response.json();
-      console.log('Email sent successfully:', result);
+      // Close connection
+      await client.close();
+
+      console.log('Email sent successfully via SMTP');
 
       return new Response(
         JSON.stringify({ 
           success: true, 
           message: 'Email sent successfully',
           recipient: to,
-          subject: subject,
-          messageId: result.id
+          subject: subject
         }),
         {
           status: 200,
@@ -123,31 +86,75 @@ const handler = async (req: Request): Promise<Response> => {
     } catch (smtpError) {
       console.error('SMTP Error:', smtpError);
       
-      // Log the email details for debugging
-      console.log('Email would have been sent:', {
-        from: fromEmail,
-        to: to,
-        subject: subject,
-        content: emailContent.substring(0, 100) + '...'
-      });
-      
-      // Return success for now to prevent frontend errors
-      return new Response(
-        JSON.stringify({ 
-          success: true, 
-          message: 'Email logged successfully (SMTP not configured)',
-          recipient: to,
+      // Try alternative SMTP configuration
+      try {
+        console.log('Trying alternative SMTP configuration...');
+        
+        const altClient = new SmtpClient();
+
+        // Try with SSL on port 465
+        await altClient.connectTLS({
+          hostname: "smtp.gmail.com",
+          port: 465,
+          username: gmailUser,
+          password: gmailAppPassword,
+        });
+
+        await altClient.send({
+          from: gmailUser,
+          to: to,
           subject: subject,
-          note: 'Email details logged - configure SMTP for actual sending'
-        }),
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'application/json',
-            ...corsHeaders,
-          },
-        }
-      );
+          content: emailContent,
+          html: emailContent,
+        });
+
+        await altClient.close();
+
+        console.log('Email sent successfully via alternative SMTP');
+
+        return new Response(
+          JSON.stringify({ 
+            success: true, 
+            message: 'Email sent successfully',
+            recipient: to,
+            subject: subject
+          }),
+          {
+            status: 200,
+            headers: {
+              'Content-Type': 'application/json',
+              ...corsHeaders,
+            },
+          }
+        );
+
+      } catch (altError) {
+        console.error('Alternative SMTP also failed:', altError);
+        
+        // Log the email details for debugging
+        console.log('Email would have been sent:', {
+          from: gmailUser,
+          to: to,
+          subject: subject,
+          content: emailContent.substring(0, 100) + '...'
+        });
+        
+        // Return error for frontend to handle
+        return new Response(
+          JSON.stringify({ 
+            success: false, 
+            error: 'Failed to send email via SMTP',
+            details: altError.message
+          }),
+          {
+            status: 500,
+            headers: {
+              'Content-Type': 'application/json',
+              ...corsHeaders,
+            },
+          }
+        );
+      }
     }
 
   } catch (error: any) {
