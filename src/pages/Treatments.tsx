@@ -16,7 +16,7 @@ const Treatments = () => {
       description: "Complete smile transformation with advanced implant technology",
       image: "/home/services/Full Arch Implants.jpg",
       path: "/full-arch-implants",
-      featured: true
+      
     },
     {
       title: "Composite Bonding",
@@ -29,7 +29,7 @@ const Treatments = () => {
       description: "Discreet orthodontic treatment for perfect alignment",
       image: "/home/services/Invisalign Braces.webp",
       path: "/invisalign-braces",
-      featured: true
+      
     },
     {
       title: "Teeth Whitening",
@@ -42,7 +42,7 @@ const Treatments = () => {
       description: "Porcelain perfection for your dream smile",
       image: "/home/services/Veneers.jpg",
       path: "/veneers",
-      featured: true
+      
     },
     {
       title: "Dental Implants",
@@ -174,7 +174,7 @@ const Treatments = () => {
                       Popular
                     </div>
                   )}
-                  <div className="relative h-56 overflow-hidden">
+                  <div className="relative h-72 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
                     <img
                       src={service.image}
@@ -224,7 +224,7 @@ const Treatments = () => {
                   to={service.path}
                   className="group bg-white/60 backdrop-blur-sm rounded-2xl shadow-md border border-white/40 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="h-40 overflow-hidden">
+                  <div className="h-72 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
