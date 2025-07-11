@@ -26,7 +26,7 @@ const Hero = () => {
             target.style.display = 'none';
           }}
         >
-          <source src="/home/hero.mp4" type="video/mp4" />
+          <source src="/home/hero.webm" type="video/mp4" />
         </video>
         {/* Video Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-50/60 to-pink-50/60"></div>
