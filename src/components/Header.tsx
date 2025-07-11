@@ -97,7 +97,7 @@ useEffect(() => {
               </div>
               
               <Link to="/about" className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors">About</Link>
-              <Link to="/#contact" className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors">Contact</Link>
+              <Link to="/contact" className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors">Contact</Link>
             </div>
 
             {/* Contact & CTA */}
