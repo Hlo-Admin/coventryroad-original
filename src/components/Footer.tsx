@@ -40,29 +40,21 @@ const Footer = () => {
             </Link>
             
             <p className="text-white/80 leading-relaxed">
-              Providing exceptional dental care to Coventry Road and surrounding areas since 2008. Your smile is our priority, and your health is our commitment.
+For appointments please call us on 024 76 31 2256
             </p>
             
-            {/* Awards & Recognition */}
-            <div className="flex items-center space-x-2 text-sm bg-white/10 rounded-xl p-3 border border-white/20">
-              <Star className="w-4 h-4 text-white fill-current" />
-              <span className="text-white/90">Award-Winning Dental Practice</span>
-            </div>
+
             
             {/* Social Media */}
             <div className="flex space-x-4">
-              <a href="#" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
+              <a href="https://www.facebook.com/coventryroaddentalcare" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
                 <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
-                <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
+             
+              <a href="https://www.instagram.com/coventryroaddentalcare?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
                 <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
-                <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
+          
             </div>
           </div>
 
@@ -84,7 +76,7 @@ const Footer = () => {
 
           {/* Our Treatments */}
           <div>
-            <h4 className="font-semibold text-lg mb-6 text-white">Our Treatments</h4>
+            <h4 className="font-semibold text-lg mb-6 text-white">Cosmetic Excellence</h4>
             <div className="space-y-4">
               {treatments.map((treatment, index) => (
                 <Link 
@@ -145,30 +137,12 @@ const Footer = () => {
                   <span>Saturday:</span>
                   <span className="text-white">9:00 AM - 4:00 PM</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span className="text-white">Emergency Only</span>
-                </div>
+                
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-16 pt-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-            <div className="flex items-center space-x-2 text-white/80 text-sm">
-              <span>© 2024 Coventry Road Dentalcare. All rights reserved.</span>
-            </div>
-            
-            <div className="flex flex-wrap justify-centre lg:justify-end space-x-6 text-sm">
-              <Link to="/privacy-policy" className="text-white/80 hover:text-white transition-colours duration-300">Privacy Policy</Link>
-              <Link to="/terms-of-service" className="text-white/80 hover:text-white transition-colours duration-300">Terms of Service</Link>
-              <Link to="/cookie-policy" className="text-white/80 hover:text-white transition-colours duration-300">Cookie Policy</Link>
-              <Link to="/sitemap" className="text-white/80 hover:text-white transition-colours duration-300">Sitemap</Link>
-            </div>
-          </div>
-        </div>
       </div>
     </footer>
   );
