@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Phone, Calendar, CheckCircle } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const RestorativeTreatment = () => {
   const benefits = [
@@ -44,10 +45,11 @@ const RestorativeTreatment = () => {
               Restore Your Smile with Coventry Road Dental Care
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
               <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />
                 <span>Request a callback</span>
-              </button>
+              </button></Link>
             </div>
           </div>
         </section>
@@ -109,14 +111,13 @@ const RestorativeTreatment = () => {
               Contact us today to discuss your restorative treatment options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
               <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />
                 <span>Book Appointment</span>
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2">
-                <Phone className="w-5 h-5" />
-                <span>Call Now</span>
-              </button>
+              </button></a>
+              
+            
             </div>
           </div>
         </section>
