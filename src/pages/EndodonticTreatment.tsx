@@ -41,21 +41,14 @@ const EndodonticTreatment = () => {
           {/* Doctor Image */}
           <div className="mb-12 text-center">
             <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=face"
+              src="/services/CompositeBonding/composite-bonding.jpeg"
               alt="Dental professional"
               className="mx-auto rounded-2xl shadow-lg w-full max-w-md h-80 object-cover"
             />
           </div>
 
-          {/* CTA Buttons */}
-          <div className="text-center mb-16">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2">
-                <Calendar className="w-5 h-5" />
-                <span>Request a callback</span>
-              </button>
-            </div>
-          </div>
+      
+         
         </div>
       </section>
 
@@ -120,22 +113,7 @@ const EndodonticTreatment = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-16 bg-[#63316b] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Restore Your Smile with Endodontic Treatment in Coventry</h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center space-x-2">
-              <Calendar className="w-5 h-5" />
-              <span>Book Appointment</span>
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center justify-center space-x-2">
-              <Phone className="w-5 h-5" />
-              <span>Call Now</span>
-            </button>
-          </div>
-        </div>
-      </section>
+      
 
       <Footer />
     </div>
