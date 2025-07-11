@@ -1,3 +1,4 @@
+
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
@@ -104,17 +105,24 @@ const ServiceTiles = () => {
     let interval: NodeJS.Timeout;
 
     const autoScroll = () => {
-      if (isPaused) return;
+      if (isPaused || !scrollContainer) return;
 
-      if (
-        scrollContainer.scrollLeft >=
-        scrollContainer.scrollWidth - scrollContainer.clientWidth
-      ) {
-        scrollAmount = 0;
-        scrollContainer.scrollLeft = 0;
-      } else {
-        scrollAmount += scrollStep;
-        scrollContainer.scrollLeft = scrollAmount;
+      try {
+        if (
+          scrollContainer.scrollLeft >=
+          scrollContainer.scrollWidth - scrollContainer.clientWidth
+        ) {
+          scrollAmount = 0;
+          scrollContainer.scrollLeft = 0;
+        } else {
+          scrollAmount += scrollStep;
+          scrollContainer.scrollLeft = scrollAmount;
+        }
+      } catch (error) {
+        console.error('Auto-scroll error:', error);
+        if (interval) {
+          clearInterval(interval);
+        }
       }
     };
 
@@ -168,21 +176,25 @@ const ServiceTiles = () => {
         >
           {services.map((service, index) => (
             <Link
-              key={index}
+              key={`${service.path}-${index}`}
               to={service.path}
-              className="group flex-none w-80 h-[340px]" // Fixed width and height for all cards
+              className="group flex-none w-80 h-[340px]"
             >
               <div className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 w-80 h-[340px] flex flex-col">
-                {/* Background Image */}
                 <div className="h-48 w-full overflow-hidden flex-shrink-0">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${service.image}`);
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
                   />
                 </div>
 
-                {/* Content */}
                 <div className="p-6 flex flex-col flex-1 justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-4">

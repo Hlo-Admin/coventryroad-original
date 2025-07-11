@@ -1,3 +1,4 @@
+
 import {
   Phone,
   Calendar,
@@ -19,6 +20,11 @@ const Hero = () => {
           loop
           muted
           playsInline
+          onError={(e) => {
+            console.error('Video failed to load:', e);
+            const target = e.target as HTMLVideoElement;
+            target.style.display = 'none';
+          }}
         >
           <source src="/home/hero.mp4" type="video/mp4" />
         </video>
@@ -36,18 +42,6 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-left">
-            {/* Trust Indicators */}
-            {/* <div className="flex flex-wrap gap-3 mb-6">
-              <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 border border-gray-200 shadow-sm">
-                <Award className="w-3 h-3 inline mr-1.5" />
-                BDA Certified
-              </div>
-              <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 border border-gray-200 shadow-sm">
-                <Users className="w-3 h-3 inline mr-1.5" />
-                25+ Years Experience
-              </div>
-            </div> */}
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
               Dentists in <span className="gradient-text">Coventry</span>
             </h1>
@@ -110,21 +104,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-
-          {/* Right Space for 3D Element */}
-          {/* <div className="hidden lg:flex items-center justify-center">
-            <div className="w-full h-[36rem] rounded-2xl border border-gray-200/50 flex items-center justify-center">
-              <iframe
-                src="https://my.spline.design/untitled-g41916vVo1fiGca33wbZbm3e/"
-                frameBorder="0"
-                width="100%"
-                height="100%"
-                className="rounded-2xl"
-                title="3D Spline Element"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>
