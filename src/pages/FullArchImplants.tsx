@@ -1,3 +1,4 @@
+
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -24,6 +25,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const FullArchImplants = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -128,7 +130,19 @@ const FullArchImplants = () => {
             </p>
           </div>
           
-          <Carousel className="w-full max-w-2xl mx-auto">
+          <Carousel 
+            className="w-full max-w-2xl mx-auto"
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: true,
+              }),
+            ]}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
             <CarouselContent>
               <CarouselItem>
                 <div className="relative group">
