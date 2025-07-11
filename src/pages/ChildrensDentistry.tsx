@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ServiceTiles from '../components/ServiceTiles';
 import FloatingBubble from '../components/FloatingBubble';
+import { Link } from 'react-router-dom';
 
 const ChildrensDentistry = () => {
   useEffect(() => {
@@ -15,7 +16,7 @@ const ChildrensDentistry = () => {
   const faqs = [
     {
       question: "How should I look after my child's teeth?",
-      answer: "Good dental health begins with you. By following a simple routine, you can keep your child's mouth clean and healthy by: Brushing your child's teeth twice daily with fluoride toothpaste. Having sugary drinks and snacks less often. Using a small to medium toothbrush. Using a pea-sized amount of toothpaste. Using small circular movements to clean your child's teeth. Changing your child's toothbrush regularly. Visiting your dentist for child check up every 3-6 months."
+      answer: ["Good dental health begins with you. By following a simple routine, you can keep your child's mouth clean and healthy by:", "Brushing your child's teeth twice daily with fluoride toothpaste.", "Having sugary drinks and snacks less often. Using a small to medium toothbrush.", "Using a pea-sized amount of toothpaste."," Using small circular movements to clean your child's teeth.", "Changing your child's toothbrush regularly.", "Visiting your dentist for child check up every 3-6 months."
     },
     {
       question: "How often should my child visit the dentist?",
@@ -57,14 +58,16 @@ const ChildrensDentistry = () => {
               </h1>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Link to="/contact">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
-                </button>
+                </button></Link>
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
                 <button className="glass bg-white/80 backdrop-blur-sm border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book a Free Consultation</span>
-                </button>
+                </button></a>
               </div>
             </div>
           </div>
@@ -122,7 +125,11 @@ const ChildrensDentistry = () => {
                 {faqs.map((faq, index) => (
                   <div key={index} className="glass bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                     <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed">
+                      {faq.answer.map((point, index) => (
+                        <li key={index}>{point}</li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
@@ -131,7 +138,7 @@ const ChildrensDentistry = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white relative overflow-hidden">
+        {/* <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 glass bg-white/5"></div>
           </div>
@@ -147,7 +154,7 @@ const ChildrensDentistry = () => {
               <span>Request a Callback</span>
             </button>
           </div>
-        </section>
+        </section> */}
 
         {/* Service Tiles */}
         <ServiceTiles />
