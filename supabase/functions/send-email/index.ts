@@ -1,6 +1,5 @@
 
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -51,43 +50,57 @@ const handler = async (req: Request): Promise<Response> => {
     const emailContent = html || text || '';
     const fromEmail = from || gmailUser;
     
-    console.log('Attempting to send email via SMTP...');
+    console.log('Attempting to send email via Gmail API...');
     console.log('Using Gmail user:', gmailUser);
 
-    try {
-      // Create SMTP client
-      const client = new SmtpClient();
+    // Create the email message in RFC 2822 format
+    const boundary = "boundary_" + Math.random().toString(36).substr(2, 9);
+    const emailMessage = [
+      `From: ${fromEmail}`,
+      `To: ${to}`,
+      `Subject: ${subject}`,
+      'MIME-Version: 1.0',
+      `Content-Type: multipart/alternative; boundary="${boundary}"`,
+      '',
+      `--${boundary}`,
+      'Content-Type: text/plain; charset=utf-8',
+      '',
+      text || emailContent.replace(/<[^>]*>/g, ''), // Strip HTML for plain text
+      '',
+      `--${boundary}`,
+      'Content-Type: text/html; charset=utf-8',
+      '',
+      emailContent,
+      '',
+      `--${boundary}--`
+    ].join('\n');
 
-      // Connect to Gmail SMTP server
-      await client.connectTLS({
-        hostname: "smtp.gmail.com",
-        port: 587,
-        username: gmailUser,
-        password: gmailAppPassword,
-      });
+    // Encode the message in base64
+    const encodedMessage = btoa(emailMessage).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 
-      console.log('SMTP connection established');
+    // Use Gmail API instead of SMTP
+    const response = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${await getGoogleAccessToken(gmailUser, gmailAppPassword)}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        raw: encodedMessage
+      })
+    });
 
-      // Send email
-      await client.send({
-        from: fromEmail,
-        to: to,
-        subject: subject,
-        content: emailContent,
-        html: emailContent,
-      });
-
-      // Close connection
-      await client.close();
-
-      console.log('Email sent successfully via SMTP');
+    if (response.ok) {
+      const result = await response.json();
+      console.log('Email sent successfully via Gmail API:', result);
 
       return new Response(
         JSON.stringify({ 
           success: true, 
           message: 'Email sent successfully',
           recipient: to,
-          subject: subject
+          subject: subject,
+          messageId: result.id
         }),
         {
           status: 200,
@@ -97,90 +110,142 @@ const handler = async (req: Request): Promise<Response> => {
           },
         }
       );
-
-    } catch (smtpError) {
-      console.error('SMTP Error:', smtpError);
+    } else {
+      const error = await response.text();
+      console.error('Gmail API Error:', error);
       
-      // Try alternative SMTP configuration
-      try {
-        console.log('Trying alternative SMTP configuration...');
-        
-        const altClient = new SmtpClient();
-
-        // Try with SSL on port 465
-        await altClient.connectTLS({
-          hostname: "smtp.gmail.com",
-          port: 465,
-          username: gmailUser,
-          password: gmailAppPassword,
-        });
-
-        console.log('Alternative SMTP connection established');
-
-        await altClient.send({
-          from: gmailUser,
-          to: to,
-          subject: subject,
-          content: emailContent,
-          html: emailContent,
-        });
-
-        await altClient.close();
-
-        console.log('Email sent successfully via alternative SMTP');
-
-        return new Response(
-          JSON.stringify({ 
-            success: true, 
-            message: 'Email sent successfully',
-            recipient: to,
-            subject: subject
-          }),
-          {
-            status: 200,
-            headers: {
-              'Content-Type': 'application/json',
-              ...corsHeaders,
-            },
-          }
-        );
-
-      } catch (altError) {
-        console.error('Alternative SMTP also failed:', altError);
-        
-        return new Response(
-          JSON.stringify({ 
-            success: false, 
-            error: 'Failed to send email via SMTP',
-            details: altError.message
-          }),
-          {
-            status: 500,
-            headers: {
-              'Content-Type': 'application/json',
-              ...corsHeaders,
-            },
-          }
-        );
-      }
+      // Fallback to direct SMTP with fetch-based approach
+      console.log('Falling back to direct SMTP...');
+      
+      const smtpResponse = await sendViaDirectSMTP(gmailUser, gmailAppPassword, to, subject, emailContent, fromEmail);
+      
+      return new Response(
+        JSON.stringify(smtpResponse),
+        {
+          status: smtpResponse.success ? 200 : 500,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          },
+        }
+      );
     }
 
   } catch (error: any) {
     console.error('Error in send-email function:', error);
-    return new Response(
-      JSON.stringify({ 
-        success: false, 
-        error: error.message || 'Failed to process email request'
-      }),
-      {
-        status: 500,
-        headers: { 
-          'Content-Type': 'application/json', 
-          ...corsHeaders 
-        },
-      }
-    );
+    
+    // Try direct SMTP as final fallback
+    try {
+      const { to, subject, html, text, from }: EmailRequest = await req.json();
+      const gmailUser = Deno.env.get("GMAIL_USER") || "karthikkishore2603@gmail.com";
+      const gmailAppPassword = Deno.env.get("GMAIL_APP_PASSWORD");
+      const emailContent = html || text || '';
+      const fromEmail = from || gmailUser;
+      
+      const smtpResponse = await sendViaDirectSMTP(gmailUser, gmailAppPassword!, to, subject, emailContent, fromEmail);
+      
+      return new Response(
+        JSON.stringify(smtpResponse),
+        {
+          status: smtpResponse.success ? 200 : 500,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          },
+        }
+      );
+    } catch (fallbackError) {
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          error: error.message || 'Failed to process email request'
+        }),
+        {
+          status: 500,
+          headers: { 
+            'Content-Type': 'application/json', 
+            ...corsHeaders 
+          },
+        }
+      );
+    }
   }
 };
+
+async function getGoogleAccessToken(email: string, appPassword: string): Promise<string> {
+  // This is a simplified approach - in production you'd use OAuth2
+  // For now, we'll use the app password directly in SMTP fallback
+  throw new Error("OAuth2 not implemented - falling back to SMTP");
+}
+
+async function sendViaDirectSMTP(
+  gmailUser: string, 
+  gmailAppPassword: string, 
+  to: string, 
+  subject: string, 
+  content: string, 
+  from: string
+) {
+  try {
+    console.log('Attempting direct SMTP connection...');
+    
+    // Use a more direct approach with raw TCP connection
+    const conn = await Deno.connect({
+      hostname: "smtp.gmail.com",
+      port: 587,
+    });
+
+    const encoder = new TextEncoder();
+    const decoder = new TextDecoder();
+
+    // Start TLS handshake
+    const tlsConn = await Deno.startTls(conn, { hostname: "smtp.gmail.com" });
+
+    // SMTP commands
+    const commands = [
+      `EHLO localhost\r\n`,
+      `AUTH PLAIN ${btoa(`\0${gmailUser}\0${gmailAppPassword}`)}\r\n`,
+      `MAIL FROM:<${gmailUser}>\r\n`,
+      `RCPT TO:<${to}>\r\n`,
+      `DATA\r\n`,
+      `From: ${from}\r\nTo: ${to}\r\nSubject: ${subject}\r\nContent-Type: text/html; charset=utf-8\r\n\r\n${content}\r\n.\r\n`,
+      `QUIT\r\n`
+    ];
+
+    for (const command of commands) {
+      await tlsConn.write(encoder.encode(command));
+      
+      // Read response
+      const buffer = new Uint8Array(1024);
+      const n = await tlsConn.read(buffer);
+      if (n) {
+        const response = decoder.decode(buffer.subarray(0, n));
+        console.log('SMTP Response:', response);
+        
+        if (response.startsWith('5')) {
+          throw new Error(`SMTP Error: ${response}`);
+        }
+      }
+    }
+
+    tlsConn.close();
+
+    return {
+      success: true,
+      message: 'Email sent successfully via direct SMTP',
+      recipient: to,
+      subject: subject
+    };
+
+  } catch (smtpError) {
+    console.error('Direct SMTP failed:', smtpError);
+    
+    return {
+      success: false,
+      error: 'Failed to send email via SMTP',
+      details: smtpError.message
+    };
+  }
+}
 
 serve(handler);
