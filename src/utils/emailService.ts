@@ -1,4 +1,6 @@
 
+import emailjs from '@emailjs/browser';
+
 export interface ContactFormData {
   firstName: string;
   lastName: string;
@@ -8,41 +10,35 @@ export interface ContactFormData {
   message: string;
 }
 
+// Initialize EmailJS with your public key
+// You'll need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace this
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace this  
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace this
+
 export const sendContactEmail = async (formData: ContactFormData): Promise<boolean> => {
   try {
-    // In a real application, you would send this to your backend API
-    // For now, we'll simulate the email sending process
+    console.log('Sending email with data:', formData);
     
-    const emailData = {
-      from: "karthikkishore2603@gmail.com",
-      to: "karthikkishore2603@gmail.com", // Fixed the typo in your email
-      subject: `New Contact Form Submission from ${formData.firstName} ${formData.lastName}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Phone:</strong> ${formData.phone || 'Not provided'}</p>
-        <p><strong>Service:</strong> ${formData.service || 'Not specified'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${formData.message}</p>
-      `,
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      from_email: formData.email,
+      phone: formData.phone || 'Not provided',
+      service: formData.service || 'Not specified',
+      message: formData.message,
+      to_email: 'karthikkishore2603@gmail.com',
     };
 
-    // TODO: Replace this with actual API call to your backend
-    // const response = await fetch('/api/send-email', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(emailData),
-    // });
+    // Send email using EmailJS
+    const result = await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      templateParams,
+      EMAILJS_PUBLIC_KEY
+    );
     
-    // For demonstration, we'll log the email data and simulate success
-    console.log('Email data to be sent:', emailData);
-    
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    console.log('Email sent successfully:', result);
     return true;
   } catch (error) {
     console.error('Error sending email:', error);
