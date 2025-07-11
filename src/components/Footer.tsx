@@ -143,6 +143,21 @@ For appointments please call us on 024 76 31 2256
           </div>
         </div>
 
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20 mt-16 pt-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+            <div className="flex items-center space-x-2 text-white/80 text-sm">
+              <span>© 2025 Coventry Road Dentalcare. All rights reserved.</span>
+            </div>
+            
+            <div className="flex flex-wrap justify-centre lg:justify-end space-x-6 text-sm">
+              <Link to="/privacy-policy" className="text-white/80 hover:text-white transition-colours duration-300">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="text-white/80 hover:text-white transition-colours duration-300">Terms of Service</Link>
+              <Link to="/cookie-policy" className="text-white/80 hover:text-white transition-colours duration-300">Cookie Policy</Link>
+              <Link to="/sitemap" className="text-white/80 hover:text-white transition-colours duration-300">Sitemap</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
