@@ -302,12 +302,23 @@ const ContactPage = () => {
                         className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:ring-2 focus:ring-[#63316b] focus:border-[#63316b] outline-none"
                       >
                         <option value="">Select a service...</option>
-                        <option value="general">General Dentistry</option>
-                        <option value="cosmetic">Cosmetic Dentistry</option>
-                        <option value="orthodontics">Orthodontics</option>
-                        <option value="implants">Dental Implants</option>
-                        <option value="whitening">Teeth Whitening</option>
-                        <option value="emergency">Emergency Care</option>
+                        <option value="full-arch-implants">Full Arch Implants</option>
+                        <option value="composite-bonding">Composite Bonding</option>
+                        <option value="invisalign-braces">Invisalign Braces</option>
+                        <option value="teeth-whitening">Teeth Whitening</option>
+                        <option value="veneers">Veneers</option>
+                        <option value="dental-implants">Dental Implants</option>
+                        <option value="dentures">Dentures</option>
+                        <option value="white-fillings">White Fillings</option>
+                        <option value="fillings">Fillings</option>
+                        <option value="night-guard">Night Guard</option>
+                        <option value="dental-hygiene">Dental Hygiene</option>
+                        <option value="childrens-dentistry">Children's Dentistry</option>
+                        <option value="nervous-patients">Nervous Patients</option>
+                        <option value="restorative-treatment">Restorative Treatment</option>
+                        <option value="endodontic-treatment">Endodontic Treatment</option>
+                        <option value="crowns-bridges">Crowns & Bridges</option>
+                        <option value="sedation">Sedation</option>
                       </select>
                     </div>
 
