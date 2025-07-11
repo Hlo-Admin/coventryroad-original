@@ -199,7 +199,7 @@ const FullArchImplants = () => {
             <div className="relative flex justify-center">
               <video
                 ref={videoRef}
-                src="/services/Full%20Arch%20Implants/implants.mp4"
+                src="/fullarch2.mp4"
                 className="w-full rounded-2xl shadow-lg"
                 controls={isPlaying}
                 muted
