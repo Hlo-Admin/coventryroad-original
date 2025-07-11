@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { Send } from "lucide-react";
+import { sendContactEmail, ContactFormData } from "@/utils/emailService";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,8 @@ const Contact = () => {
     service: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -24,10 +28,40 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    alert("Form submitted! (Check console for data)");
+    setIsSubmitting(true);
+
+    try {
+      const success = await sendContactEmail(formData as ContactFormData);
+      
+      if (success) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your inquiry. We'll get back to you soon.",
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error) {
+      toast({
+        title: "Error Sending Message",
+        description: "Please try again or call us directly at 024 76 31 2256.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -200,9 +234,10 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#63316b] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2"
+                disabled={isSubmitting}
+                className="w-full bg-[#63316b] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Send Message</span>
+                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                 <Send className="w-5 h-5" />
               </button>
             </form>

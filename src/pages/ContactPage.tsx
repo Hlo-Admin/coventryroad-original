@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { sendContactEmail, ContactFormData } from "@/utils/emailService";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +20,8 @@ const ContactPage = () => {
     service: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -31,10 +35,40 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    alert("Form submitted! (Check console for data)");
+    setIsSubmitting(true);
+
+    try {
+      const success = await sendContactEmail(formData as ContactFormData);
+      
+      if (success) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your inquiry. We'll get back to you soon.",
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error) {
+      toast({
+        title: "Error Sending Message",
+        description: "Please try again or call us directly at 024 76 31 2256.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -301,10 +335,11 @@ const ContactPage = () => {
 
                     <Button
                       type="submit"
+                      disabled={isSubmitting}
                       className="w-full bg-[#63316b] hover:bg-[#63316b]/90 text-white"
                       size="lg"
                     >
-                      <span>Send Message</span>
+                      <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                       <Send className="w-5 h-5 ml-2" />
                     </Button>
                   </form>
