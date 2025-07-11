@@ -62,10 +62,12 @@ const Hero = () => {
                 <span>Book An Appointment</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
+              <a  href="tel:02476312256">
+
               <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
                 <Phone className="w-5 h-5" />
                 <span>024 76 31 2256</span>
-              </button>
+              </button></a>
             </div>
 
             {/* Quick Benefits */}
