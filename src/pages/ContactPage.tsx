@@ -100,13 +100,7 @@ const ContactPage = () => {
                 <Calendar className="w-5 h-5" />
                 <span>Book a Free Consultation</span>
               </a>
-              <Link
-                to="/contact"
-                className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center justify-center space-x-2"
-              >
-                <Phone className="w-5 h-5" />
-                <span>Request a Callback</span>
-              </Link>
+              
             </div>
           </div>
 
@@ -135,14 +129,14 @@ const ContactPage = () => {
                             Clifton Villa, Bedworth<br />
                             Coventry, CV12 8NW
                           </p>
-                          <a 
+                          {/* <a 
                             href="https://www.google.com/maps?q=94+Coventry+Rd,+Bedworth,+Coventry+CV12+8NW,+United+Kingdom"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block mt-3 text-[#63316b] hover:underline font-medium"
                           >
                             View on Maps →
-                          </a>
+                          </a> */}
                         </div>
                       </div>
                     </CardContent>
@@ -184,10 +178,10 @@ const ContactPage = () => {
                             href="mailto:info@coventryroaddental.co.uk" 
                             className="text-[#63316b] hover:underline"
                           >
-                            info@coventryroaddental.co.uk
+                            reception@deoldental.com
                           </a>
                           <p className="text-sm text-muted-foreground mt-1">
-                            We'll get back to you within 24 hours
+                            We'll get back to you soon
                           </p>
                         </div>
                       </div>
