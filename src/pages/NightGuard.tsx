@@ -1,10 +1,12 @@
-import { Phone, Calendar, CheckCircle } from 'lucide-react';
+import { Phone, Calendar, CheckCircle , ArrowRight} from 'lucide-react';
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ServiceTiles from '../components/ServiceTiles';
 import FloatingBubble from '../components/FloatingBubble';
 import { Link } from 'react-router-dom';
+import ExploreServicesCarousel from "../components/Marquee";
+
 
 const NightGuard = () => {
   useEffect(() => {
@@ -52,19 +54,28 @@ const NightGuard = () => {
         </section>
 
         {/* About Night Guard Section */}
-        <section className="py-16 lg:py-20">
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 text-center">
-                Night Guard
-              </h2>
-              <div className="prose prose-lg text-gray-700 space-y-6">
-                <p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                 Night Guard
+                </h2>
+                <div className="prose prose-lg text-gray-700 space-y-4">
+                  <p>
                   A common problem, bruxism (the clenching and grinding of teeth) is thought to affect over 80% of the population at some stage in their life.
-                </p>
-                <p>
+                  </p>
+                  <p>
                   Left untreated, it can cause numerous side effects for the sufferer, including: headaches, migraines, stiff neck and jaw, earache, poor sleep quality, and tooth wear. Apart from the damage to the teeth, there is nothing about the above that would suggest that bruxism is the cause. This is often the source of the problem, as too many sufferers are unaware of the true reason for their symptoms-seeking ineffective treatments from their GP instead.
-                </p>
+                  </p>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="/services/night guard/about.jpg"
+                  alt="Composite bonding treatment"
+                  className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                />
               </div>
             </div>
           </div>
@@ -91,32 +102,39 @@ const NightGuard = () => {
           </div>
         </section>
 
-        {/* Call to Action Section */}
-        {/* <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 glass bg-white/5"></div>
-          </div>
-          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              Get Relief from Bruxism with a Custom Night Guard
-            </h3>
-            <p className="text-lg mb-8 opacity-90">
-              Protect your teeth and improve your sleep quality with our precision-made night guards.
-            </p>
-            <a
-              href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl"
-            >
-              <Phone className="w-5 h-5" />
-              <span>Request a Callback</span>
-            </a>
-          </div>
-        </section> */}
+        
+{/* Explore Our Services Carousel */}
+<ExploreServicesCarousel />
 
-        {/* Service Tiles */}
-        <ServiceTiles />
+{/* Final CTA Section */}
+<section className="py-16 bg-white">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+      <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+        Ready to Transform Your Smile?
+      </h3>
+      <p className="text-lg mb-6 text-gray-700 opacity-90">
+        Book your free consultation today.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
+        <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+          <Calendar className="w-5 h-5" />
+          <span>Book Free Consultation</span>
+        </button></a>
+        <Link
+          to="/"
+          className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+        >
+          <ArrowRight className="w-5 h-5" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+      
+
       </div>
       <FloatingBubble />
       <Footer />

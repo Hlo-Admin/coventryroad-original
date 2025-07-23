@@ -22,6 +22,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import ExploreServicesCarousel from "../components/Marquee";
 
 const CompositeBonding = () => {
   useEffect(() => {
@@ -29,7 +30,6 @@ const CompositeBonding = () => {
       "Composite Bonding - Natural Tooth Restoration | Coventry Road Dental Care";
     window.scrollTo(0, 0);
   }, []);
-
 
   return (
     <>
@@ -46,15 +46,19 @@ const CompositeBonding = () => {
               </h1>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp pt-16">
-                {/* <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
-                </button> */}
-                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
-                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book Free Consultation</span>
-                </button></a>
+                </button>
+                <a
+                  href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                  target="_blank"
+                >
+                  <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>Book Free Consultation</span>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -76,16 +80,11 @@ const CompositeBonding = () => {
                     into the desired shape. The resin with then be set with a
                     curing light and finally the tooth polished.
                   </p>
-                  <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
-                  <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                    <Phone className="w-5 h-5" />
-                    <span>Book Free Consultation</span>
-                  </button></a>
                 </div>
               </div>
               <div>
                 <img
-                  src="/services/CompositeBonding/composite-bonding.jpeg"
+                  src="/services/CompositeBonding/about.jpg"
                   alt="Composite bonding treatment"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />
@@ -97,11 +96,21 @@ const CompositeBonding = () => {
         {/* Q&A Section: Implant Info */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Frequently Asked{" "}
+                <span className="text-[#63316b]">Questions</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                Get answers to common questions about Composite Bonding
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 gap-12 items-center">
+              
               {/* Left: Image */}
               <div className="flex justify-center">
                 <img
-                  src="/home/services/Composite Bonding.jpg"
+                  src="/services/faq.jpg"
                   alt="Full Arch Implants Hero"
                   className="rounded-2xl shadow-lg max-w-full h-auto object-cover"
                   style={{ maxHeight: 400 }}
@@ -146,8 +155,6 @@ const CompositeBonding = () => {
           </div>
         </section>
 
-   
-
         {/* Easy Steps Section */}
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,8 +189,9 @@ const CompositeBonding = () => {
                   teeth that extra boost of brightness to achieve your dream
                   smile.
                   <br />
-                  <br />A 3D iTero Scan is done to make your bespoke whitening
-                  trays, this can also be done at your consultation appointment.
+                  <br />
+                  Appointment with our cosmetic dentist where a 3D iTero scan is
+                  done to make your bespoke whitening trays..
                 </p>
               </div>
               {/* Step 3 */}
@@ -205,10 +213,8 @@ const CompositeBonding = () => {
           </div>
         </section>
 
-      
-
-        {/* Service Tiles */}
-        {/* <ServiceTiles /> */}
+        {/* Explore Our Services Carousel */}
+        <ExploreServicesCarousel />
 
         {/* Final CTA Section */}
         <section className="py-16 bg-white">
@@ -222,11 +228,15 @@ const CompositeBonding = () => {
                 bonding can enhance your smile.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
-                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book Free Consultation</span>
-                </button></a>
+                <a
+                  href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                  target="_blank"
+                >
+                  <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>Book Free Consultation</span>
+                  </button>
+                </a>
                 <Link
                   to="/"
                   className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"

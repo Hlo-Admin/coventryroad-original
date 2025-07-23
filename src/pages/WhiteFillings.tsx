@@ -1,5 +1,5 @@
 
-import { Phone, Calendar, Shield, Heart, CheckCircle, Palette, Sparkles, User, MessageCircle } from 'lucide-react';
+import { Phone, Calendar, Shield, Heart, CheckCircle, Palette, Sparkles, ArrowRight, User, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from '../components/Header';
@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import ServiceTiles from '../components/ServiceTiles';
 import FloatingBubble from '../components/FloatingBubble';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import ExploreServicesCarousel from "../components/Marquee";
 
 const WhiteFillings = () => {
   useEffect(() => {
@@ -38,44 +39,26 @@ const WhiteFillings = () => {
       <Header />
       <div className="min-h-screen pt-24">
         {/* Hero Section */}
-        <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#63316b]/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#63316b]/5 rounded-full blur-3xl"></div>
-          </div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-              {/* Content - Left Side */}
-              <div className="space-y-8">
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Restore Your Smile with{" "}
-                  <span className="text-[#63316b]">White Fillings</span> <br /> in Coventry
-                </h1>
-               
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/contact">
-                  <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
-                    <Phone className="w-5 h-5" />
-                    <span>Request a Callback</span>
-                  </button></Link>
-                  <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
-                  <button className="glass bg-white/80 backdrop-blur-sm border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-                    <Calendar className="w-5 h-5" />
-                    <span>Book a Free Consultation</span>
-                  </button></a>
-                </div>
-              </div>
-              
-              {/* Hero Image - Right Side */}
-              <div className="relative">
-                <div className="flex justify-center items-center order-1 lg:order-2">
-                  <img
-                    src="/home/services/White Fillings.jpg"
-                    alt="White Fillings"
-                    className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border border-white/20 bg-gradient-to-br from-[#63316b]/10 to-purple-100"
-                  />
-                </div>
+        <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559829834-3c0e0d2b1d31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl lg:text-6xl pt-8 font-bold text-gray-900 mb-6 animate-fadeInUp">
+                Restore Your Smile with{" "}
+                <span className="text-[#63316b]"><br />White Fillings</span> <br /> in Coventry
+              </h1>
+             
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
+                <Link to="/contact">
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                  <Phone className="w-5 h-5" />
+                  <span>Request a Callback</span>
+                </button></Link>
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
+                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book My Free Consultation</span>
+                </button></a>
               </div>
             </div>
           </div>
@@ -100,8 +83,8 @@ const WhiteFillings = () => {
               </div>
               <div>
                 <img
-                 src="/common.jpeg"
-                  alt="White filling procedure"
+                  src="/services/white filling/about.jpg"
+                  alt="Composite bonding treatment"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />
               </div>
@@ -127,48 +110,81 @@ const WhiteFillings = () => {
           </div>
         </section>
 
-        {/* Call to Action Section */}
-        <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 glass bg-white/5"></div>
-          </div>
-          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              Restore Your Smile with White Fillings in Coventry
-            </h3>
-           <Link to="/contact">
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
-              <Phone className="w-5 h-5" />
-              <span>Request a Callback</span>
-            </button></Link>
-          </div>
-        </section>
 
-        {/* FAQ Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                FAQs
+       {/* FAQ Section */}
+       <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Frequently Asked{" "}
+                <span className="text-[#63316b]">Questions</span>
               </h2>
+              <p className="text-xl text-gray-600">
+                Get answers to common questions about White Fillings
+              </p>
             </div>
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="glass bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20">
-                  <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-gray-700">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* Left Image */}
+              <div className="flex justify-center">
+                <img
+                  src="/services/faq.jpg"
+                  alt="Dentures Example"
+                  className="w-full max-w-md rounded-2xl shadow-xl object-cover"
+                />
+              </div>
+              {/* Right FAQ Accordion */}
+              <div>
+                <Accordion type="single" collapsible className="space-y-6">
+                  {faqs.map((faq, index) => (
+                    <AccordionItem
+                      key={index}
+                      value={`item-${index}`}
+                      className="bg-gray-50 rounded-2xl shadow-sm border-0 overflow-hidden"
+                    >
+                      <AccordionTrigger className="px-8 py-6 text-left font-bold text-lg text-gray-900 hover:no-underline hover:bg-gray-100 transition-colors">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="px-8 pb-6 text-gray-700 text-base leading-relaxed">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Service Tiles */}
-        {/* <ServiceTiles /> */}
+     {/* Explore Our Services Carousel */}
+     <ExploreServicesCarousel />
+
+{/* Final CTA Section */}
+<section className="py-16 bg-white">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+      <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+        Ready to Transform Your Smile?
+      </h3>
+      <p className="text-lg mb-6 text-gray-700 opacity-90">
+        Book your free consultation today.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
+        <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+          <Calendar className="w-5 h-5" />
+          <span>Book Free Consultation</span>
+        </button></a>
+        <Link
+          to="/"
+          className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+        >
+          <ArrowRight className="w-5 h-5" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
       </div>
       <FloatingBubble />
       <Footer />

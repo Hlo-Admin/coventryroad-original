@@ -25,6 +25,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ServiceTiles from "../components/ServiceTiles";
+import ExploreServicesCarousel from "../components/Marquee";
 
 const InvisalignBraces = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -59,7 +60,7 @@ const InvisalignBraces = () => {
     {
       icon: CheckCircle,
       title:
-        "Brace treatment transforms crowded, twisted, crossed and protruding teeth",
+        "Invisalign treatment transforms crowded, twisted, crossed and protruding teeth",
     },
     {
       icon: DollarSign,
@@ -109,25 +110,33 @@ const InvisalignBraces = () => {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            Align your Smile with{" "}
-            <span className="text-[#63316b]">Invisalign Braces</span> in
-            Coventry
+            What is{" "}
+            <span className="text-[#63316b]">
+              {" "}
+              <br />
+              Invisalign ?
+            </span>
           </h1>
 
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp pt-16"
             style={{ animationDelay: "0.4s" }}
           >
-            <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
-            <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
-              <Calendar className="w-5 h-5" />
-              <span>Book a Free Consultation</span>
-            </button></a>
+            <a
+              href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+              target="_blank"
+            >
+              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
+                <Calendar className="w-5 h-5" />
+                <span>Book a Free Consultation</span>
+              </button>
+            </a>
             <Link to="/contact">
-            <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-              <Mail className="w-5 h-5" />
-              <span>Request a Callback</span>
-            </button></Link>
+              <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                <Mail className="w-5 h-5" />
+                <span>Request a Callback</span>
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -138,14 +147,16 @@ const InvisalignBraces = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                What is{" "}
-                <span className="text-[#63316b]">Invisalign Braces?</span>
+                Here at <span className="text-[#63316b]">Coventry Road</span>
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Misaligned teeth can knock your confidence, but we understand
                 that as an adult the thought of wearing braces can seem
                 daunting. Here at Coventry Road, we have the ideal solution to
                 both problems – we are pleased to offer Invisalign Braces.
+                Invisalign clear aligner system starting at just at just £1.60
+                per day. These clear aligners will help you achieve your dream
+                smile with confidence.
               </p>
             </div>
 
@@ -193,7 +204,7 @@ const InvisalignBraces = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 animate-fadeInUp">
-            Straight Teeth May Be A Phone Call Away
+              Straight Teeth May Be A Phone Call Away
             </h2>
           </div>
 
@@ -263,42 +274,42 @@ const InvisalignBraces = () => {
         </div>
       </section>
 
-      
+      {/* Explore Our Services Carousel */}
+      <ExploreServicesCarousel />
 
-   
-
-
-      {/* Service Tiles */}
-      {/* <ServiceTiles /> */}
-
-        {/* Final CTA Section */}
-  <section className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
-              <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
-                Ready to Transform Your Smile?
-              </h3>
-              <p className="text-lg mb-6 text-gray-700 opacity-90">
-                Book your free consultation today and discover how composite
-                bonding can enhance your smile.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
+      {/* Final CTA Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+            <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+              Ready to Transform Your Smile?
+            </h3>
+            <p className="text-lg mb-6 text-gray-700 opacity-90">
+              We would love to help you achieve your perfect smile as discreetly
+              as possible. Book your free consultation and let's discuss your
+              options for a straight smile.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                target="_blank"
+              >
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Consultation</span>
-                </button></a>
-                <Link
-                  to="/"
-                  className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
-                >
-                  <ArrowRight className="w-5 h-5" />
-                  <span>Back to Home</span>
-                </Link>
-              </div>
+                </button>
+              </a>
+              <Link
+                to="/"
+                className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+              >
+                <ArrowRight className="w-5 h-5" />
+                <span>Back to Home</span>
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* Floating Chat CTA */}
       {/* <div className="fixed bottom-6 right-6 z-50">

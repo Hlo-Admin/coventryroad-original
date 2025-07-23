@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -9,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   MessageCircle,
+  ArrowRight
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -26,6 +26,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import ExploreServicesCarousel from "../components/Marquee";
+
 
 const FullArchImplants = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -53,7 +55,8 @@ const FullArchImplants = () => {
         "Most people in good general health will be suitable for dental implants so why not come in for your FREE implant consultation to discuss your treatment plan.\n\nHere at Coventry Road Dental Care, we provide the best care and quality for all of our patients.",
     },
     {
-      question: "What if I'm nervous about going to the dentist to have my dental implant treatment?",
+      question:
+        "What if I'm nervous about going to the dentist to have my dental implant treatment?",
       answer:
         "Here at Coventry Road Dental Care we have all the answers to your worries. We offer sedation here which can either be done via IV sedation in the arm or hand or oral sedation use, which can be discussed on your consultation. We have an amazing team which discusses your treatment plan and co-ordinate it together, so the procedure runs smoothly. The whole outcome can be achieved with a minimal number of visits, to reassure those that suffer anxiety.",
     },
@@ -86,13 +89,6 @@ const FullArchImplants = () => {
         </div>
 
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 flex flex-col items-center justify-center min-h-[70vh] text-center">
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-[#63316b] mb-4">
-              Coventry Road Dental
-            </h3>
-            <h4 className="text-lg text-gray-600 mb-2">Full Arch Implants</h4>
-          </div>
-          
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
             Restore Your Smile with{" "}
             <span className="text-[#63316b]">Full Arch Implants</span> in
@@ -105,15 +101,85 @@ const FullArchImplants = () => {
             A long-lasting and immovable remedy designed for individuals with
             extensive tooth loss.
           </p>
-          <div className="bg-[#63316b]/10 border border-[#63316b]/20 rounded-lg p-6 max-w-xl mx-auto">
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
+                <Link to="/contact">
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                  <Phone className="w-5 h-5" />
+                  <span>Request a Callback</span>
+                </button></Link>
+                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
+                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book My Free Consultation</span>
+                </button></a>
+              </div>
+          {/* <div className="bg-[#63316b]/10 border border-[#63316b]/20 rounded-lg p-6 max-w-xl mx-auto">
             <p className="text-lg font-semibold text-[#63316b] mb-2">
-              Would You Like To Talk To A Consultant?
+              Would You Like To Talk To a Consultant?
             </p>
             <p className="text-gray-700">
               You can reach our friendly team by calling{" "}
               <span className="font-bold">024 7631 2256</span> during our
               regular clinic opening hours.
             </p>
+          </div> */}
+        </div>
+      </section>
+
+
+       {/* What is a Dental Implant */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative flex justify-center">
+              <video
+                ref={videoRef}
+                src="/services/full5 - Made with Clipchamp (1).mp4"
+                className="w-full rounded-2xl shadow-lg"
+                controls={isPlaying}
+                muted
+                autoPlay
+                style={{ objectFit: "cover", maxHeight: 500 }}
+              />
+              {!isPlaying && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button
+                    className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group"
+                    onClick={() => {
+                      setIsPlaying(true);
+                      videoRef.current?.play();
+                    }}
+                  >
+                    <Play
+                      className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform"
+                      fill="currentColor"
+                    />
+                  </button>
+                </div>
+              )}
+            </div>
+
+            <div className="space-y-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                What Is A Dental Implant?
+              </h2>
+
+              <p className="text-lg text-gray-600 leading-relaxed pb-8">
+                A dental implant is an artificial root made from titanium that
+                replaces the root of a missing tooth. It can be placed in either
+                the upper or lower jaw and, in time will bond with your jawbone
+                to create a firm foundation to which a replacement false tooth
+                is fixed. Implants can also be used to provide a secure
+                foundation for replacing multiple teeth, failing bridges and
+                poor fitting dentures.
+              </p>
+              <Link to="/contact">
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300">
+                  Request a callback
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -126,11 +192,12 @@ const FullArchImplants = () => {
               Before & After Results
             </h2>
             <p className="text-lg text-gray-600">
-              See the amazing transformations we've achieved with full arch implants
+              See the amazing transformations we've achieved with full arch
+              implants
             </p>
           </div>
-          
-          <Carousel 
+
+          <Carousel
             className="w-full max-w-2xl mx-auto"
             plugins={[
               Autoplay({
@@ -182,6 +249,20 @@ const FullArchImplants = () => {
       {/* Implant Types */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       
+
+          <div className="text-center pb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Faster And More Secure Than Ever Previously Experienced.
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              If you are searching for a fast yet long-lasting remedy for
+              failing bridges, missing teeth or uncomfortable dentures, full
+              arch implants offer a comprehensive solution. It will completely
+              transform your smile, leaving you feeling confident and satisfied.
+            </p>
+          </div>
+
           <div className="flex flex-col md:flex-row gap-8 justify-center items-center mb-16">
             <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg w-full md:w-1/3 p-8 border border-gray-100 relative">
               <div className="absolute top-0 left-0 w-full h-2 rounded-t-2xl bg-[#63316b]"></div>
@@ -202,79 +283,22 @@ const FullArchImplants = () => {
               </h3>
             </div>
           </div>
-
-          <div className="text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Faster And More Secure Than Ever Previously Experienced.
-            </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              If you are searching for a fast yet long-lasting remedy for
-              failing bridges, missing teeth or uncomfortable dentures, full
-              arch implants offer a comprehensive solution. It will completely
-              transform your smile, leaving you feeling confident and satisfied.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* What is a Dental Implant */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative flex justify-center">
-              <video
-                ref={videoRef}
-                src="/services/full5 - Made with Clipchamp (1).mp4"
-                className="w-full rounded-2xl shadow-lg"
-                controls={isPlaying}
-                muted
-                autoPlay
-                style={{ objectFit: "cover", maxHeight: 500 }}
-              />
-              {!isPlaying && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button
-                    className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group"
-                    onClick={() => {
-                      setIsPlaying(true);
-                      videoRef.current?.play();
-                    }}
-                  >
-                    <Play
-                      className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform"
-                      fill="currentColor"
-                    />
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                What Is A Dental Implant?
-              </h2>
-
-              <p className="text-lg text-gray-600 leading-relaxed">
-                A dental implant is an artificial root made from titanium that
-                replaces the root of a missing tooth. It can be placed in either
-                the upper or lower jaw and, in time will bond with your jawbone
-                to create a firm foundation to which a replacement false tooth
-                is fixed. Implants can also be used to provide a secure
-                foundation for replacing multiple teeth, failing bridges and
-                poor fitting dentures.
-              </p>
-              <Link to="/contact">
-              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300">
-                Request a callback
-              </button></Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Q&A Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Frequently Asked{" "}
+                <span className="text-[#63316b]">Questions</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                Get answers to common questions about Full Arch Implants
+              </p>
+            </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Accordion type="single" collapsible className="space-y-4">
@@ -353,7 +377,7 @@ const FullArchImplants = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="/services/CompositeBonding/composite-bonding.jpeg"
+                src="/services/faq.jpg"
                 alt="Full Arch Implants"
                 className="rounded-2xl shadow-lg max-w-full h-auto object-cover"
                 style={{ maxHeight: 400 }}
@@ -363,40 +387,38 @@ const FullArchImplants = () => {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              FAQs
-            </h2>
-          </div>
+   
 
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="border border-gray-200 rounded-lg px-6"
-              >
-                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-[#63316b] transition-colors">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed whitespace-pre-line">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
+            {/* Explore Our Services Carousel */}
+      <ExploreServicesCarousel />
 
-      {/* Floating CTA */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <button className="bg-[#63316b] text-white p-4 rounded-full shadow-lg hover:bg-[#63316b]/90 transition-all duration-300 group">
-          <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
-        </button>
+{/* Final CTA Section */}
+<section className="py-16 bg-white">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+      <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+        Ready to Transform Your Smile?
+      </h3>
+      <p className="text-lg mb-6 text-gray-700 opacity-90">
+        Book your free consultation today.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
+        <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+          <Calendar className="w-5 h-5" />
+          <span>Book Free Consultation</span>
+        </button></a>
+        <Link
+          to="/"
+          className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+        >
+          <ArrowRight className="w-5 h-5" />
+          <span>Back to Home</span>
+        </Link>
       </div>
+    </div>
+  </div>
+</section>
 
       <Footer />
     </>

@@ -1,24 +1,26 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Sparkles } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Marquee from "../components/MarqueeLogo";
 
 const Treatments = () => {
   useEffect(() => {
-    document.title = "Services - Coventry Road Dental Care | Premium Dental Services";
+    document.title =
+      "Services - Coventry Road Dental Care | Premium Dental Services";
   }, []);
 
   const cosmeticServices = [
     {
       title: "Full Arch Implants",
-      description: "Complete smile transformation with advanced implant technology",
+      description:
+        "Complete smile transformation with advanced implant technology",
       image: "/home/services/Full Arch Implants.jpg",
       path: "/full-arch-implants",
-      
     },
     {
-      title: "Composite Bonding", 
+      title: "Composite Bonding",
       description: "Natural-looking dental restoration and enhancement",
       image: "/home/services/Composite Bonding.jpg",
       path: "/composite-bonding",
@@ -28,7 +30,6 @@ const Treatments = () => {
       description: "Discreet orthodontic treatment for perfect alignment",
       image: "/home/services/Invisalign Braces.webp",
       path: "/invisalign-braces",
-      
     },
     {
       title: "Teeth Whitening",
@@ -41,7 +42,6 @@ const Treatments = () => {
       description: "Porcelain perfection for your dream smile",
       image: "/home/services/Veneers.jpg",
       path: "/veneers",
-      
     },
     {
       title: "Dental Implants",
@@ -65,8 +65,14 @@ const Treatments = () => {
       title: "Night Guard",
       description: "Protect your teeth from grinding and clenching",
       image: "/home/services/night-guard.png",
-      path: "/night-guard"
-    }
+      path: "/night-guard",
+    },
+    {
+      title: "Sleepwell MAS",
+      description: "Protect your teeth from grinding and clenching",
+      image: "/home/services/sleepwell.jpg",
+      path: "/sleep-well",
+    },
   ];
 
   const generalServices = [
@@ -74,59 +80,59 @@ const Treatments = () => {
       title: "Dental Hygiene",
       description: "Professional cleaning and preventive care",
       image: "/home/services/dental-hygiene.jpg",
-      path: "/dental-hygiene"
+      path: "/dental-hygiene",
     },
     {
       title: "Fillings",
       description: "Restorative treatment for damaged teeth",
       image: "/home/services/fillings.jpg",
-      path: "/fillings"
+      path: "/fillings",
     },
     {
       title: "Children's Dentistry",
       description: "Gentle dental care designed for young smiles",
       image: "/home/services/children-dentistry.jpg",
-      path: "/childrens-dentistry"
+      path: "/childrens-dentistry",
     },
     {
       title: "Nervous Patients",
       description: "Compassionate care for anxious patients",
       image: "/home/services/nervous-paitents.jpeg",
-      path: "/nervous-patients"
+      path: "/nervous-patients",
     },
     {
       title: "Restorative Treatment",
       description: "Comprehensive solutions for damaged teeth",
       image: "/home/services/restorative-treatment.jpg",
-      path: "/restorative-treatment"
+      path: "/restorative-treatment",
     },
     {
       title: "Endodontic Treatment",
       description: "Advanced root canal therapy and treatment",
       image: "/home/services/endodontic-treatment.jpeg",
-      path: "/endodontic-treatment"
+      path: "/endodontic-treatment",
     },
     {
       title: "Crowns & Bridges",
       description: "Durable solutions for missing or damaged teeth",
       image: "/home/services/crowns-bridges.jpg",
-      path: "/crowns-bridges"
+      path: "/crowns-bridges",
     },
     {
       title: "Sedation",
       description: "Comfortable dentistry with sedation options",
       image: "/home/services/sedation.jpg",
-      path: "/sedation"
-    }
+      path: "/sedation",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
       <Header />
-      
+
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-20 overflow-hidden bg-gradient-to-r from-slate-100 via-white to-slate-50">
           <div className="absolute inset-0 bg-gradient-to-r from-[#63316b]/5 to-transparent"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center max-w-4xl mx-auto">
@@ -135,62 +141,72 @@ const Treatments = () => {
                 <span>Premium Dental Care</span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-[#63316b] to-purple-600 bg-clip-text text-transparent">
-                  Our Services
-                </span>
+                <span className="text-[#6a3870]">Our Services</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Experience exceptional dental care with our comprehensive range of premium treatments, 
-                delivered by expert professionals in a state-of-the-art facility.
+                Experience exceptional dental care with our comprehensive range
+                of premium treatments, delivered by expert professionals in a
+                state-of-the-art facility.
               </p>
             </div>
           </div>
         </section>
 
         {/* Cosmetic Services */}
-        <section className="py-20">
+        <section className="py-20 bg-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Cosmetic Excellence
+                Cosmetic Services
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Transform your smile with our advanced cosmetic treatments
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {cosmeticServices.map((service, index) => (
-                <Link
-                  key={index}
-                  to={service.path}
-                  className="group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/50 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
-                >
-                  <div className="relative h-72 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#63316b] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center text-[#63316b] font-semibold text-sm group-hover:gap-2 transition-all">
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              {cosmeticServices.map((service, index) => {
+                // Center the last card if it's alone in the last row (for 10 cards in 3-column grid)
+                const isLast = index === cosmeticServices.length - 1;
+                const needsCentering =
+                  cosmeticServices.length % 3 !== 0 && isLast;
+                return (
+                  <Link
+                    key={index}
+                    to={service.path}
+                    className={`group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/50 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ${
+                      needsCentering ? "lg:col-span-3 justify-self-center" : ""
+                    }`}
+                  >
+                    <div className="relative h-72 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
                     </div>
-                  </div>
-                </Link>
-              ))}
+                    <div className="p-8">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#63316b] transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                      <div className="flex items-center text-[#63316b] font-semibold text-sm group-hover:gap-2 transition-all">
+                        <span>Learn More</span>
+                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
+{/* 
+        Marquee Section */}
+        <Marquee />
 
         {/* Divider */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -198,17 +214,17 @@ const Treatments = () => {
         </div>
 
         {/* General Services */}
-        <section className="py-20">
+        <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Essential Care
+                General Services
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Comprehensive dental treatments for optimal oral health
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {generalServices.map((service, index) => (
                 <Link
@@ -242,14 +258,14 @@ const Treatments = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-[#63316b] to-purple-700">
+        <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-[#6a3870] mb-6">
               Ready to Transform Your Smile?
             </h2>
-            <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-              Book your consultation today and discover how our premium dental services 
-              can give you the confident smile you deserve.
+            <p className="text-xl text-black mb-8 leading-relaxed">
+              Book your consultation today and discover how our premium dental
+              services can give you the confident smile you deserve.
             </p>
             <a
               href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
