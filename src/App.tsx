@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/sonner";
 import { Toaster as RadixToaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,7 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Treatments from "./pages/Treatments";
 import FullArchImplants from "./pages/FullArchImplants";
-import CompositeBonding from "./pages/CompositeBonding"; 
+import CompositeBonding from "./pages/CompositeBonding";
 import InvisalignBraces from "./pages/InvisalignBraces";
 import TeethWhitening from "./pages/TeethWhitening";
 import Veneers from "./pages/Veneers";
@@ -30,6 +29,10 @@ import EndodonticTreatment from "./pages/EndodonticTreatment";
 import CrownsBridges from "./pages/CrownsBridges";
 import Sedation from "./pages/Sedation";
 import ContactPage from "./pages/ContactPage";
+import FinanceOptions from "./pages/FinanceOptions";
+import PricingPage from "./pages/PricingPage";
+import TeamPage from "./pages/TeamPage";
+import KidsZone from "./pages/KidsZone";
 
 const queryClient = new QueryClient();
 
@@ -57,14 +60,24 @@ const App = () => (
           <Route path="/dental-hygiene" element={<DentalHygiene />} />
           <Route path="/childrens-dentistry" element={<ChildrensDentistry />} />
           <Route path="/nervous-patients" element={<NervousPatients />} />
-          <Route path="/restorative-treatment" element={<RestorativeTreatment />} />
-          <Route path="/endodontic-treatment" element={<EndodonticTreatment />} />
+          <Route
+            path="/restorative-treatment"
+            element={<RestorativeTreatment />}
+          />
+          <Route
+            path="/endodontic-treatment"
+            element={<EndodonticTreatment />}
+          />
           <Route path="/crowns-bridges" element={<CrownsBridges />} />
           <Route path="/sedation" element={<Sedation />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/finance-options" element={<FinanceOptions />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/kids-zone" element={<KidsZone />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

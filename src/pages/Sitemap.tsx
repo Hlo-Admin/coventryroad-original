@@ -1,9 +1,8 @@
-
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import FloatingBubble from '../components/FloatingBubble';
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import FloatingBubble from "../components/FloatingBubble";
 
 const Sitemap = () => {
   useEffect(() => {
@@ -12,19 +11,19 @@ const Sitemap = () => {
   }, []);
 
   const pages = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Full Arch Implants', path: '/full-arch-implants' },
-    { name: 'Composite Bonding', path: '/composite-bonding' },
-    { name: 'Invisalign Braces', path: '/invisalign-braces' },
-    { name: 'Teeth Whitening', path: '/teeth-whitening' },
-    { name: 'Veneers', path: '/veneers' },
-    { name: 'Dental Implants', path: '/dental-implants' },
-    { name: 'Dentures', path: '/dentures' },
-    { name: 'White Fillings', path: '/white-fillings' },
-    { name: 'Privacy Policy', path: '/privacy-policy' },
-    { name: 'Terms of Service', path: '/terms-of-service' },
-    { name: 'Cookie Policy', path: '/cookie-policy' }
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Full Arch Implants", path: "/full-arch-implants" },
+    { name: "Composite Bonding", path: "/composite-bonding" },
+    { name: "Invisalign Braces", path: "/invisalign-braces" },
+    { name: "Teeth Whitening", path: "/teeth-whitening" },
+    { name: "Veneers", path: "/veneers" },
+    { name: "Dental Implants", path: "/dental-implants" },
+    { name: "Dentures", path: "/dentures" },
+    { name: "White Fillings", path: "/white-fillings" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Terms of Service", path: "/terms-of-service" },
+    { name: "Cookie Policy", path: "/cookie-policy" },
   ];
 
   return (
@@ -33,7 +32,7 @@ const Sitemap = () => {
       <div className="pt-32 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Sitemap</h1>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {pages.map((page, index) => (
               <Link

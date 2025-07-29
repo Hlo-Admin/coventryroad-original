@@ -1,38 +1,36 @@
-
-import { useState, useEffect} from 'react';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
-  
-useEffect(() => {
-  window.scrollTo(0, 0);
-  // Close mobile menu when navigating
-  setIsMenuOpen(false);
-}, [location.pathname]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // Close mobile menu when navigating
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   const services = [
-    { name: 'Full Arch Implants', path: '/full-arch-implants' },
-    { name: 'Composite Bonding', path: '/composite-bonding' },
-    { name: 'Invisalign Braces', path: '/invisalign-braces' },
-    { name: 'Teeth Whitening', path: '/teeth-whitening' },
-    { name: 'Veneers', path: '/veneers' },
-    { name: 'Dental Implants', path: '/dental-implants' },
-    { name: 'Dentures', path: '/dentures' },
-    { name: 'White Fillings', path: '/white-fillings' },
-    { name: 'Fillings', path: '/fillings' },
-    { name: 'Night Guard', path: '/night-guard' },
-    { name: 'Dental Hygiene', path: '/dental-hygiene' },
-    { name: "Children's Dentistry", path: '/childrens-dentistry' },
-    { name: 'Nervous Patients', path: '/nervous-patients' },
-    { name: 'Restorative Treatment', path: '/restorative-treatment' },
-    { name: 'Endodontic Treatment', path: '/endodontic-treatment' },
-    { name: 'Crowns & Bridges', path: '/crowns-bridges' },
-    { name: 'Sedation', path: '/sedation' }
+    { name: "Full Arch Implants", path: "/full-arch-implants" },
+    { name: "Composite Bonding", path: "/composite-bonding" },
+    { name: "Invisalign Braces", path: "/invisalign-braces" },
+    { name: "Teeth Whitening", path: "/teeth-whitening" },
+    { name: "Veneers", path: "/veneers" },
+    { name: "Dental Implants", path: "/dental-implants" },
+    { name: "Dentures", path: "/dentures" },
+    { name: "White Fillings", path: "/white-fillings" },
+    { name: "Fillings", path: "/fillings" },
+    { name: "Night Guard", path: "/night-guard" },
+    { name: "Dental Hygiene", path: "/dental-hygiene" },
+    { name: "Children's Dentistry", path: "/childrens-dentistry" },
+    { name: "Nervous Patients", path: "/nervous-patients" },
+    { name: "Restorative Treatment", path: "/restorative-treatment" },
+    { name: "Endodontic Treatment", path: "/endodontic-treatment" },
+    { name: "Crowns & Bridges", path: "/crowns-bridges" },
+    { name: "Sedation", path: "/sedation" },
   ];
 
   return (
@@ -43,9 +41,9 @@ useEffect(() => {
             {/* Logo */}
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-3">
-                <img 
-                  src="/lovable-uploads/a149de9b-ffc7-4ccb-89c6-45a712d8505a.png" 
-                  alt="Coventry Road Dentalcare" 
+                <img
+                  src="/lovable-uploads/a149de9b-ffc7-4ccb-89c6-45a712d8505a.png"
+                  alt="Coventry Road Dentalcare"
                   className="h-8 w-auto"
                 />
               </Link>
@@ -53,11 +51,16 @@ useEffect(() => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors">Home</Link>
-              
+              <Link
+                to="/"
+                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+              >
+                Home
+              </Link>
+
               {/* Services Dropdown */}
               <div className="relative group">
-                <button 
+                <button
                   className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
@@ -65,11 +68,13 @@ useEffect(() => {
                   <span>Services</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
-                
+
                 {/* Dropdown Menu */}
-                <div 
+                <div
                   className={`absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl transition-all duration-200 z-50 ${
-                    isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                    isServicesOpen
+                      ? "opacity-100 visible translate-y-0"
+                      : "opacity-0 invisible -translate-y-2"
                   }`}
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
@@ -80,7 +85,6 @@ useEffect(() => {
                       className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium border-b border-gray-200 mb-2"
                     >
                       Our Services
-
                     </Link>
                     <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
                       {services.map((service, index) => (
@@ -96,9 +100,43 @@ useEffect(() => {
                   </div>
                 </div>
               </div>
-              
-              <Link to="/about" className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors">About</Link>
-              <Link to="/contact" className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors">Contact</Link>
+
+              <Link
+                to="/about"
+                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                to="/contact"
+                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+              >
+                Contact
+              </Link>
+              {/* <Link
+                to="/finance-options"
+                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+              >
+                Finance Options
+              </Link>
+              <Link
+                to="/pricing"
+                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+              >
+                Pricing
+              </Link>
+              <Link
+                to="/team"
+                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+              >
+                Team
+              </Link>
+              <Link
+                to="/kids-zone"
+                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+              >
+                Kids Zone
+              </Link> */}
             </div>
 
             {/* Contact & CTA */}
@@ -122,7 +160,11 @@ useEffect(() => {
               className="md:hidden p-2 rounded-xl hover:bg-white/20 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-5 h-5 text-gray-800" /> : <Menu className="w-5 h-5 text-gray-800" />}
+              {isMenuOpen ? (
+                <X className="w-5 h-5 text-gray-800" />
+              ) : (
+                <Menu className="w-5 h-5 text-gray-800" />
+              )}
             </button>
           </div>
 
@@ -130,12 +172,22 @@ useEffect(() => {
           {isMenuOpen && (
             <div className="md:hidden border-t border-gray-200 mt-4 pt-4 pb-6">
               <div className="space-y-4">
-                <Link to="/" className="block text-gray-800 hover:text-[#63316b] font-semibold py-2">Home</Link>
-                
+                <Link
+                  to="/"
+                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                >
+                  Home
+                </Link>
+
                 {/* Mobile Services */}
                 <div className="space-y-2">
-                  <div className="text-gray-900 font-bold py-2 border-b border-gray-200">Services</div>
-                  <Link to="/services" className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4 border-b border-gray-100">
+                  <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
+                    Services
+                  </div>
+                  <Link
+                    to="/services"
+                    className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4 border-b border-gray-100"
+                  >
                     Our Services
                   </Link>
                   <div className="max-h-60 overflow-y-auto space-y-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
@@ -150,9 +202,43 @@ useEffect(() => {
                     ))}
                   </div>
                 </div>
-                
-                <Link to="/about" className="block text-gray-800 hover:text-[#63316b] font-semibold py-2">About</Link>
-                <Link to="/contact" className="block text-gray-800 hover:text-[#63316b] font-semibold py-2">Contact</Link>
+
+                <Link
+                  to="/about"
+                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                >
+                  About
+                </Link>
+                <Link
+                  to="/contact"
+                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                >
+                  Contact
+                </Link>
+                <Link
+                  to="/finance-options"
+                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                >
+                  Finance Options
+                </Link>
+                <Link
+                  to="/pricing"
+                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                >
+                  Pricing
+                </Link>
+                <Link
+                  to="/team"
+                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                >
+                  Team
+                </Link>
+                <Link
+                  to="/kids-zone"
+                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                >
+                  Kids Zone
+                </Link>
                 <div className="pt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium mb-4">
                     <Phone className="w-4 h-4" />
