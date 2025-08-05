@@ -1,4 +1,3 @@
-
 import {
   Phone,
   Calendar,
@@ -21,9 +20,9 @@ const Hero = () => {
           muted
           playsInline
           onError={(e) => {
-            console.error('Video failed to load:', e);
+            console.error("Video failed to load:", e);
             const target = e.target as HTMLVideoElement;
-            target.style.display = 'none';
+            target.style.display = "none";
           }}
         >
           <source src="/home/hero.webm" type="video/mp4" />
@@ -62,12 +61,12 @@ const Hero = () => {
                 <span>Book An Appointment</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a  href="tel:02476312256">
-
-              <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
-                <Phone className="w-5 h-5" />
-                <span>024 76 31 2256</span>
-              </button></a>
+              <a href="tel:02476312256">
+                <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
+                  <Phone className="w-5 h-5" />
+                  <span>024 76 31 2256</span>
+                </button>
+              </a>
             </div>
 
             {/* Quick Benefits */}
@@ -92,14 +91,16 @@ const Hero = () => {
 
             {/* Contact Info */}
             <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-gray-200 shadow-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-sm">
-                <div className="flex items-center space-x-2">
-                  <MapPin className="w-4 h-4 text-[#63316b]" />
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm">
+                <div className="flex items-start sm:items-center space-x-2">
+                  <MapPin className="w-4 h-4 text-[#63316b] mt-1 sm:mt-0" />
                   <span className="text-gray-700">
-                    94 Coventry Rd Bedworth, Coventry CV12 8NW United Kingdom
+                    94 Coventry Rd Bedworth, Coventry CV12 8NW
+                    <br />
+                    United Kingdom
                   </span>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="sm:border-l sm:pl-4 border-gray-300 flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#63316b]" />
                   <span className="text-gray-700">Mon-Fri: 8AM-6PM</span>
                 </div>

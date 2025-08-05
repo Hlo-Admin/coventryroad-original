@@ -33,6 +33,12 @@ import FinanceOptions from "./pages/FinanceOptions";
 import PricingPage from "./pages/PricingPage";
 import TeamPage from "./pages/TeamPage";
 import KidsZone from "./pages/KidsZone";
+import Sleepwell from "./pages/Sleepwell";
+import ForDentists from "./pages/ForDentists";
+import DentistImplants from "./pages/DentistImplants";
+import DentistSedation from "./pages/DentistSedation";
+import DentistEndodontics from "./pages/DentistEndodotics";
+import DentistMOS from "./pages/DentistMOS";
 
 const queryClient = new QueryClient();
 
@@ -78,6 +84,12 @@ const App = () => (
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/kids-zone" element={<KidsZone />} />
+          <Route path="/sleepwell" element={<Sleepwell />} />
+          <Route path="/for-dentists" element={<ForDentists />} />
+          <Route path="/for-dentists/implants" element={<DentistImplants />} />
+          <Route path="/for-dentists/sedation" element={<DentistSedation />} />
+          <Route path="/for-dentists/mos" element={<DentistMOS />} />
+          <Route path="/for-dentists/endodontics" element={<DentistEndodontics />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

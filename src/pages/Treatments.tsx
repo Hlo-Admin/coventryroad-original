@@ -57,7 +57,7 @@ const Treatments = () => {
     },
     {
       title: "White Fillings",
-      description: "Mercury-free restorations that blend seamlessly",
+      description: "Discreet and durable tooth restoration",
       image: "/home/services/White Fillings.jpg",
       path: "/white-fillings",
     },
@@ -69,9 +69,9 @@ const Treatments = () => {
     },
     {
       title: "Sleepwell MAS",
-      description: "Protect your teeth from grinding and clenching",
+      description: "Stop snoring and improve sleep quality",
       image: "/home/services/sleepwell.jpg",
-      path: "/sleep-well",
+      path: "/sleepwell",
     },
   ];
 
@@ -204,7 +204,7 @@ const Treatments = () => {
             </div>
           </div>
         </section>
-{/* 
+        {/* 
         Marquee Section */}
         <Marquee />
 

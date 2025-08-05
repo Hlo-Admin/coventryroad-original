@@ -14,19 +14,19 @@ const PricingPage = () => {
   const nhsBands = [
     {
       band: "Band 1",
-      price: "£25.80",
+      price: "£27.40",
       description:
         "Covers an examination, diagnosis and advice. If necessary, includes x-rays, a clean and polish and planning for further treatment.",
     },
     {
       band: "Band 2",
-      price: "£70.70",
+      price: "£75.30",
       description:
         "Covers all treatments in Band 1, plus additional treatments like fillings, root canal treatment and extractions.",
     },
     {
       band: "Band 3",
-      price: "£306.80",
+      price: "£326.70",
       description:
         "Covers all treatments in Bands 1 and 2, plus more complex procedures such as crowns, dentures and bridges.",
     },

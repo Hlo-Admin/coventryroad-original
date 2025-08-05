@@ -215,7 +215,7 @@ const KidsZone = () => {
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-[#6a3870] mb-6">
-              Have Questions About Kids' Dental Care?
+              Have Questions About Kids Dental Care?
             </h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Our friendly team is ready to help you make your child's dental

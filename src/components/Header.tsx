@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const Header = () => {
     { name: "White Fillings", path: "/white-fillings" },
     { name: "Fillings", path: "/fillings" },
     { name: "Night Guard", path: "/night-guard" },
+    { name: "Sleepwell MAS", path: "/sleepwell" },
     { name: "Dental Hygiene", path: "/dental-hygiene" },
     { name: "Children's Dentistry", path: "/childrens-dentistry" },
     { name: "Nervous Patients", path: "/nervous-patients" },
@@ -31,6 +33,11 @@ const Header = () => {
     { name: "Endodontic Treatment", path: "/endodontic-treatment" },
     { name: "Crowns & Bridges", path: "/crowns-bridges" },
     { name: "Sedation", path: "/sedation" },
+  ];
+
+  const contact = [
+    { name: "For Dentists", path: "/for-dentists" },
+    { name: "For Patients", path: "/contact" },
   ];
 
   return (
@@ -56,6 +63,15 @@ const Header = () => {
                 className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
               >
                 Home
+              </Link>
+
+               {/* about */}
+
+               <Link
+                to="/about"
+                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+              >
+                About
               </Link>
 
               {/* Services Dropdown */}
@@ -101,41 +117,51 @@ const Header = () => {
                 </div>
               </div>
 
-              <Link
-                to="/about"
-                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-              >
-                About
-              </Link>
-              <Link
+              {/* Contact Dropdown */}
+              <div className="relative group">
+                <button
+                  className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+                  onMouseEnter={() => setIsContactOpen(true)}
+                  onMouseLeave={() => setIsContactOpen(false)}
+                >
+                  <span>Contact Us</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+
+                {/* Dropdown Menu */}
+                <div
+                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl transition-all duration-200 z-50 ${
+                    isContactOpen
+                      ? "opacity-100 visible translate-y-0"
+                      : "opacity-0 invisible -translate-y-2"
+                  }`}
+                  onMouseEnter={() => setIsContactOpen(true)}
+                  onMouseLeave={() => setIsContactOpen(false)}
+                >
+                  <div className="py-2">
+                    <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                      {contact.map((contact, index) => (
+                        <Link
+                          key={index}
+                          to={contact.path}
+                          className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
+                        >
+                          {contact.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+             
+
+              {/* contact */}
+              {/* <Link
                 to="/contact"
                 className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
               >
                 Contact
-              </Link>
-              {/* <Link
-                to="/finance-options"
-                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-              >
-                Finance Options
-              </Link>
-              <Link
-                to="/pricing"
-                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-              >
-                Pricing
-              </Link>
-              <Link
-                to="/team"
-                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-              >
-                Team
-              </Link>
-              <Link
-                to="/kids-zone"
-                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-              >
-                Kids Zone
               </Link> */}
             </div>
 
