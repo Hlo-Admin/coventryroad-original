@@ -36,19 +36,19 @@ const Header = () => {
     { name: "Sedation", path: "/sedation" },
   ];
 
+  // Update quickLinks array to include New Patients
   const quickLinks = [
     { name: "Finance Options", path: "/finance-options" },
     { name: "Pricing", path: "/pricing" },
     { name: "Team", path: "/team" },
     { name: "Kids Zone", path: "/kids-zone" },
-    { name: "Emergencies", path: "/emergencies" },
     { name: "FAQs", path: "/faq" },
+    { name: "New Patients", path: "/new-patients" }, // Add this line
   ];
 
   const contact = [
     { name: "For Dentists", path: "/for-dentists" },
     { name: "For Patients", path: "/contact" },
-   
   ];
 
   return (
