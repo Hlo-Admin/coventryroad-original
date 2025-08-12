@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const location = useLocation();
 
@@ -35,9 +36,19 @@ const Header = () => {
     { name: "Sedation", path: "/sedation" },
   ];
 
+  const quickLinks = [
+    { name: "Finance Options", path: "/finance-options" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Team", path: "/team" },
+    { name: "Kids Zone", path: "/kids-zone" },
+    { name: "Emergencies", path: "/emergencies" },
+    { name: "FAQs", path: "/faq" },
+  ];
+
   const contact = [
     { name: "For Dentists", path: "/for-dentists" },
     { name: "For Patients", path: "/contact" },
+   
   ];
 
   return (
@@ -65,9 +76,8 @@ const Header = () => {
                 Home
               </Link>
 
-               {/* about */}
-
-               <Link
+              {/* about */}
+              <Link
                 to="/about"
                 className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
               >
@@ -117,6 +127,43 @@ const Header = () => {
                 </div>
               </div>
 
+              {/* Quick Links Dropdown */}
+              <div className="relative group">
+                <button
+                  className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
+                  onMouseEnter={() => setIsQuickLinksOpen(true)}
+                  onMouseLeave={() => setIsQuickLinksOpen(false)}
+                >
+                  <span>Quick Links</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+
+                {/* Dropdown Menu */}
+                <div
+                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl transition-all duration-200 z-50 ${
+                    isQuickLinksOpen
+                      ? "opacity-100 visible translate-y-0"
+                      : "opacity-0 invisible -translate-y-2"
+                  }`}
+                  onMouseEnter={() => setIsQuickLinksOpen(true)}
+                  onMouseLeave={() => setIsQuickLinksOpen(false)}
+                >
+                  <div className="py-2">
+                    <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                      {quickLinks.map((link, index) => (
+                        <Link
+                          key={index}
+                          to={link.path}
+                          className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Contact Dropdown */}
               <div className="relative group">
                 <button
@@ -140,29 +187,19 @@ const Header = () => {
                 >
                   <div className="py-2">
                     <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
-                      {contact.map((contact, index) => (
+                      {contact.map((contactItem, index) => (
                         <Link
                           key={index}
-                          to={contact.path}
+                          to={contactItem.path}
                           className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
                         >
-                          {contact.name}
+                          {contactItem.name}
                         </Link>
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
-
-             
-
-              {/* contact */}
-              {/* <Link
-                to="/contact"
-                className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-              >
-                Contact
-              </Link> */}
             </div>
 
             {/* Contact & CTA */}
@@ -205,6 +242,13 @@ const Header = () => {
                   Home
                 </Link>
 
+                <Link
+                  to="/about"
+                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                >
+                  About
+                </Link>
+
                 {/* Mobile Services */}
                 <div className="space-y-2">
                   <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
@@ -229,42 +273,38 @@ const Header = () => {
                   </div>
                 </div>
 
-                <Link
-                  to="/about"
-                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
-                >
-                  About
-                </Link>
-                <Link
-                  to="/contact"
-                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
-                >
-                  Contact
-                </Link>
-                <Link
-                  to="/finance-options"
-                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
-                >
-                  Finance Options
-                </Link>
-                <Link
-                  to="/pricing"
-                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
-                >
-                  Pricing
-                </Link>
-                <Link
-                  to="/team"
-                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
-                >
-                  Team
-                </Link>
-                <Link
-                  to="/kids-zone"
-                  className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
-                >
-                  Kids Zone
-                </Link>
+                {/* Mobile Quick Links */}
+                <div className="space-y-2">
+                  <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
+                    Quick Links
+                  </div>
+                  {quickLinks.map((link, index) => (
+                    <Link
+                      key={index}
+                      to={link.path}
+                      className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Mobile Contact */}
+                <div className="space-y-2">
+                  <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
+                    Contact Us
+                  </div>
+                  {contact.map((contactItem, index) => (
+                    <Link
+                      key={index}
+                      to={contactItem.path}
+                      className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
+                    >
+                      {contactItem.name}
+                    </Link>
+                  ))}
+                </div>
+
                 <div className="pt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium mb-4">
                     <Phone className="w-4 h-4" />

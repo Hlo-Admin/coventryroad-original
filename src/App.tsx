@@ -39,6 +39,8 @@ import DentistImplants from "./pages/DentistImplants";
 import DentistSedation from "./pages/DentistSedation";
 import DentistEndodontics from "./pages/DentistEndodotics";
 import DentistMOS from "./pages/DentistMOS";
+import Emergencies from "./pages/Emergencies";
+import FAQPage from "./pages/FAQPage";
 
 const queryClient = new QueryClient();
 
@@ -89,7 +91,12 @@ const App = () => (
           <Route path="/for-dentists/implants" element={<DentistImplants />} />
           <Route path="/for-dentists/sedation" element={<DentistSedation />} />
           <Route path="/for-dentists/mos" element={<DentistMOS />} />
-          <Route path="/for-dentists/endodontics" element={<DentistEndodontics />} />
+          <Route
+            path="/for-dentists/endodontics"
+            element={<DentistEndodontics />}
+          />
+          <Route path="/emergencies" element={<Emergencies />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
