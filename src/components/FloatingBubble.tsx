@@ -4,7 +4,7 @@ import { MessageCircle } from 'lucide-react';
 const FloatingBubble = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <div className="group relative">
+      {/* <div className="group relative">
         <button className="bg-[#63316b] text-white p-4 rounded-full shadow-lg hover:bg-[#63316b]/90 transition-all duration-300 group">
           <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
         </button>
@@ -16,7 +16,7 @@ const FloatingBubble = () => {
             Chat with our dental experts today.
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

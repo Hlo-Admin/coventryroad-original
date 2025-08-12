@@ -139,7 +139,7 @@ For appointments please call us on 024 76 31 2256
                 </div>
                 <div className="flex justify-between">
                   <span>Saturday:</span>
-                  <span className="text-white">9:00 AM - 4:00 PM</span>
+                  <span className="text-white">9:00 AM - 1:00 PM</span>
                 </div>
                 
               </div>

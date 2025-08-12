@@ -102,7 +102,9 @@ const Hero = () => {
                 </div>
                 <div className="sm:border-l sm:pl-4 border-gray-300 flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#63316b]" />
-                  <span className="text-gray-700">Mon-Fri: 8AM-6PM</span>
+                  <span className="text-gray-700">
+                    Mon-Fri: 8AM-6PM <br className="sm:hidden" /> <br /> Saturday: 8AM-1PM
+                  </span>
                 </div>
               </div>
             </div>
