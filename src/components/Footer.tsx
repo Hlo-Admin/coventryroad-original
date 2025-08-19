@@ -205,7 +205,7 @@ const Footer = () => {
                 target="_blank"
                 className="text-white/80 hover:text-white transition-colours duration-300"
               >
-                GDC link
+                GDC
               </Link>
               <Link
                 to="/sitemap"
