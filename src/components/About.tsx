@@ -22,16 +22,26 @@ const About = () => {
       className="py-20 bg-gradient-to-br from-purple-50 to-pink-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6">
-            About Holbrooks Dental Care Coventry
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            At Coventry Road Dental Care Our Passion Is Your Smile
-          </p>
-        </div>
+      <div className="mb-16 relative">
+  <img
+    src="/about/banner.JPG"
+    alt="Coventry Road Dental Care Landscape View"
+    className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
+  />
+  <div className="absolute inset-0 bg-black/60 rounded-3xl"></div> {/* darker overlay */}
+  <div className="absolute inset-0 flex items-center justify-center text-center">
+    <div>
+      <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+      About Coventry Road Dental Care
+      </h2>
+      <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
+        At Coventry Road Dental Care Our Passion Is Your Smile
+      </p>
+    </div>
+  </div>
+</div>
 
-        {/* Excellence In Dental Care */}
+
         <div className="mb-16 glass p-8 rounded-3xl">
           <div className="flex items-center mb-6">
             <Award className="w-8 h-8 text-[#63316b] mr-3" />
@@ -56,7 +66,6 @@ const About = () => {
           </p>
         </div>
 
-        {/* Experience Section */}
         <div className="mb-16 glass p-8 rounded-3xl">
           <div className="flex items-center mb-6">
             <Calendar className="w-8 h-8 text-[#63316b] mr-3" />
@@ -66,7 +75,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Market Excellence */}
         <div className="mb-16 glass p-8 rounded-3xl">
           <div className="flex items-center mb-6">
             <Shield className="w-8 h-8 text-[#63316b] mr-3" />
@@ -100,7 +108,6 @@ const About = () => {
           </p>
         </div>
 
-        {/* Join Our Friendly Practice */}
         <div className="mb-16 glass p-8 rounded-3xl">
           <div className="flex items-center mb-6">
             <Heart className="w-8 h-8 text-[#63316b] mr-3" />
@@ -116,55 +123,6 @@ const About = () => {
           </p>
         </div>
 
-        {/* Doctor Photos */}
-       {/* Doctor Photos */}
-<div className="mb-16">
-  <div className="flex flex-wrap gap-6 justify-center mb-8">
-    <div className="glass rounded-2xl overflow-hidden w-[350px] h-[350px]">
-      <img
-        src="/teams/Dr anoop.jpg"
-        alt="Dr. Anoop Deol"
-        className="w-[350px] h-[350px] object-cover"
-      />
-    </div>
-    <div className="glass rounded-2xl overflow-hidden w-[350px] h-[350px]">
-      <img
-        src="/teams/Dr-Kalveen-Manak.jpg"
-        alt="Dr. Kalveen Manak"
-        className="w-[350px] h-[350px] object-cover"
-      />
-    </div>
-    <div className="glass rounded-2xl overflow-hidden w-[350px] h-[350px]">
-      <img
-        src="/teams/Satbir.jpg"
-        alt="Dr. Satbir Birdi"
-        className="w-[350px] h-[350px] object-cover"
-      />
-    </div>
-  </div>
-
-  {/* Doctor Names */}
-  <div className="flex flex-wrap gap-6 justify-center">
-    <div className="glass p-6 rounded-2xl text-center w-[350px]">
-      <h4 className="text-xl font-semibold text-[#63316b] mb-2">
-        Dr. Anoop Deol
-      </h4>
-    </div>
-    <div className="glass p-6 rounded-2xl text-center w-[350px]">
-      <h4 className="text-xl font-semibold text-[#63316b] mb-2">
-        Dr. Kalveen Manak
-      </h4>
-    </div>
-    <div className="glass p-6 rounded-2xl text-center w-[350px]">
-      <h4 className="text-xl font-semibold text-[#63316b] mb-2">
-        Dr. Satbir Birdi
-      </h4>
-    </div>
-  </div>
-</div>
-
-
-        {/* Your smile is our passion - Features List */}
         <div className="mb-16 glass p-8 rounded-3xl">
           <div className="flex items-center mb-6">
             <Heart className="w-8 h-8 text-[#63316b] mr-3" />
@@ -214,53 +172,61 @@ const About = () => {
           </div>
         </div>
 
-        {/* FAQs */}
-        <div className="glass p-8 rounded-3xl">
-          <div className="flex items-center mb-6">
-            <Shield className="w-8 h-8 text-[#63316b] mr-3" />
-            <h3 className="text-2xl font-bold text-gray-900">FAQs</h3>
+        <div className="glass p-8 rounded-3xl grid md:grid-cols-2 gap-8">
+          <div>
+            <div className="flex items-center mb-6">
+              <Shield className="w-8 h-8 text-[#63316b] mr-3" />
+              <h3 className="text-2xl font-bold text-gray-900">FAQs</h3>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-semibold text-[#63316b] mb-2">
+                  Do you offer new patient appointments?
+                </h4>
+                <p className="text-gray-700">
+                  Yes, our comprehensive new patient appointments are 20 minutes
+                  long. Please refer to our New Patients section for further
+                  details. Please call 02476 312256 – our friendly receptionists
+                  will be waiting to make an appointment for you.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-[#63316b] mb-2">
+                  Can you offer support to nervous patients?
+                </h4>
+                <p className="text-gray-700">
+                  We completely understand that some people just do not enjoy
+                  visiting the dentist but we do everything we can to make sure
+                  that patients look forward to coming to see us. We will
+                  immediately try to put you at ease and alleviate any feelings
+                  of anxiety you may have.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-[#63316b] mb-2">
+                  What range of treatments do you offer?
+                </h4>
+                <p className="text-gray-700">
+                  We offer an extensive range of dental treatments including
+                  everyday care and more complex treatments such as dental
+                  implants and adult orthodontics. We would be delighted to meet
+                  you and discuss your needs. Please see our General and
+                  Cosmetic treatments sections for more details on our services.
+                  Alternatively, call us on 02476 312256 and we will be pleased
+                  to make an appointment for you.
+                </p>
+              </div>
+            </div>
           </div>
-
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-lg font-semibold text-[#63316b] mb-2">
-                Do you offer new patient appointments?
-              </h4>
-              <p className="text-gray-700">
-                Yes, our comprehensive new patient appointments are 20 minutes
-                long. Please refer to our New Patients section for further
-                details. Please call 02476 312256 – our friendly receptionists
-                will be waiting to make an appointment for you.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold text-[#63316b] mb-2">
-                Can you offer support to nervous patients?
-              </h4>
-              <p className="text-gray-700">
-                We completely understand that some people just do not enjoy
-                visiting the dentist but we do everything we can to make sure
-                that patients look forward to coming to see us. We will
-                immediately try to put you at ease and alleviate any feelings of
-                anxiety you may have.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold text-[#63316b] mb-2">
-                What range of treatments do you offer?
-              </h4>
-              <p className="text-gray-700">
-                We offer an extensive range of dental treatments including
-                everyday care and more complex treatments such as dental
-                implants and adult orthodontics. We would be delighted to meet
-                you and discuss your needs. Please see our General and Cosmetic
-                treatments sections for more details on our services.
-                Alternatively, call us on 02476 312256 and we will be pleased to
-                make an appointment for you.
-              </p>
-            </div>
+          <div className="flex items-center justify-center">
+            <img
+              src="/about/faq.jpg"
+              alt="Coventry Road Dental Care FAQ"
+              className="w-full h-[600px] object-cover rounded-3xl shadow-lg"
+            />
           </div>
         </div>
       </div>

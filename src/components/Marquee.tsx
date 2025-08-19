@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { ArrowRight } from "lucide-react";
 
 const services = [
@@ -89,77 +89,106 @@ const services = [
 const ExploreServicesCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
-  // Auto-scroll effect
+  // Improved auto-scroll effect with requestAnimationFrame
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
-    let scrollAmount = scrollContainer.scrollLeft;
-    const scrollStep = 1;
-    const scrollDelay = 20;
-    let interval: NodeJS.Timeout;
 
-    const autoScroll = () => {
-      if (isPaused || !scrollContainer) return;
+    let animationFrameId: number;
+    let lastScrollTime = 0;
+    const scrollSpeed = 1; // Reduced speed for smoother scroll
+    const scrollInterval = 20; // Increased interval for smoother movement
+
+    const autoScroll = (timestamp: number) => {
+      // Prevent scrolling when paused or dragging
+      if (isPaused || isDragging) {
+        animationFrameId = requestAnimationFrame(autoScroll);
+        return;
+      }
+
+      // Throttle scroll to prevent excessive updates
+      if (timestamp - lastScrollTime < scrollInterval) {
+        animationFrameId = requestAnimationFrame(autoScroll);
+        return;
+      }
+
+      lastScrollTime = timestamp;
+
+      // Reset scroll when reaching the end
       if (
         scrollContainer.scrollLeft >=
         scrollContainer.scrollWidth - scrollContainer.clientWidth
       ) {
-        scrollAmount = 0;
         scrollContainer.scrollLeft = 0;
       } else {
-        scrollAmount += scrollStep;
-        scrollContainer.scrollLeft = scrollAmount;
+        scrollContainer.scrollLeft += scrollSpeed;
       }
+
+      animationFrameId = requestAnimationFrame(autoScroll);
     };
 
-    interval = setInterval(autoScroll, scrollDelay);
-    return () => clearInterval(interval);
-  }, [isPaused]);
+    animationFrameId = requestAnimationFrame(autoScroll);
 
-  // Mouse drag scroll
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [isPaused, isDragging]);
+
+  // Improved mouse drag scroll with more robust handling
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
-    let isDown = false;
+
     let startX = 0;
     let scrollLeft = 0;
 
     const onMouseDown = (e: MouseEvent) => {
-      isDown = true;
+      setIsDragging(true);
+      setIsPaused(true);
       container.classList.add("cursor-grabbing");
+
       startX = e.pageX - container.offsetLeft;
       scrollLeft = container.scrollLeft;
-      setIsPaused(true);
     };
-    const onMouseLeave = () => {
-      isDown = false;
-      container.classList.remove("cursor-grabbing");
-      setIsPaused(false);
-    };
-    const onMouseUp = () => {
-      isDown = false;
-      container.classList.remove("cursor-grabbing");
-      setIsPaused(false);
-    };
+
     const onMouseMove = (e: MouseEvent) => {
-      if (!isDown) return;
+      if (!isDragging) return;
+
       e.preventDefault();
       const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2; // scroll-fast
+      const walk = (x - startX) * 2; // Adjust scroll speed
       container.scrollLeft = scrollLeft - walk;
     };
+
+    const onMouseUp = () => {
+      setIsDragging(false);
+      setIsPaused(false);
+      container.classList.remove("cursor-grabbing");
+    };
+
+    const onMouseLeave = () => {
+      if (isDragging) {
+        setIsDragging(false);
+        setIsPaused(false);
+        container.classList.remove("cursor-grabbing");
+      }
+    };
+
+    // Use more modern event listeners
     container.addEventListener("mousedown", onMouseDown);
-    container.addEventListener("mouseleave", onMouseLeave);
-    container.addEventListener("mouseup", onMouseUp);
     container.addEventListener("mousemove", onMouseMove);
+    container.addEventListener("mouseup", onMouseUp);
+    container.addEventListener("mouseleave", onMouseLeave);
+
     return () => {
       container.removeEventListener("mousedown", onMouseDown);
-      container.removeEventListener("mouseleave", onMouseLeave);
-      container.removeEventListener("mouseup", onMouseUp);
       container.removeEventListener("mousemove", onMouseMove);
+      container.removeEventListener("mouseup", onMouseUp);
+      container.removeEventListener("mouseleave", onMouseLeave);
     };
-  }, []);
+  }, [isDragging]);
 
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
@@ -186,15 +215,17 @@ const ExploreServicesCarousel = () => {
         <div
           ref={scrollRef}
           className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4 cursor-grab"
-          style={{ scrollBehavior: "smooth" }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          style={{
+            scrollBehavior: "smooth",
+            WebkitOverflowScrolling: "touch", // Improve scrolling on touch devices
+            scrollSnapType: "x mandatory", // Improve scroll snapping
+          }}
         >
           {services.map((service, index) => (
             <Link
               key={`${service.path}-${index}`}
               to={service.path}
-              className="group flex-none w-80 h-[340px]"
+              className="group flex-none w-80 h-[340px] scroll-snap-align-center"
             >
               <div className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 w-80 h-[340px] flex flex-col">
                 <div className="h-48 w-full overflow-hidden flex-shrink-0">

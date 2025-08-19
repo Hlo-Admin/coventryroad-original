@@ -8,7 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   MessageCircle,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -18,16 +18,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import ExploreServicesCarousel from "../components/Marquee";
-
 
 const FullArchImplants = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -102,18 +94,23 @@ const FullArchImplants = () => {
             extensive tooth loss.
           </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
-                <Link to="/contact">
-                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                  <Phone className="w-5 h-5" />
-                  <span>Request a Callback</span>
-                </button></Link>
-                <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
-                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book My Free Consultation</span>
-                </button></a>
-              </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
+            <Link to="/contact">
+              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                <Phone className="w-5 h-5" />
+                <span>Request a Callback</span>
+              </button>
+            </Link>
+            <a
+              href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+              target="_blank"
+            >
+              <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                <Calendar className="w-5 h-5" />
+                <span>Book My Free Consultation</span>
+              </button>
+            </a>
+          </div>
           {/* <div className="bg-[#63316b]/10 border border-[#63316b]/20 rounded-lg p-6 max-w-xl mx-auto">
             <p className="text-lg font-semibold text-[#63316b] mb-2">
               Would You Like To Talk To a Consultant?
@@ -127,8 +124,7 @@ const FullArchImplants = () => {
         </div>
       </section>
 
-
-       {/* What is a Dental Implant */}
+      {/* What is a Dental Implant */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -197,60 +193,18 @@ const FullArchImplants = () => {
             </p>
           </div>
 
-          <Carousel
-            className="w-full max-w-2xl mx-auto"
-            plugins={[
-              Autoplay({
-                delay: 3000,
-                stopOnInteraction: true,
-              }),
-            ]}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-          >
-            <CarouselContent>
-              <CarouselItem>
-                <div className="relative group">
-                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100">
-                    <img
-                      src="/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png"
-                      alt="Before dental implant treatment"
-                      className="w-full h-64 md:h-80 object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      Before
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="relative group">
-                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-100">
-                    <img
-                      src="/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png"
-                      alt="After dental implant treatment"
-                      className="w-full h-64 md:h-80 object-cover"
-                    />
-                    <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      After
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
-          </Carousel>
+          <BeforeAfterSlider
+            beforeSrc="/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png"
+            afterSrc="/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png"
+            width={800}
+            height={400}
+          />
         </div>
       </section>
 
       {/* Implant Types */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       
-
           <div className="text-center pb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Faster And More Secure Than Ever Previously Experienced.
@@ -286,19 +240,17 @@ const FullArchImplants = () => {
         </div>
       </section>
 
-
       {/* Q&A Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Frequently Asked{" "}
-                <span className="text-[#63316b]">Questions</span>
-              </h2>
-              <p className="text-xl text-gray-600">
-                Get answers to common questions about Full Arch Implants
-              </p>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Frequently Asked <span className="text-[#63316b]">Questions</span>
+            </h2>
+            <p className="text-xl text-gray-600">
+              Get answers to common questions about Full Arch Implants
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Accordion type="single" collapsible className="space-y-4">
@@ -387,38 +339,40 @@ const FullArchImplants = () => {
         </div>
       </section>
 
-   
-
-            {/* Explore Our Services Carousel */}
+      {/* Explore Our Services Carousel */}
       <ExploreServicesCarousel />
 
-{/* Final CTA Section */}
-<section className="py-16 bg-white">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
-      <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
-        Ready to Transform Your Smile?
-      </h3>
-      <p className="text-lg mb-6 text-gray-700 opacity-90">
-        Book your free consultation today.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
-        <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-          <Calendar className="w-5 h-5" />
-          <span>Book Free Consultation</span>
-        </button></a>
-        <Link
-          to="/"
-          className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
-        >
-          <ArrowRight className="w-5 h-5" />
-          <span>Back to Home</span>
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Final CTA Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+            <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+              Ready to Transform Your Smile?
+            </h3>
+            <p className="text-lg mb-6 text-gray-700 opacity-90">
+              Book your free consultation today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                target="_blank"
+              >
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book Free Consultation</span>
+                </button>
+              </a>
+              <Link
+                to="/"
+                className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+              >
+                <ArrowRight className="w-5 h-5" />
+                <span>Back to Home</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>

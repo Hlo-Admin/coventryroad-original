@@ -15,96 +15,113 @@ const TeamPage = () => {
     {
       name: "Dr. Anoop Deol",
       role: "Practice Principal",
+      gdcNumber: "74608",
       image: "/teams/Dr anoop.jpg",
     },
     {
       name: "Dr. Jisu Jacob",
       role: "Associate Dentist",
+      gdcNumber: "118339",
       image: "/teams/jisu jacob.jpg",
     },
     {
       name: "Dr. Megha Mamadapurmath",
       role: "Dentist",
+      gdcNumber: "284405",
       image: "/teams/meg.jpg",
     },
     {
       name: "Dr. Jaskaran Cheema",
       role: "Dentist",
+      gdcNumber: "261901",
       image: "/teams/Dr-Jaskaran-Cheema.jpg",
     },
     {
       name: "Dr. Kalveen Manak",
       role: "Dentist",
+      gdcNumber: "277594",
       image: "/teams/Dr-Kalveen-Manak.jpg",
     },
     {
       name: "Dr. Satbir Birdi",
       role: "Dentist",
+      gdcNumber: "85528",
       image: "/teams/Satbir.jpg",
     },
     {
       name: "Dr. Gutaran Shergill",
       role: "Dentist",
+      gdcNumber: "292404",
       image: "/teams/gutaran .jpg",
     },
     {
       name: "Dr. Raj Pagudala",
       role: "Dentist",
+      gdcNumber: "185348",
       image: "/teams/raj.jpg",
     },
-
     {
       name: "Dr. Puja Rathour",
       role: "Dentist",
+      gdcNumber: "251412",
       image: "/teams/puja.jpg",
     },
     {
       name: "Dr. Waddah Salman",
       role: "Dentist",
+      gdcNumber: "268936",
       image: "/teams/waddah.jpg",
     },
     {
       name: "Dr. Manni Deol",
       role: "Dentist",
+      gdcNumber: "73684",
       image: "/teams/deol.jpg",
     },
-
     {
       name: "Dr. Zahra Mushtaq",
       role: "Dentist",
-      image: "/teams/zahra-1.jpg",
+      gdcNumber: "311047",
+      image: "/teams/mustaq.jpg",
     },
     {
       name: "Dr. Jaskern Chana",
       role: "Dentist",
+      gdcNumber: "310533",
       image: "/teams/Jaskern.jpg",
     },
     {
       name: "Dr. Keval Rathod",
       role: "Dentist",
+      gdcNumber: "296305",
       image: "/teams/keval-rathode.JPG",
     },
     {
       name: "Dr. Amit Bansil",
       role: "Dentist",
-      image: "/teams/1.jpg",
+      gdcNumber: "301594",
+      image: "/team/Amit bansil.JPG",
     },
     {
       name: "Dr. Sarika Thakor",
       role: "Dentist",
-      image: "/teams/1.jpg",
+      gdcNumber: "310105",
+      image: "/teams/thakor.jpg",
     },
     {
       name: "Chinwe Joy Okorie",
       role: "Dental Hygienist",
+      gdcNumber: "268134",
       image: "/teams/joy.jpg",
     },
     {
       name: "Dr. Shaniece sahunta",
       role: "Dental Hygienist",
+      gdcNumber: "284143",
       image: "/teams/1.jpg",
     },
   ];
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
@@ -134,7 +151,7 @@ const TeamPage = () => {
 
         {/* Team Grid */}
       {/* Team Grid */}
-<section className="py-16 bg-white">
+      <section className="py-16 bg-white">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       {teamMembers.slice(0, 16).map((member, index) => (
@@ -157,7 +174,13 @@ const TeamPage = () => {
             <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#63316b] transition-colors">
               {member.name}
             </h3>
-            <p className="text-sm text-gray-600">{member.role}</p>
+            <p className="text-sm text-gray-600 font-bold">{member.role}</p>
+
+            {member.gdcNumber && (
+              <p className="text-sm text-gray-500 mt-1">
+                GDC {member.gdcNumber}
+              </p>
+            )}
           </div>
         </div>
       ))}
@@ -185,13 +208,20 @@ const TeamPage = () => {
             <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#63316b] transition-colors">
               {member.name}
             </h3>
-            <p className="text-sm text-gray-600">{member.role}</p>
+            <p className="text-sm text-gray-600 font-bold">{member.role}</p>
+
+            {member.gdcNumber && (
+              <p className="text-sm text-gray-500 mt-1">
+               GDC {member.gdcNumber}
+              </p>
+            )}
           </div>
         </div>
       ))}
     </div>
   </div>
 </section>
+
 
 
         {/* Callback CTA */}
