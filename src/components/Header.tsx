@@ -44,6 +44,7 @@ const Header = () => {
     { name: "Kids Zone", path: "/kids-zone" },
     { name: "FAQs", path: "/faq" },
     { name: "New Patients", path: "/new-patients" }, // Add this line
+    { name: "Feedback & Complaints", path: "/feedback" },
   ];
 
   const contact = [

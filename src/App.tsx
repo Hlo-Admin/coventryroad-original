@@ -42,6 +42,7 @@ import DentistMOS from "./pages/DentistMOS";
 import Emergencies from "./pages/Emergencies";
 import FAQPage from "./pages/FAQPage";
 import NewPatients from "./pages/NewPatients";
+import FeedbackPage from "./pages/FeedbackPage";
 
 const queryClient = new QueryClient();
 
@@ -99,6 +100,7 @@ const App = () => (
           <Route path="/emergencies" element={<Emergencies />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/new-patients" element={<NewPatients />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

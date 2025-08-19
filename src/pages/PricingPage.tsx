@@ -52,8 +52,7 @@ const PricingPage = () => {
 
     // Root Canal Treatment
     { treatment: "Root Canal - Incisor", price: "£545.00" },
-    { treatment: "Root Canal - Premolar", price: "£595.00" },
-    { treatment: "Root Canal - Molar", price: "£695.00" },
+    { treatment: "Root Canal", price: "£595.00" },
     { treatment: "Re-Root Canal", price: "From £795.00" },
 
     // Extractions
@@ -157,14 +156,14 @@ const PricingPage = () => {
           <p className="text-gray-600 group-hover:text-white transition-colors duration-300">
             {band.description}
           </p>
-          <a
+          {/* <a
             href="http://www.nhs.uk"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-block text-[#63316b] hover:underline group-hover:text-white transition-colors duration-300"
           >
             More Information
-          </a>
+          </a> */}
         </div>
       ))}
     </div>

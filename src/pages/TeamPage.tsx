@@ -13,13 +13,13 @@ const TeamPage = () => {
 
   const teamMembers = [
     {
-      name: "Dr. Anoop Deol",
+      name: "Dr. Anoop\nDeol",
       role: "Practice Principal",
       gdcNumber: "74608",
       image: "/teams/Dr anoop.jpg",
     },
     {
-      name: "Dr. Jisu Jacob",
+      name: "Dr. Jisu\nJacob",
       role: "Associate Dentist",
       gdcNumber: "118339",
       image: "/teams/jisu jacob.jpg",
@@ -31,7 +31,7 @@ const TeamPage = () => {
       image: "/teams/meg.jpg",
     },
     {
-      name: "Dr. Jaskaran Cheema",
+      name: "Dr. Jaskaran\nCheema",
       role: "Dentist",
       gdcNumber: "261901",
       image: "/teams/Dr-Jaskaran-Cheema.jpg",
@@ -115,13 +115,12 @@ const TeamPage = () => {
       image: "/teams/joy.jpg",
     },
     {
-      name: "Dr. Shaniece sahunta",
+      name: "Shaniece sahunta",
       role: "Dental Hygienist",
       gdcNumber: "284143",
       image: "/teams/1.jpg",
     },
   ];
-  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
@@ -150,79 +149,85 @@ const TeamPage = () => {
         </section>
 
         {/* Team Grid */}
-      {/* Team Grid */}
-      <section className="py-16 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {teamMembers.slice(0, 16).map((member, index) => (
-        <div
-          key={index}
-          className="min-h-[400px] bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-        >
-          <div className="h-80 bg-gray-200 flex items-center justify-center">
-            {member.image ? (
-              <img
-                src={member.image}
-                alt={member.name}
-                className="object-cover h-full w-full"
-              />
-            ) : (
-              <span className="text-gray-400 text-sm">Photo Coming Soon</span>
-            )}
+        {/* Team Grid */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              {teamMembers.slice(0, 16).map((member, index) => (
+                <div
+                  key={index}
+                  className="min-h-[400px] bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                >
+                  <div className="h-80 bg-gray-200 flex items-center justify-center">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="object-cover h-full w-full"
+                      />
+                    ) : (
+                      <span className="text-gray-400 text-sm">
+                        Photo Coming Soon
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-6 text-center relative">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#63316b] transition-colors whitespace-pre-line">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 font-bold">
+                      {member.role}
+                    </p>
+
+                    {member.gdcNumber && (
+                      <p className="text-xs text-gray-400 absolute bottom-2 right-4">
+                        GDC {member.gdcNumber}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Last 2 cards centered below */}
+            <div className="mt-12 flex justify-center gap-8">
+              {teamMembers.slice(16).map((member, index) => (
+                <div
+                  key={index + 16}
+                  className="min-h-[400px] w-[280px] bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                >
+                  <div className="h-80 bg-gray-200 flex items-center justify-center">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="object-cover h-full w-full"
+                      />
+                    ) : (
+                      <span className="text-gray-400 text-sm">
+                        Photo Coming Soon
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-6 text-center relative">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#63316b] transition-colors whitespace-pre-line">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 font-bold">
+                      {member.role}
+                    </p>
+
+                    {member.gdcNumber && (
+                      <p className="text-xs text-gray-400 absolute bottom-2 pt-5 right-4">
+                        GDC {member.gdcNumber}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="p-6 text-center">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#63316b] transition-colors">
-              {member.name}
-            </h3>
-            <p className="text-sm text-gray-600 font-bold">{member.role}</p>
-
-            {member.gdcNumber && (
-              <p className="text-sm text-gray-500 mt-1">
-                GDC {member.gdcNumber}
-              </p>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* Last 2 cards centered below */}
-    <div className="mt-12 flex justify-center gap-8">
-      {teamMembers.slice(16).map((member, index) => (
-        <div
-          key={index + 16}
-          className="min-h-[400px] w-[280px] bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-        >
-          <div className="h-80 bg-gray-200 flex items-center justify-center">
-            {member.image ? (
-              <img
-                src={member.image}
-                alt={member.name}
-                className="object-cover h-full w-full"
-              />
-            ) : (
-              <span className="text-gray-400 text-sm">Photo Coming Soon</span>
-            )}
-          </div>
-          <div className="p-6 text-center">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#63316b] transition-colors">
-              {member.name}
-            </h3>
-            <p className="text-sm text-gray-600 font-bold">{member.role}</p>
-
-            {member.gdcNumber && (
-              <p className="text-sm text-gray-500 mt-1">
-               GDC {member.gdcNumber}
-              </p>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
+        </section>
 
         {/* Callback CTA */}
         <section className="py-16 bg-gray-50">
