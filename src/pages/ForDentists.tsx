@@ -30,7 +30,7 @@ const ForDentists = () => {
     },
     {
       title: "Endodontics",
-      description: "Specialized root canal treatments",
+      description: "Comprehensive root canal treatments",
       image: "dentist/2.jpg",
       path: "/for-dentists/endodontics",
     },

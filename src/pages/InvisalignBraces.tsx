@@ -106,40 +106,46 @@ const InvisalignBraces = () => {
 
       {/* Hero Section with Parallax */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-10"></div>
+  {/* <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-10"></div> */}
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            What is{" "}
-            <span className="text-[#63316b]">
-              {" "}
-              <br />
-              Invisalign ?
-            </span>
-          </h1>
+  <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <img
+      src="/Invasigln.png" // Replace with your actual path to logo
+      alt="Invisalign Logo"
+      className="mx-auto mb-8 w-52 sm:w-64"
+    />
+    <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+      What is{" "}
+      <span className="text-[#63316b]">
+        <br />
+        Invisalign ?
+      </span>
+    </h1>
 
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp pt-16"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <a
-              href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
-              target="_blank"
-            >
-              <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
-                <Calendar className="w-5 h-5" />
-                <span>Book a Free Consultation</span>
-              </button>
-            </a>
-            <Link to="/contact">
-              <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-                <Mail className="w-5 h-5" />
-                <span>Request a Callback</span>
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
+    <div
+      className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp pt-16"
+      style={{ animationDelay: "0.4s" }}
+    >
+      <a
+        href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
+          <Calendar className="w-5 h-5" />
+          <span>Book a Free Consultation</span>
+        </button>
+      </a>
+      <Link to="/contact">
+        <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+          <Mail className="w-5 h-5" />
+          <span>Request a Callback</span>
+        </button>
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       {/* What is Invisalign Section */}
       <section className="py-20 bg-white">

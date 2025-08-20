@@ -178,6 +178,9 @@ const Services = () => {
         {/* Desktop View - Carousel rows */}
         <div className="hidden lg:block space-y-8">
           {/* Top Row Carousel - Cosmetic Services */}
+          <h3 className="text-2xl font-bold text-[#63316b] mb-6 text-center">
+      Cosmetic Services
+    </h3>
           <Carousel
             setApi={(api) => (topApiRef.current = api)}
             opts={{ loop: true, slidesToScroll: 1 }}
@@ -236,6 +239,11 @@ const Services = () => {
           </Carousel>
 
           {/* Bottom Row Carousel - General Services */}
+
+          <h3 className="text-2xl font-bold text-[#63316b] mb-6 text-center">
+      General Services
+    </h3>
+
           <Carousel
             setApi={(api) => (bottomApiRef.current = api)}
             opts={{ loop: true, slidesToScroll: 1 }}

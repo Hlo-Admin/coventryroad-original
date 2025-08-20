@@ -11,11 +11,11 @@ const Header = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // Close mobile menu when navigating
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  const services = [
+  // Split services into 2 categories
+  const cosmeticServices = [
     { name: "Full Arch Implants", path: "/full-arch-implants" },
     { name: "Composite Bonding", path: "/composite-bonding" },
     { name: "Invisalign Braces", path: "/invisalign-braces" },
@@ -24,10 +24,11 @@ const Header = () => {
     { name: "Dental Implants", path: "/dental-implants" },
     { name: "Dentures", path: "/dentures" },
     { name: "White Fillings", path: "/white-fillings" },
-    { name: "Fillings", path: "/fillings" },
-    { name: "Night Guard", path: "/night-guard" },
-    { name: "Sleepwell MAS", path: "/sleepwell" },
+  ];
+
+  const generalServices = [
     { name: "Dental Hygiene", path: "/dental-hygiene" },
+    { name: "Fillings", path: "/fillings" },
     { name: "Children's Dentistry", path: "/childrens-dentistry" },
     { name: "Nervous Patients", path: "/nervous-patients" },
     { name: "Restorative Treatment", path: "/restorative-treatment" },
@@ -36,14 +37,13 @@ const Header = () => {
     { name: "Sedation", path: "/sedation" },
   ];
 
-  // Update quickLinks array to include New Patients
   const quickLinks = [
     { name: "Finance Options", path: "/finance-options" },
     { name: "Pricing", path: "/pricing" },
     { name: "Team", path: "/team" },
     { name: "Kids Zone", path: "/kids-zone" },
     { name: "FAQs", path: "/faq" },
-    { name: "New Patients", path: "/new-patients" }, // Add this line
+    { name: "New Patients", path: "/new-patients" },
     { name: "Feedback & Complaints", path: "/feedback" },
   ];
 
@@ -77,7 +77,6 @@ const Header = () => {
                 Home
               </Link>
 
-              {/* about */}
               <Link
                 to="/about"
                 className="text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
@@ -85,119 +84,118 @@ const Header = () => {
                 About
               </Link>
 
-              {/* Services Dropdown */}
-              <div className="relative group">
-                <button
-                  className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                >
+              {/* Services Dropdown - with 2 sections inside */}
+              <div
+                className="relative group"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <button className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors">
                   <span>Services</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
 
-                {/* Dropdown Menu */}
                 <div
-                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl transition-all duration-200 z-50 ${
+                  className={`absolute top-full left-0 mt-2 w-[500px] bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl transition-all duration-200 z-50 grid grid-cols-2 gap-4 p-4 ${
                     isServicesOpen
                       ? "opacity-100 visible translate-y-0"
                       : "opacity-0 invisible -translate-y-2"
                   }`}
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  <div className="py-2">
-                    <Link
-                      to="/services"
-                      className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium border-b border-gray-200 mb-2"
-                    >
-                      Our Services
-                    </Link>
-                    <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
-                      {services.map((service, index) => (
-                        <Link
-                          key={index}
-                          to={service.path}
-                          className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
-                        >
-                          {service.name}
-                        </Link>
-                      ))}
-                    </div>
+                  {/* Cosmetic Services */}
+                  <div>
+                    <h4 className="px-2 py-1 text-xs font-bold text-gray-500 uppercase">
+                      Cosmetic Services
+                    </h4>
+                    {cosmeticServices.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={service.path}
+                        className="block px-3 py-2 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] rounded-lg font-medium"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* General Services */}
+                  <div>
+                    <h4 className="px-2 py-1 text-xs font-bold text-gray-500 uppercase">
+                      General Services
+                    </h4>
+                    {generalServices.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={service.path}
+                        className="block px-3 py-2 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] rounded-lg font-medium"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
 
               {/* Quick Links Dropdown */}
-              <div className="relative group">
-                <button
-                  className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-                  onMouseEnter={() => setIsQuickLinksOpen(true)}
-                  onMouseLeave={() => setIsQuickLinksOpen(false)}
-                >
+              <div
+                className="relative group"
+                onMouseEnter={() => setIsQuickLinksOpen(true)}
+                onMouseLeave={() => setIsQuickLinksOpen(false)}
+              >
+                <button className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors">
                   <span>Quick Links</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
 
-                {/* Dropdown Menu */}
                 <div
-                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl transition-all duration-200 z-50 ${
+                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 border rounded-2xl shadow-2xl transition-all duration-200 ${
                     isQuickLinksOpen
-                      ? "opacity-100 visible translate-y-0"
-                      : "opacity-0 invisible -translate-y-2"
+                      ? "opacity-100 visible"
+                      : "opacity-0 invisible"
                   }`}
-                  onMouseEnter={() => setIsQuickLinksOpen(true)}
-                  onMouseLeave={() => setIsQuickLinksOpen(false)}
                 >
-                  <div className="py-2">
-                    <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
-                      {quickLinks.map((link, index) => (
-                        <Link
-                          key={index}
-                          to={link.path}
-                          className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
-                    </div>
+                  <div className="py-2 max-h-80 overflow-y-auto scrollbar-thin">
+                    {quickLinks.map((link, idx) => (
+                      <Link
+                        key={idx}
+                        to={link.path}
+                        className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] rounded-xl font-medium"
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
 
               {/* Contact Dropdown */}
-              <div className="relative group">
-                <button
-                  className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors"
-                  onMouseEnter={() => setIsContactOpen(true)}
-                  onMouseLeave={() => setIsContactOpen(false)}
-                >
+              <div
+                className="relative group"
+                onMouseEnter={() => setIsContactOpen(true)}
+                onMouseLeave={() => setIsContactOpen(false)}
+              >
+                <button className="flex items-center space-x-1 text-gray-800 hover:text-[#63316b] font-semibold transition-colors">
                   <span>Contact Us</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
 
-                {/* Dropdown Menu */}
                 <div
-                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl transition-all duration-200 z-50 ${
+                  className={`absolute top-full left-0 mt-2 w-64 bg-white/95 border rounded-2xl shadow-2xl transition-all duration-200 ${
                     isContactOpen
-                      ? "opacity-100 visible translate-y-0"
-                      : "opacity-0 invisible -translate-y-2"
+                      ? "opacity-100 visible"
+                      : "opacity-0 invisible"
                   }`}
-                  onMouseEnter={() => setIsContactOpen(true)}
-                  onMouseLeave={() => setIsContactOpen(false)}
                 >
                   <div className="py-2">
-                    <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
-                      {contact.map((contactItem, index) => (
-                        <Link
-                          key={index}
-                          to={contactItem.path}
-                          className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
-                        >
-                          {contactItem.name}
-                        </Link>
-                      ))}
-                    </div>
+                    {contact.map((c, idx) => (
+                      <Link
+                        key={idx}
+                        to={c.path}
+                        className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] rounded-xl font-medium"
+                      >
+                        {c.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -213,7 +211,7 @@ const Header = () => {
                 href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#63316b] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-[#63316b] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all shadow-lg"
               >
                 Book Appointment
               </a>
@@ -221,7 +219,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 rounded-xl hover:bg-white/20 transition-colors"
+              className="md:hidden p-2 rounded-xl hover:bg-white/20 transition"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -255,18 +253,33 @@ const Header = () => {
                   <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
                     Services
                   </div>
-                  <Link
-                    to="/services"
-                    className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4 border-b border-gray-100"
-                  >
-                    Our Services
-                  </Link>
-                  <div className="max-h-60 overflow-y-auto space-y-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
-                    {services.map((service, index) => (
+
+                  {/* Cosmetic subsection */}
+                  <div>
+                    <h4 className="pl-4 py-1 text-xs font-bold text-gray-500 uppercase">
+                      Cosmetic Services
+                    </h4>
+                    {cosmeticServices.map((service, i) => (
                       <Link
-                        key={index}
+                        key={i}
                         to={service.path}
-                        className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
+                        className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-6"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* General subsection */}
+                  <div>
+                    <h4 className="pl-4 py-1 text-xs font-bold text-gray-500 uppercase">
+                      General Services
+                    </h4>
+                    {generalServices.map((service, i) => (
+                      <Link
+                        key={i}
+                        to={service.path}
+                        className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-6"
                       >
                         {service.name}
                       </Link>
@@ -274,14 +287,14 @@ const Header = () => {
                   </div>
                 </div>
 
-                {/* Mobile Quick Links */}
+                {/* Quick Links */}
                 <div className="space-y-2">
                   <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
                     Quick Links
                   </div>
-                  {quickLinks.map((link, index) => (
+                  {quickLinks.map((link, i) => (
                     <Link
-                      key={index}
+                      key={i}
                       to={link.path}
                       className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
                     >
@@ -290,22 +303,23 @@ const Header = () => {
                   ))}
                 </div>
 
-                {/* Mobile Contact */}
+                {/* Contact */}
                 <div className="space-y-2">
                   <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
                     Contact Us
                   </div>
-                  {contact.map((contactItem, index) => (
+                  {contact.map((c, i) => (
                     <Link
-                      key={index}
-                      to={contactItem.path}
+                      key={i}
+                      to={c.path}
                       className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
                     >
-                      {contactItem.name}
+                      {c.name}
                     </Link>
                   ))}
                 </div>
 
+                {/* CTA */}
                 <div className="pt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium mb-4">
                     <Phone className="w-4 h-4" />
@@ -315,7 +329,7 @@ const Header = () => {
                     href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full bg-[#63316b] text-white px-6 py-3 rounded-full font-semibold shadow-lg text-center"
+                    className="block w-full bg-[#63316b] text-white px-6 py-3 rounded-full font-semibold text-center shadow-lg"
                   >
                     Book Appointment
                   </a>
