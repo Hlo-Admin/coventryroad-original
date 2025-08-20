@@ -181,6 +181,22 @@ const Footer = () => {
               <span>© 2025 Coventry Road Dentalcare. All rights reserved.</span>
             </div>
 
+            <div className="flex items-center space-x-4">
+              {/* Developer Logo */}
+              <span className="text-white/80 text-sm">Developed by</span>
+              <a
+                href="https://v5digital.co.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/v5.png"
+                  alt="Developer Logo"
+                  className="h-8 w-auto"
+                />
+              </a>
+            </div>
+
             <div className="flex flex-wrap justify-centre lg:justify-end space-x-6 text-sm">
               <Link
                 to="/privacy-policy"

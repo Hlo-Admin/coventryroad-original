@@ -79,12 +79,12 @@ const FeedbackPage = () => {
 
   const downloadComplaintsProcedure = () => {
     const downloadUrl =
-      "/document/Coventry Road Dental Practice - Code of Practice.pdf";
+      "/document/NHS patient complaint handling.pdf";
 
     // Create a temporary anchor element
     const link = document.createElement("a");
     link.href = downloadUrl;
-    link.download = "Coventry Road Dental Practice - Code of Practice.pdf";
+    link.download = "NHS patient complaint handling.pdf";
 
     // Append to body, click and remove
     document.body.appendChild(link);
