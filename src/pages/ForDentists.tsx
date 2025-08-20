@@ -139,13 +139,21 @@ const ForDentists = () => {
                     Referring a patient for any of our treatments is
                     straightforward. Our team can accept direct referrals.
                   </p>
-                  <div className="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl">
-                    <Printer className="w-10 h-10 text-[#63316b]" />
-                    <div>
-                      <h4 className="font-bold text-lg">Referral Form</h4>
-                      <p>Simply print out our referral form</p>
-                    </div>
-                  </div>
+                 <div className="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl">
+  <Printer className="w-10 h-10 text-[#63316b]" />
+  <div>
+    <h4 className="font-bold text-lg">Referral Form</h4>
+    <p>Simply print out our referral form</p>
+    <a
+      href="/document/CRD-Dentist-Referral-Form.pdf"
+      download
+      className="mt-2 inline-block text-[#63316b] font-semibold hover:underline"
+    >
+      Download the Referral Form (PDF)
+    </a>
+  </div>
+</div>
+
                   <div className="flex items-center space-x-4 bg-gray-50 p-4 rounded-xl">
                     <Mail className="w-10 h-10 text-[#63316b]" />
                     <div>
@@ -157,7 +165,7 @@ const ForDentists = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <div className="bg-white p-8 rounded-2xl shadow-lg pt-16">
                 <h3 className="text-2xl font-bold text-[#63316b] mb-6">
                   Contact Information
                 </h3>
