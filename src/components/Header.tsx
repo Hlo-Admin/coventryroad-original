@@ -14,6 +14,10 @@ const Header = () => {
   const [isMobileQuickLinksOpen, setIsMobileQuickLinksOpen] = useState(false);
   const [isMobileContactOpen, setIsMobileContactOpen] = useState(false);
 
+  // New state for controlling Services submenu view on mobile
+  // Options: 'both' (show both section titles), 'cosmetic', or 'general'
+  const [mobileServicesView, setMobileServicesView] = useState("both");
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsMenuOpen(false);
@@ -22,6 +26,9 @@ const Header = () => {
     setIsMobileServicesOpen(false);
     setIsMobileQuickLinksOpen(false);
     setIsMobileContactOpen(false);
+
+    // Reset mobile services view
+    setMobileServicesView("both");
   }, [location.pathname]);
 
   // Split services into 2 categories
@@ -256,10 +263,20 @@ const Header = () => {
                   About
                 </Link>
 
-                {/* Mobile Services - toggle */}
+                {/* Mobile Services - toggle with controlled view */}
                 <div className="space-y-2">
                   <button
-                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    onClick={() => {
+                      if (isMobileServicesOpen) {
+                        // Close menu
+                        setIsMobileServicesOpen(false);
+                        setMobileServicesView("both");
+                      } else {
+                        // Open menu, show both sections
+                        setIsMobileServicesOpen(true);
+                        setMobileServicesView("both");
+                      }
+                    }}
                     className="w-full flex justify-between items-center text-gray-900 font-bold py-2 border-b border-gray-200"
                   >
                     Services
@@ -269,39 +286,78 @@ const Header = () => {
                       }`}
                     />
                   </button>
+
                   {isMobileServicesOpen && (
-                    <>
-                      <div>
-                        <h4 className="pl-4 py-1 text-xs font-bold text-gray-500 uppercase">
-                          Cosmetic Services
-                        </h4>
-                        {cosmeticServices.map((service, i) => (
-                          <Link
-                            key={i}
-                            to={service.path}
-                            className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-8"
-                            onClick={() => setIsMenuOpen(false)}
+                    <div className="max-h-64 overflow-y-auto">
+                      {mobileServicesView === "both" && (
+                        <>
+                          <button
+                            onClick={() => setMobileServicesView("cosmetic")}
+                            className="w-full text-left pl-4 py-2 text-gray-600 font-semibold hover:text-[#63316b]"
                           >
-                            {service.name}
-                          </Link>
-                        ))}
-                      </div>
-                      <div>
-                        <h4 className="pl-4 py-1 text-xs font-bold text-gray-500 uppercase">
-                          General Services
-                        </h4>
-                        {generalServices.map((service, i) => (
-                          <Link
-                            key={i}
-                            to={service.path}
-                            className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-8"
-                            onClick={() => setIsMenuOpen(false)}
+                            Cosmetic Services
+                          </button>
+                          <button
+                            onClick={() => setMobileServicesView("general")}
+                            className="w-full text-left pl-4 py-2 text-gray-600 font-semibold hover:text-[#63316b]"
                           >
-                            {service.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </>
+                            General Services
+                          </button>
+                        </>
+                      )}
+
+                      {mobileServicesView === "cosmetic" && (
+                        <>
+                          <button
+                            onClick={() => setMobileServicesView("both")}
+                            className="flex items-center space-x-2 text-gray-600 font-semibold py-2 px-4 hover:text-[#63316b]"
+                          >
+                            <ChevronDown className="w-4 h-4 rotate-180" />
+                            <span>Back to Services</span>
+                          </button>
+                          {cosmeticServices.map((service, i) => (
+                            <Link
+                              key={i}
+                              to={service.path}
+                              className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-8"
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setIsMobileServicesOpen(false);
+                                setMobileServicesView("both");
+                              }}
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                        </>
+                      )}
+
+                      {mobileServicesView === "general" && (
+                        <>
+                          <button
+                            onClick={() => setMobileServicesView("both")}
+                            className="flex items-center space-x-2 text-gray-600 font-semibold py-2 px-4 hover:text-[#63316b]"
+                          >
+                            <ChevronDown className="w-4 h-4 rotate-180" />
+                            <span>Back to Services</span>
+                          </button>
+                          {generalServices.map((service, i) => (
+                            <Link
+                              key={i}
+                              to={service.path}
+                              className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-8"
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setIsMobileServicesOpen(false);
+                                setMobileServicesView("both");
+                              }}
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                        </>
+                      )}
+                    </div>
                   )}
                 </div>
 
