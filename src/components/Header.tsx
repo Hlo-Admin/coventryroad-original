@@ -9,9 +9,19 @@ const Header = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const location = useLocation();
 
+  // Mobile submenu states
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isMobileQuickLinksOpen, setIsMobileQuickLinksOpen] = useState(false);
+  const [isMobileContactOpen, setIsMobileContactOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsMenuOpen(false);
+
+    // Also close mobile submenus when changing route
+    setIsMobileServicesOpen(false);
+    setIsMobileQuickLinksOpen(false);
+    setIsMobileContactOpen(false);
   }, [location.pathname]);
 
   // Split services into 2 categories
@@ -149,9 +159,7 @@ const Header = () => {
 
                 <div
                   className={`absolute top-full left-0 mt-2 w-64 bg-white/95 border rounded-2xl shadow-2xl transition-all duration-200 ${
-                    isQuickLinksOpen
-                      ? "opacity-100 visible"
-                      : "opacity-0 invisible"
+                    isQuickLinksOpen ? "opacity-100 visible" : "opacity-0 invisible"
                   }`}
                 >
                   <div className="py-2 max-h-80 overflow-y-auto scrollbar-thin">
@@ -181,9 +189,7 @@ const Header = () => {
 
                 <div
                   className={`absolute top-full left-0 mt-2 w-64 bg-white/95 border rounded-2xl shadow-2xl transition-all duration-200 ${
-                    isContactOpen
-                      ? "opacity-100 visible"
-                      : "opacity-0 invisible"
+                    isContactOpen ? "opacity-100 visible" : "opacity-0 invisible"
                   }`}
                 >
                   <div className="py-2">
@@ -237,6 +243,7 @@ const Header = () => {
                 <Link
                   to="/"
                   className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Home
                 </Link>
@@ -244,79 +251,116 @@ const Header = () => {
                 <Link
                   to="/about"
                   className="block text-gray-800 hover:text-[#63316b] font-semibold py-2"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   About
                 </Link>
 
-                {/* Mobile Services */}
+                {/* Mobile Services - toggle */}
                 <div className="space-y-2">
-                  <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
+                  <button
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    className="w-full flex justify-between items-center text-gray-900 font-bold py-2 border-b border-gray-200"
+                  >
                     Services
-                  </div>
-
-                  {/* Cosmetic subsection */}
-                  <div>
-                    <h4 className="pl-4 py-1 text-xs font-bold text-gray-500 uppercase">
-                      Cosmetic Services
-                    </h4>
-                    {cosmeticServices.map((service, i) => (
-                      <Link
-                        key={i}
-                        to={service.path}
-                        className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-6"
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
-
-                  {/* General subsection */}
-                  <div>
-                    <h4 className="pl-4 py-1 text-xs font-bold text-gray-500 uppercase">
-                      General Services
-                    </h4>
-                    {generalServices.map((service, i) => (
-                      <Link
-                        key={i}
-                        to={service.path}
-                        className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-6"
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
+                    <ChevronDown
+                      className={`transition-transform duration-300 ${
+                        isMobileServicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {isMobileServicesOpen && (
+                    <>
+                      <div>
+                        <h4 className="pl-4 py-1 text-xs font-bold text-gray-500 uppercase">
+                          Cosmetic Services
+                        </h4>
+                        {cosmeticServices.map((service, i) => (
+                          <Link
+                            key={i}
+                            to={service.path}
+                            className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-8"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                      <div>
+                        <h4 className="pl-4 py-1 text-xs font-bold text-gray-500 uppercase">
+                          General Services
+                        </h4>
+                        {generalServices.map((service, i) => (
+                          <Link
+                            key={i}
+                            to={service.path}
+                            className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-8"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
 
-                {/* Quick Links */}
+                {/* Mobile Quick Links - toggle */}
                 <div className="space-y-2">
-                  <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
+                  <button
+                    onClick={() => setIsMobileQuickLinksOpen(!isMobileQuickLinksOpen)}
+                    className="w-full flex justify-between items-center text-gray-900 font-bold py-2 border-b border-gray-200"
+                  >
                     Quick Links
-                  </div>
-                  {quickLinks.map((link, i) => (
-                    <Link
-                      key={i}
-                      to={link.path}
-                      className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+                    <ChevronDown
+                      className={`transition-transform duration-300 ${
+                        isMobileQuickLinksOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {isMobileQuickLinksOpen && (
+                    <>
+                      {quickLinks.map((link, i) => (
+                        <Link
+                          key={i}
+                          to={link.path}
+                          className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </>
+                  )}
                 </div>
 
-                {/* Contact */}
+                {/* Mobile Contact Us - toggle */}
                 <div className="space-y-2">
-                  <div className="text-gray-900 font-bold py-2 border-b border-gray-200">
+                  <button
+                    onClick={() => setIsMobileContactOpen(!isMobileContactOpen)}
+                    className="w-full flex justify-between items-center text-gray-900 font-bold py-2 border-b border-gray-200"
+                  >
                     Contact Us
-                  </div>
-                  {contact.map((c, i) => (
-                    <Link
-                      key={i}
-                      to={c.path}
-                      className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
-                    >
-                      {c.name}
-                    </Link>
-                  ))}
+                    <ChevronDown
+                      className={`transition-transform duration-300 ${
+                        isMobileContactOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {isMobileContactOpen && (
+                    <>
+                      {contact.map((c, i) => (
+                        <Link
+                          key={i}
+                          to={c.path}
+                          className="block text-gray-800 hover:text-[#63316b] font-medium py-2 pl-4"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {c.name}
+                        </Link>
+                      ))}
+                    </>
+                  )}
                 </div>
 
                 {/* CTA */}

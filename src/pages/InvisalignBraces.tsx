@@ -105,7 +105,7 @@ const InvisalignBraces = () => {
       <Header />
 
       {/* Hero Section with Parallax */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-20">
   <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
     {/* Left Side: Content */}
     <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
