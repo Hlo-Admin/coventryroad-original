@@ -94,7 +94,7 @@ const Sedation = () => {
             {/* Doctor Image */}
             <div>
                 <img
-                  src="/services/sedation/about.JPG"
+                  src="/services/sedation/about.jpg"
                   alt="Composite bonding treatment"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />
