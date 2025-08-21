@@ -234,7 +234,7 @@ const Footer = () => {
                 target="_blank"
                 className="text-white/80 hover:text-white transition-colours duration-300"
               >
-                GD
+                Other
               </Link>
               <Link
                 to="/sitemap"
