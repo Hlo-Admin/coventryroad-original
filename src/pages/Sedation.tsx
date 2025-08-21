@@ -151,7 +151,7 @@ const Sedation = () => {
               {/* Left Image */}
               <div className="flex justify-center">
                 <img
-                  src="/services/faq.jpg"
+                  src="/services/faq1.jpg"
                   alt="Dentures Example"
                   className="w-full max-w-md rounded-2xl shadow-xl object-cover"
                 />

@@ -70,7 +70,7 @@ const NervousPatients = () => {
               </h2>
               <div className="prose prose-lg text-gray-700 space-y-4">
                 <p>
-                  Around 50 per cent of the population does not visit the
+                  Around 50 percent of the population does not visit the
                   dentist – and a quarter of those fail to do so because they
                   are too afraid. These statistics cause us great concern here
                   at Coventry Road Dental Care and we do everything we can to
@@ -152,7 +152,7 @@ const NervousPatients = () => {
               {/* Left Image */}
               <div className="flex justify-center">
                 <img
-                  src="/services/faq.jpg"
+                  src="/services/faq1.jpg"
                   alt="Dentures Example"
                   className="w-full max-w-md rounded-2xl shadow-xl object-cover"
                 />
