@@ -94,16 +94,23 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm">
                 <div className="flex items-start sm:items-center space-x-2">
                   <MapPin className="w-4 h-4 text-[#63316b] mt-1 sm:mt-0" />
-                  <span className="text-gray-700">
+                  <a
+                    href="https://maps.app.goo.gl/8pUfo5jrHwdwuMLq8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-[#63316b] transition-colors"
+                  >
                     94 Coventry Rd Bedworth, Coventry CV12 8NW
                     <br />
                     United Kingdom
-                  </span>
+                  </a>
                 </div>
+
                 <div className="sm:border-l sm:pl-4 border-gray-300 flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#63316b]" />
                   <span className="text-gray-700">
-                    Mon-Fri: 8AM-6PM <br className="sm:hidden" /> <br /> Saturday: 8AM-1PM
+                    Mon-Fri: 8AM-6PM <br className="sm:hidden" /> <br />{" "}
+                    Saturday: 8AM-1PM
                   </span>
                 </div>
               </div>

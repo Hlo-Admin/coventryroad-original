@@ -181,7 +181,7 @@ const TeamPage = () => {
 
                     {member.gdcNumber && (
                       <p className="text-xs text-gray-400 absolute bottom-2 right-4">
-                        GDC {member.gdcNumber}
+                      {member.gdcNumber}
                       </p>
                     )}
                   </div>
@@ -219,7 +219,7 @@ const TeamPage = () => {
 
                     {member.gdcNumber && (
                       <p className="text-xs text-gray-400 absolute bottom-2 pt-5 right-4">
-                        GDC {member.gdcNumber}
+                        {member.gdcNumber}
                       </p>
                     )}
                   </div>

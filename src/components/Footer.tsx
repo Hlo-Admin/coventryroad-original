@@ -60,6 +60,8 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/coventryroaddentalcare"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20"
               >
                 <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -67,9 +69,20 @@ const Footer = () => {
 
               <a
                 href="https://www.instagram.com/coventryroaddentalcare?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20"
               >
                 <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </a>
+
+              <a
+                href="https://maps.app.goo.gl/8pUfo5jrHwdwuMLq8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20"
+              >
+                <MapPin className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>
