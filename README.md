@@ -1,9 +1,8 @@
-
 # Coventry Road Dentalcare Website
 
 ## Project info
 
-**Website**: Premium dental care services in Birmingham
+**Website**: Premium dental care services in United Kingdom
 
 ## About
 

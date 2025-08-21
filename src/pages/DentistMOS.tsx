@@ -122,38 +122,38 @@ const DentistMOS = () => {
               </div>
               <div className="prose prose-lg text-gray-700 space-y-4">
                 <p>
-                  Dr Anoop Deol qualified from the University of Birmingham (UK)
-                  in 1998 and thereafter took up an Associate post in Coventry,
-                  his hometown, following which he opened his own practice in
-                  Bedworth Warwickshire. Having worked to serve the local
-                  population, he has continued to expand the practice and is
-                  principal to a large team of Dentists, undertaking all aspects
-                  of Dentistry. The practice ethos is to give their clients the
-                  very best of treatments that are available worldwide and
-                  ensure that the team is trained to the highest standards to
-                  enable that. He leads a team of approximately 40 staff to give
-                  their patients the very best.
+                  Dr Anoop Deol qualified from the University of United Kingdom
+                  (UK) in 1998 and thereafter took up an Associate post in
+                  Coventry, his hometown, following which he opened his own
+                  practice in Bedworth Warwickshire. Having worked to serve the
+                  local population, he has continued to expand the practice and
+                  is principal to a large team of Dentists, undertaking all
+                  aspects of Dentistry. The practice ethos is to give their
+                  clients the very best of treatments that are available
+                  worldwide and ensure that the team is trained to the highest
+                  standards to enable that. He leads a team of approximately 40
+                  staff to give their patients the very best.
                 </p>
                 <p>
                   Anoop has qualified further and obtained his Membership of the
                   Faculty of General Practitioners (Royal College of Surgeons
                   London) qualification in 2006 and the Postgraduate Certificate
-                  in Medical Education, returning to University of Birmingham in
-                  2013. The latter to help train newly qualified Dentists, which
-                  Dr Deol has done for several years since 2002–2020,
-                  successfully being an approved post-graduate trainer for
-                  Dentists to help mentor their careers. He has trained and
-                  tutored many such Dentists, giving them guidance, and
-                  mentoring in clinical restorative procedures after they have
-                  qualified. He held the award of Enhanced Trainers in 2005 and
-                  2011. As the whole team has a life-long approach to learning
-                  and improving their skill set, Dr Deol continued his skill
-                  advancement by obtaining the Postgraduate Certificate in Minor
-                  Oral Surgery from the Faculty of General Dental Practice (UK)
-                  and the Royal College of Surgeons England in London, 2016.
-                  Then progressed further to the award of Postgraduate Diploma
-                  in Oral surgery, from the University of Central Lancashire in
-                  2018.
+                  in Medical Education, returning to University of United
+                  Kingdom in 2013. The latter to help train newly qualified
+                  Dentists, which Dr Deol has done for several years since
+                  2002–2020, successfully being an approved post-graduate
+                  trainer for Dentists to help mentor their careers. He has
+                  trained and tutored many such Dentists, giving them guidance,
+                  and mentoring in clinical restorative procedures after they
+                  have qualified. He held the award of Enhanced Trainers in 2005
+                  and 2011. As the whole team has a life-long approach to
+                  learning and improving their skill set, Dr Deol continued his
+                  skill advancement by obtaining the Postgraduate Certificate in
+                  Minor Oral Surgery from the Faculty of General Dental Practice
+                  (UK) and the Royal College of Surgeons England in London,
+                  2016. Then progressed further to the award of Postgraduate
+                  Diploma in Oral surgery, from the University of Central
+                  Lancashire in 2018.
                 </p>
                 <p>
                   Dr Deol is an active member of his local Dental Community,
