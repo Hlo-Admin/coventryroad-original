@@ -8,13 +8,44 @@ import {
   CheckCircle,
   Shield,
 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 const About = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
   useEffect(() => {
     document.title =
       "About Us - Coventry Road Dental Care | Expert Dental Team Coventry";
   }, []);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCurrent(api.selectedScrollSnap());
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 5000);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [api]);
 
   return (
     <section
@@ -22,25 +53,25 @@ const About = () => {
       className="py-20 bg-gradient-to-br from-purple-50 to-pink-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="mb-16 relative">
-  <img
-    src="/about/banner.JPG"
-    alt="Coventry Road Dental Care Landscape View"
-    className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
-  />
-  <div className="absolute inset-0 bg-black/60 rounded-3xl"></div> {/* darker overlay */}
-  <div className="absolute inset-0 flex items-center justify-center text-center">
-    <div>
-      <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
-      About Coventry Road Dental Care
-      </h2>
-      <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
-        At Coventry Road Dental Care Our Passion Is Your Smile
-      </p>
-    </div>
-  </div>
-</div>
-
+        <div className="mb-16 relative">
+          <img
+            src="/about/banner.JPG"
+            alt="Coventry Road Dental Care Landscape View"
+            className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
+          />
+          <div className="absolute inset-0 bg-black/60 rounded-3xl"></div>{" "}
+          {/* darker overlay */}
+          <div className="absolute inset-0 flex items-center justify-center text-center">
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+                About Coventry Road Dental Care
+              </h2>
+              <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
+                At Coventry Road Dental Care Our Passion Is Your Smile
+              </p>
+            </div>
+          </div>
+        </div>
 
         <div className="mb-16 glass p-8 rounded-3xl">
           <div className="flex items-center mb-6">
@@ -222,11 +253,40 @@ const About = () => {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <img
-              src="/about/faq.jpg"
-              alt="Coventry Road Dental Care FAQ"
-              className="w-full h-[600px] object-cover rounded-3xl shadow-lg"
-            />
+            <Carousel
+              opts={{
+                loop: true,
+                align: "start",
+              }}
+              setApi={setApi}
+              className="w-full max-w-md"
+            >
+              <CarouselContent>
+                <CarouselItem>
+                  <img
+                    src="/about/carousel-1.JPG"
+                    alt="Coventry Road Dental Care Carousel 1"
+                    className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img
+                    src="/about/carousel-2.JPG"
+                    alt="Coventry Road Dental Care Carousel 2"
+                    className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img
+                    src="/about/carousel-3.JPG"
+                    alt="Coventry Road Dental Care Carousel 3"
+                    className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
+                  />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </div>
