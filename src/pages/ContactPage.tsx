@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Send, MapPin, Phone, Mail, Clock, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { sendContactEmail, ContactFormData } from "@/utils/emailService";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactPage = () => {
@@ -40,14 +38,31 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      const success = await sendContactEmail(formData as ContactFormData);
-      
-      if (success) {
+      // Prepare form data for Google Sheets
+      const formDataToSubmit = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataToSubmit.append(key, value);
+      });
+      formDataToSubmit.append("formType", "contact");
+
+      // Submit to Google Apps Script
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzad2mv1Diw5X6GHHrhImy24_shdBXcTHTdw7xMPm_q0wMnmRlcyEVGcIUx8i7G9DsO/exec",
+        {
+          method: "POST",
+          body: formDataToSubmit,
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.result === "success") {
         toast({
           title: "Message Sent Successfully!",
-          description: "Thank you for your inquiry. We'll get back to you soon.",
+          description:
+            "Thank you for your inquiry. We'll get back to you soon.",
         });
-        
+
         // Reset form
         setFormData({
           firstName: "",
@@ -58,7 +73,7 @@ const ContactPage = () => {
           message: "",
         });
       } else {
-        throw new Error("Failed to send email");
+        throw new Error("Failed to send message");
       }
     } catch (error) {
       toast({
@@ -74,7 +89,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -86,9 +101,10 @@ const ContactPage = () => {
               Contact Us
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Ready to transform your smile? Get in touch with our expert team at Coventry Road Dental.
+              Ready to transform your smile? Get in touch with our expert team
+              at Coventry Road Dental.
             </p>
-            
+
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
@@ -100,7 +116,6 @@ const ContactPage = () => {
                 <Calendar className="w-5 h-5" />
                 <span>Book a Free Consultation</span>
               </a>
-              
             </div>
           </div>
 
@@ -112,7 +127,7 @@ const ContactPage = () => {
                 <h2 className="text-3xl font-bold text-foreground mb-8">
                   Visit Our Practice
                 </h2>
-                
+
                 {/* Contact Cards */}
                 <div className="space-y-6">
                   {/* Address */}
@@ -123,10 +138,14 @@ const ContactPage = () => {
                           <MapPin className="w-6 h-6 text-[#63316b]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground mb-2">Our Location</h3>
+                          <h3 className="font-semibold text-foreground mb-2">
+                            Our Location
+                          </h3>
                           <p className="text-muted-foreground">
-                            94 Coventry Road<br />
-                            Clifton Villa, Bedworth<br />
+                            94 Coventry Road
+                            <br />
+                            Clifton Villa, Bedworth
+                            <br />
                             Coventry, CV12 8NW
                           </p>
                           {/* <a 
@@ -150,9 +169,11 @@ const ContactPage = () => {
                           <Phone className="w-6 h-6 text-[#63316b]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground mb-2">Phone Number</h3>
-                          <a 
-                            href="tel:02476312256" 
+                          <h3 className="font-semibold text-foreground mb-2">
+                            Phone Number
+                          </h3>
+                          <a
+                            href="tel:02476312256"
                             className="text-lg font-semibold text-[#63316b] hover:underline"
                           >
                             024 76 31 2256
@@ -173,9 +194,11 @@ const ContactPage = () => {
                           <Mail className="w-6 h-6 text-[#63316b]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground mb-2">Email Us</h3>
-                          <a 
-                            href="mailto:info@coventryroaddental.co.uk" 
+                          <h3 className="font-semibold text-foreground mb-2">
+                            Email Us
+                          </h3>
+                          <a
+                            href="mailto:info@coventryroaddental.co.uk"
                             className="text-[#63316b] hover:underline"
                           >
                             reception@deoldental.com
@@ -196,19 +219,33 @@ const ContactPage = () => {
                           <Clock className="w-6 h-6 text-[#63316b]" />
                         </div>
                         <div className="w-full">
-                          <h3 className="font-semibold text-foreground mb-3">Opening Hours</h3>
+                          <h3 className="font-semibold text-foreground mb-3">
+                            Opening Hours
+                          </h3>
                           <div className="space-y-2 text-sm">
                             <div className="flex justify-between">
-                              <span className="text-muted-foreground">Monday - Friday</span>
-                              <span className="text-foreground font-medium">8:00 AM - 6:00 PM</span>
+                              <span className="text-muted-foreground">
+                                Monday - Friday
+                              </span>
+                              <span className="text-foreground font-medium">
+                                8:00 AM - 6:00 PM
+                              </span>
                             </div>
                             <div className="flex justify-between">
-                              <span className="text-muted-foreground">Saturday</span>
-                              <span className="text-foreground font-medium">8:00 AM - 1:00 PM</span>
+                              <span className="text-muted-foreground">
+                                Saturday
+                              </span>
+                              <span className="text-foreground font-medium">
+                                8:00 AM - 1:00 PM
+                              </span>
                             </div>
                             <div className="flex justify-between">
-                              <span className="text-muted-foreground">Sunday</span>
-                              <span className="text-foreground font-medium">Closed</span>
+                              <span className="text-muted-foreground">
+                                Sunday
+                              </span>
+                              <span className="text-foreground font-medium">
+                                Closed
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -227,14 +264,18 @@ const ContactPage = () => {
                     Request a Callback
                   </CardTitle>
                   <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you as soon as possible.
+                    Fill out the form below and we'll get back to you as soon as
+                    possible.
                   </p>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label htmlFor="firstName" className="text-sm font-medium text-foreground">
+                        <label
+                          htmlFor="firstName"
+                          className="text-sm font-medium text-foreground"
+                        >
                           First Name *
                         </label>
                         <Input
@@ -247,7 +288,10 @@ const ContactPage = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="lastName" className="text-sm font-medium text-foreground">
+                        <label
+                          htmlFor="lastName"
+                          className="text-sm font-medium text-foreground"
+                        >
                           Last Name *
                         </label>
                         <Input
@@ -262,7 +306,10 @@ const ContactPage = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="email"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Email Address *
                       </label>
                       <Input
@@ -277,7 +324,10 @@ const ContactPage = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="phone"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Phone Number
                       </label>
                       <Input
@@ -291,7 +341,10 @@ const ContactPage = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="service" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="service"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Service of Interest
                       </label>
                       <select
@@ -302,9 +355,15 @@ const ContactPage = () => {
                         className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:ring-2 focus:ring-[#63316b] focus:border-[#63316b] outline-none"
                       >
                         <option value="">Select a service...</option>
-                        <option value="full-arch-implants">Full Arch Implants</option>
-                        <option value="composite-bonding">Composite Bonding</option>
-                        <option value="invisalign-braces">Invisalign Braces</option>
+                        <option value="full-arch-implants">
+                          Full Arch Implants
+                        </option>
+                        <option value="composite-bonding">
+                          Composite Bonding
+                        </option>
+                        <option value="invisalign-braces">
+                          Invisalign Braces
+                        </option>
                         <option value="teeth-whitening">Teeth Whitening</option>
                         <option value="veneers">Veneers</option>
                         <option value="dental-implants">Dental Implants</option>
@@ -313,17 +372,28 @@ const ContactPage = () => {
                         <option value="fillings">Fillings</option>
                         <option value="night-guard">Night Guard</option>
                         <option value="dental-hygiene">Dental Hygiene</option>
-                        <option value="childrens-dentistry">Children's Dentistry</option>
-                        <option value="nervous-patients">Nervous Patients</option>
-                        <option value="restorative-treatment">Restorative Treatment</option>
-                        <option value="endodontic-treatment">Endodontic Treatment</option>
+                        <option value="childrens-dentistry">
+                          Children's Dentistry
+                        </option>
+                        <option value="nervous-patients">
+                          Nervous Patients
+                        </option>
+                        <option value="restorative-treatment">
+                          Restorative Treatment
+                        </option>
+                        <option value="endodontic-treatment">
+                          Endodontic Treatment
+                        </option>
                         <option value="crowns-bridges">Crowns & Bridges</option>
                         <option value="sedation">Sedation</option>
                       </select>
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="message"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Message *
                       </label>
                       <Textarea
@@ -344,7 +414,9 @@ const ContactPage = () => {
                       className="w-full bg-[#63316b] hover:bg-[#63316b]/90 text-white"
                       size="lg"
                     >
-                      <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                      <span>
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                      </span>
                       <Send className="w-5 h-5 ml-2" />
                     </Button>
                   </form>

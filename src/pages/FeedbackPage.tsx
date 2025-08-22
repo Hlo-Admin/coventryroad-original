@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { sendContactEmail } from "@/utils/emailService";
 import Marquee from "../components/MarqueeLogo";
 
 const FeedbackPage = () => {
@@ -41,30 +40,46 @@ const FeedbackPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Implement email sending logic
-      await sendContactEmail({
-        firstName: formData.name.split(" ")[0],
-        lastName: formData.name.split(" ").slice(1).join(" "),
-        email: formData.email,
-        service: formData.subject,
-        message: formData.message,
+      // Prepare form data for Google Sheets
+      const formDataToSubmit = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        // Convert boolean to string for checkbox
+        const processedValue =
+          typeof value === "boolean" ? (value ? "Yes" : "No") : value;
+        formDataToSubmit.append(key, processedValue);
       });
+      formDataToSubmit.append("formType", "feedback");
 
-      toast({
-        title: "Feedback Submitted",
-        description:
-          "Thank you for your feedback. We will review and respond as soon as possible.",
-        variant: "default",
-      });
+      // Submit to Google Apps Script
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzad2mv1Diw5X6GHHrhImy24_shdBXcTHTdw7xMPm_q0wMnmRlcyEVGcIUx8i7G9DsO/exec",
+        {
+          method: "POST",
+          body: formDataToSubmit,
+        }
+      );
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        privacyConsent: false,
-      });
+      const result = await response.json();
+
+      if (result.result === "success") {
+        toast({
+          title: "Feedback Submitted",
+          description:
+            "Thank you for your feedback. We will review and respond as soon as possible.",
+          variant: "default",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          privacyConsent: false,
+        });
+      } else {
+        throw new Error("Failed to submit feedback");
+      }
     } catch (error) {
       toast({
         title: "Submission Error",
@@ -78,8 +93,7 @@ const FeedbackPage = () => {
   };
 
   const downloadComplaintsProcedure = () => {
-    const downloadUrl =
-      "/document/NHS patient complaint handling.pdf";
+    const downloadUrl = "/document/NHS patient complaint handling.pdf";
 
     // Create a temporary anchor element
     const link = document.createElement("a");
