@@ -136,11 +136,9 @@ const Dentures = () => {
                   </p>
                   <p className="text-lg leading-relaxed">
                     That's why here at Coventry Road Dental Care, We provide
-                    full and partial dentures in metal, acrylic, and soft
-                    flexible dentures, which can be very comfortable. Advances
-                    in denture teeth and bases mean we can now offer more
-                    natural-looking teeth, to include tooth shades that look
-                    realistic.
+                    full and partial chrome, acrylic, and flexible dentures,
+                    which can be very comfortable. Advances in denture teeth and
+                    bases mean we can now offer more natural-looking dentures.
                   </p>
                   <p className="text-lg leading-relaxed">
                     If you would prefer not to wear dentures because they
@@ -150,25 +148,6 @@ const Dentures = () => {
                     solution you are looking for.
                   </p>
                 </div>
-{/* 
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Link to="/contact">
-                    <button className="bg-[#63316b] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center space-x-2 group">
-                      <Phone className="w-5 h-5" />
-                      <span>Request a Callback</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </Link>
-                  <a
-                    href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
-                    target="_blank"
-                  >
-                    <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
-                      <Calendar className="w-5 h-5" />
-                      <span>Book Consultation</span>
-                    </button>
-                  </a>
-                </div> */}
               </div>
 
               {/* Right Image */}
@@ -263,42 +242,42 @@ const Dentures = () => {
           </div>
         </section>
 
- {/* Explore Our Services Carousel */}
- <ExploreServicesCarousel />
+        {/* Explore Our Services Carousel */}
+        <ExploreServicesCarousel />
 
         {/* Final CTA Section */}
         <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
-            <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
-              Ready to Transform Your Smile?
-            </h3>
-            <p className="text-lg mb-6 text-gray-700 opacity-90">
-              We would love to help you achieve your perfect smile as discreetly
-              as possible. Book your free consultation and let's discuss your
-              options for a straight smile.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
-                target="_blank"
-              >
-                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book Free Consultation</span>
-                </button>
-              </a>
-              <Link
-                to="/"
-                className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
-              >
-                <ArrowRight className="w-5 h-5" />
-                <span>Back to Home</span>
-              </Link>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+              <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+                Ready to Transform Your Smile?
+              </h3>
+              <p className="text-lg mb-6 text-gray-700 opacity-90">
+                We would love to help you achieve your perfect smile as
+                discreetly as possible. Book your free consultation and let's
+                discuss your options for a straight smile.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                  target="_blank"
+                >
+                  <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>Book Free Consultation</span>
+                  </button>
+                </a>
+                <Link
+                  to="/"
+                  className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+                >
+                  <ArrowRight className="w-5 h-5" />
+                  <span>Back to Home</span>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
       </div>
       <FloatingBubble />
       <Footer />

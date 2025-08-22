@@ -113,12 +113,12 @@ const EndodonticTreatment = () => {
 
             {/* Doctor Image */}
             <div>
-                <img
-                  src="/services/root canal/about.jpg"
-                  alt="Composite bonding treatment"
-                  className="w-full h-96 object-cover rounded-2xl shadow-lg"
-                />
-              </div>
+              <img
+                src="/services/root canal/about.jpg"
+                alt="Composite bonding treatment"
+                className="w-full h-96 object-cover rounded-2xl shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -128,13 +128,12 @@ const EndodonticTreatment = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              We Welcome Children To Our Practice
+              Why Have This Treatment With Us​?
             </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our family practice offers good value treatment, and we invite
-              parents to bring their children even before their first tooth
-              appears to make sure they grow up happy and comfortable with
-              visiting the dentist.
+              We understand that root canal treatment can strike fear into many
+              people but our gentle dentists will quickly and effectively
+              alleviate your pain – and aim to save your tooth.
             </p>
           </div>
 
@@ -202,37 +201,40 @@ const EndodonticTreatment = () => {
         </div>
       </section>
 
+      {/* Explore Our Services Carousel */}
+      <ExploreServicesCarousel />
 
-        {/* Explore Our Services Carousel */}
-        <ExploreServicesCarousel />
-
-{/* Final CTA Section */}
-<section className="py-16 bg-white">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
-      <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
-        Ready to Transform Your Smile?
-      </h3>
-      <p className="text-lg mb-6 text-gray-700 opacity-90">
-        Book your free consultation today.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1" target="_blank">
-        <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-          <Calendar className="w-5 h-5" />
-          <span>Book Free Consultation</span>
-        </button></a>
-        <Link
-          to="/"
-          className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
-        >
-          <ArrowRight className="w-5 h-5" />
-          <span>Back to Home</span>
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Final CTA Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+            <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+              Ready to Transform Your Smile?
+            </h3>
+            <p className="text-lg mb-6 text-gray-700 opacity-90">
+              Book your free consultation today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://booking.uk.hsone.app/soe/new?pid=UKDEO01#/perspectives/1"
+                target="_blank"
+              >
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book Free Consultation</span>
+                </button>
+              </a>
+              <Link
+                to="/"
+                className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+              >
+                <ArrowRight className="w-5 h-5" />
+                <span>Back to Home</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>

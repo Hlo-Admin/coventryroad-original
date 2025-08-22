@@ -68,7 +68,7 @@ const TeethWhitening = () => {
       question:
         "What can you do about stained veneers, crowns or dentures to make sure they match my natural teeth?",
       answer:
-        "Depending on the degree of staining, you may need a thorough clean and polish before you have whitening treatment, to remove any discolouration caused by stains. The colour of crowns, veneers and dentures is not affected by tooth whitening. Old or dark crowns may need replacing to ensure they match your natural teeth. That is why an initial appointment with a dental professional is imperative before you begin using any tooth whitening products.",
+        "The colour of crowns, veneers and dentures is not affected by tooth whitening. Old or dark crowns may need replacing to ensure they match your natural teeth. That is why an initial appointment with a dental professional is imperative before you begin using any tooth whitening products.",
     },
   ];
 

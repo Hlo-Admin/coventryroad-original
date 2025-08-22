@@ -133,11 +133,11 @@ const Veneers = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                  What is <span className="text-[#63316b]">Veneers ?</span>
+                  What are <span className="text-[#63316b]">Veneers ?</span>
                 </h2>
                 <div className="prose prose-lg text-gray-700 space-y-4">
                   <p>
-                    If you've a cracked, discoloured, or unsightly tooth or a
+                    If you have a cracked, discoloured, or unsightly tooth or a
                     niggling gap in your smile line that bothers you, veneers
                     might be the answer.
                   </p>
