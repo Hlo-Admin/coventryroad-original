@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { useNavigate } from "react-router-dom";  // import this for navigation
+import { useNavigate } from "react-router-dom"; // import this for navigation
 
 const LandingPopup: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();  // initialize the navigate function
+  const navigate = useNavigate(); // initialize the navigate function
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,7 +20,7 @@ const LandingPopup: React.FC = () => {
   // This is the handler for the CTA button
   const handleButtonClick = () => {
     setIsOpen(false);
-    navigate("/invisalign-braces");
+    window.open("https://invisalign.coventryroaddental.co.uk/", "_blank");
   };
 
   if (!isOpen) return null;
