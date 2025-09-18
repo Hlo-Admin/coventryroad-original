@@ -48,13 +48,12 @@ const LandingPopup: React.FC = () => {
         {/* Popup Content */}
         <div className="text-center">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-primary">
-            £1000 OFF INVISALIGN WITH FREE TEETH-WHITENING
+            Save £1000 or up to £1000 with FREE iTero scan, FREE 3D Simulation, FREE Whitening and FREE Retainers
           </h2>
 
           <div className="bg-blue-100 rounded-lg p-2 mb-3">
             <p className="text-xs sm:text-sm text-gray-700">
-              Simply send us your smile photos using your smartphone and receive
-              a £1000 discount on Invisalign with FREE Teeth-Whitening.
+              Share your smile photos and save up to £1000 on Invisalign with free scan, whitening & retainers.
             </p>
           </div>
 
