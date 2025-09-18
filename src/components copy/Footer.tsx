@@ -120,7 +120,7 @@ For appointments please call us on 024 76 31 2256
                 </div>
                 <div className="text-white/80">
                   <p className="font-medium text-white mb-1">Email Us</p>
-                  <p className="text-sm">reception@deoldental.com</p>
+                  <p className="text-sm">reception@covrddental.co.uk</p>
                 </div>
               </div>
             </div>
