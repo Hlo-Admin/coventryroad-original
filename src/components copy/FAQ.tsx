@@ -17,7 +17,7 @@ const FAQ: React.FC = () => {
   {
     question: "Do you offer emergency appointments?",
     answer:
-      "We try our best to accommodate as many emergencies as we can. Just call us on 024 76 31 2256 or email us at reception@deoldental.com and our friendly reception team will assist you further.",
+      "We try our best to accommodate as many emergencies as we can. Just call us on 024 76 31 2256 or email us at reception@covrddental.co.uk and our friendly reception team will assist you further.",
   },
   {
     question: "Do you offer finance?",
