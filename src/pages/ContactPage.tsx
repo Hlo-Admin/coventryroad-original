@@ -201,7 +201,7 @@ const ContactPage = () => {
                             href="mailto:info@coventryroaddental.co.uk"
                             className="text-[#63316b] hover:underline"
                           >
-                            reception@deoldental.com
+                            reception@covrddental.co.uk
                           </a>
                           <p className="text-sm text-muted-foreground mt-1">
                             We'll get back to you soon
