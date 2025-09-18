@@ -59,7 +59,7 @@ const TermsOfService = () => {
               <p className="text-gray-700">
                 For questions regarding these terms, please contact us at:
                 <br />
-                Email: reception@deoldental.com
+                Email: reception@covrddental.co.uk
                 <br />
                 Phone: 024 76 31 2256
               </p>
