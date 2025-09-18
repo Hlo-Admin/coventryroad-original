@@ -22,7 +22,7 @@ const WhiteFillings = () => {
     },
     {
       question: "Are white fillings for me?",
-      answer: "If you prefer the natural look of mercury-free fillings, white fillings may be an option for you. Call us on 02476312256 or email us at reception@deoldental.com and our friendly team will be on hand to discuss the options and help you decide what's right for you."
+      answer: "If you prefer the natural look of mercury-free fillings, white fillings may be an option for you. Call us on 02476312256 or email us at reception@covrddental.co.uk and our friendly team will be on hand to discuss the options and help you decide what's right for you."
     },
     {
       question: "Can anybody have white fillings?",
