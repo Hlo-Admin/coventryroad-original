@@ -15,12 +15,12 @@ const FAQPage = () => {
     {
       question: "Can I visit the practice before I make an appointment?",
       answer:
-        "Yes, it's common for patients – particularly those who are anxious about visiting the dentist– to come for a look around to get a feel for our practice and team before they commit to joining. We'd be delighted to welcome you and show you around. Just call or email us on 02476 312256 or reception@deoldental.co.uk",
+        "Yes, it's common for patients – particularly those who are anxious about visiting the dentist– to come for a look around to get a feel for our practice and team before they commit to joining. We'd be delighted to welcome you and show you around. Just call or email us on 02476 312256 or reception@covrddental.co.uk",
     },
     {
       question: "Are you taking on new NHS patients?",
       answer:
-        "Yes, we are a dedicated NHS practice and would welcome your patronage as an NHS patient. We provide a wide range of both NHS and private dental treatments so you can choose what is best for you on a case-by-case basis. All you need to do is call us on 02476 312256 or email us at reception@deoldental.co.uk we can guide you through the options and make an appointment for you",
+        "Yes, we are a dedicated NHS practice and would welcome your patronage as an NHS patient. We provide a wide range of both NHS and private dental treatments so you can choose what is best for you on a case-by-case basis. All you need to do is call us on 02476 312256 or email us at reception@covrddental.co.uk we can guide you through the options and make an appointment for you",
     },
     {
       question: "Do you offer an extensive range of services?",
