@@ -145,7 +145,7 @@ const PrivacyPolicy = () => {
               <p className="text-gray-700">
                 If you have any questions about this Privacy Policy, please contact us at:
                 <br />
-                Email: reception@deoldental.com
+                Email: reception@covrddental.co.uk
                 <br />
                 Phone: 024 76 31 2256
               </p>
