@@ -252,7 +252,7 @@ const PricingPage = () => {
             <p className="text-gray-600 mb-8 max-w-5xl mx-auto">
               If you're considering joining Coventry Road, we'd like to invite
               you to call us on 02476 312256 or email us at
-              reception@deoldental.com and we will be pleased to arrange an
+              reception@covrddental.co.uk and we will be pleased to arrange an
               appointment. We look forward to meeting you and your family, and
               looking after your smile.
             </p>
