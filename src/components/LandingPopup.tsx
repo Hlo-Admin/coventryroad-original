@@ -48,7 +48,7 @@ const LandingPopup: React.FC = () => {
         {/* Popup Content */}
         <div className="text-center">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-primary">
-            Save £1000 or up to £1000 with FREE iTero scan, FREE 3D Simulation, FREE Whitening and FREE Retainers
+            Save up to £1000 with FREE iTero scan, FREE 3D Simulation, FREE Whitening and FREE Retainers
           </h2>
 
           <div className="bg-blue-100 rounded-lg p-2 mb-3">
